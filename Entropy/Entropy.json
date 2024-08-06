@@ -1,0 +1,75 @@
+{
+  "ComponentIndexes": {},
+  "ControlUniqueGuids": {},
+  "ControlUniqueIds": {
+    "App": 1,
+    "Host": 3,
+    "LoginScreen": 4,
+    "LoginScreenPasswordTextField": 6,
+    "LoginScreenSigninButton": 7,
+    "LoginScreenSignupButton": 8,
+    "LoginScreenUsernameTextField": 5,
+    "SignupScreen": 10,
+    "SignupScreenPasswordTextField_1": 12,
+    "SignupScreenSignupButton": 14,
+    "SignupScreenUsernameTextField_1": 11
+  },
+  "FunctionParamsInvariantScripts": {},
+  "FunctionParamsInvariantScriptsOnInstances": {},
+  "HeaderLastSavedDateTimeUTC": "08/06/2024 02:45:00",
+  "IsLegacyComponentAllowGlobalScopeCase": false,
+  "LocalConnectionIDReferences": {},
+  "LocalDatabaseReferencesAsEmpty": true,
+  "LocalResourceFileNames": {},
+  "LocalResourceRootPaths": {},
+  "OrderComponentMetadata": {},
+  "OrderComponentTemplate": {},
+  "OrderDataSource": {},
+  "OrderGroupControls": {},
+  "OrderPcfTemplate": {},
+  "OrderTemplate": {},
+  "OrderXMLTemplate": {
+    "button": 1,
+    "text": 0
+  },
+  "OverridablePropertiesEntry": {
+    "App": {},
+    "Host": {},
+    "LoginScreen": {},
+    "LoginScreenPasswordTextField": {},
+    "LoginScreenSigninButton": {},
+    "LoginScreenSignupButton": {},
+    "LoginScreenUsernameTextField": {},
+    "SignupScreen": {},
+    "SignupScreenPasswordTextField_1": {},
+    "SignupScreenSignupButton": {},
+    "SignupScreenUsernameTextField_1": {}
+  },
+  "PCFDynamicSchemaForIRRetrievalEntry": {},
+  "PCFTemplateEntry": {},
+  "PublishOrderIndices": {
+    "App": 0,
+    "Host": 0,
+    "LoginScreen": 0,
+    "LoginScreenPasswordTextField": 1,
+    "LoginScreenSigninButton": 2,
+    "LoginScreenSignupButton": 3,
+    "LoginScreenUsernameTextField": 0,
+    "SignupScreen": 0,
+    "SignupScreenPasswordTextField_1": 5,
+    "SignupScreenSignupButton": 6,
+    "SignupScreenUsernameTextField_1": 4
+  },
+  "ResourcesJsonIndices": {},
+  "RuleScreenIdWithoutScreen": {},
+  "TemplateVersions": {},
+  "VolatileProperties": {
+    "AnalysisLoadTime": 0.178193,
+    "ControlCount": {
+      "button": 4,
+      "screen": 1,
+      "text": 3
+    }
+  },
+  "WasLocalDatabaseReferencesEmpty": true
+}

@@ -1,0 +1,31 @@
+SignupScreen As screen:
+
+    SignupScreenUsernameTextField_1 As text:
+        Default: =""
+        Height: =62
+        HintText: ="ユーザー名"
+        Size: =21
+        Width: =427
+        X: =118
+        Y: =204
+        ZIndex: =1
+
+    SignupScreenPasswordTextField_1 As text:
+        Default: =""
+        Height: =62
+        HintText: ="パスワード"
+        Size: =21
+        Width: =427
+        X: =118
+        Y: =384
+        ZIndex: =2
+
+    SignupScreenSignupButton As button:
+        Height: =70
+        Size: =24
+        Text: ="新規登録"
+        Width: =280
+        X: =191
+        Y: =824
+        ZIndex: =4
+
