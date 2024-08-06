@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "hws_b_rate",
+    "MaxGetRowsCount": 500,
     "Name": "B_RATE",
     "NativeCDSDataSourceInfoNameMapping": {
       "createdby": "作成者",

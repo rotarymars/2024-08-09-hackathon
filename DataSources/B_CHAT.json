@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "cr344_b_chat",
+    "MaxGetRowsCount": 500,
     "Name": "B_CHAT",
     "NativeCDSDataSourceInfoNameMapping": {
       "cr344_a": "a",

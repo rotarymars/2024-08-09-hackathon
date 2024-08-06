@@ -5,12 +5,11 @@ TaskScreen As screen:
         OnSelect: |-
             =Set(
                 task_id,
-                Defaults(B_TASK).B_TASK
+                Blank()
             );
             Navigate(TaskEditScreen,ScreenTransition.None);
         Size: =24
         Text: ="タスクを追加"
         Width: =280
-        X: =56
         ZIndex: =1
 

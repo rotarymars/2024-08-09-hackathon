@@ -60,22 +60,27 @@ TaskEditScreen As screen:
 
     TaskEditScreenSubmit As button:
         Height: =70
-        OnSelect: |
-            =/*
-            If(
-                TaskEditScreenCheckbox.Value,
-                Set(temp, 1),
-                Set(temp,0)
+        OnSelect: |-
+            =If(
+                IsBlank(task_id),
+                Set(
+                    tmp_address,
+                    Defaults(B_TASK)
+                ),
+                Set(
+                    tmp_address,
+                    LookUp(B_TASK, B_TASK = task_id)
+                )
             );
-            */
             If(
                 TaskEditScreenCheckbox.Value,
                 Patch(
                     B_TASK,
-                    LookUp(B_TASK, B_TASK=task_id),
+                    tmp_address,
                     {
                         USERID: user_id,
                         TASKNAME: TaskEditScreenTaskNameTextField.Text,
+                        TASKDESCRIPTION: TaskEditScreenTaskDescriptionTextField.Text,
                         FLAG: 1,
                         DATE: TaskEditScreenTaskDateDateField.SelectedDate,
                         FINISHTIME: TaskEditScreenFinishTimeDateField.SelectedDate
@@ -83,15 +88,17 @@ TaskEditScreen As screen:
                 ),
                 Patch(
                     B_TASK,
-                    LookUp(B_TASK, B_TASK=task_id),
+                    tmp_address,
                     {
                         USERID: user_id,
                         TASKNAME: TaskEditScreenTaskNameTextField.Text,
-                        FLAG: 1,
+                        TASKDESCRIPTION: TaskEditScreenTaskDescriptionTextField.Text,
+                        FLAG: 0,
                         DATE: TaskEditScreenTaskDateDateField.SelectedDate
                     }
                 )
             );
+            Navigate(HomeScreen, ScreenTransition.None);
         Size: =24
         Text: ="決定"
         Width: =280

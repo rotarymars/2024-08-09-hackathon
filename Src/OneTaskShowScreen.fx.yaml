@@ -2,6 +2,7 @@ OneTaskShowScreen As screen:
 
     OneTaskShowScreenEditButton As button:
         Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
         Size: =24
         Text: ="編集"
         Width: =280
@@ -10,7 +11,22 @@ OneTaskShowScreen As screen:
     OneTaskShowScreenFinishButton As button:
         Height: =70
         OnSelect: |
-            =HomeScreenGallery.Selected.FLAG = 1;
+            =/*
+                LookUp(B_TASK, B_TASK = task_id).FLAG
+                1
+            */
+            Patch(
+                B_TASK,
+                LookUp(B_TASK, B_TASK = task_id),
+                {
+                    USERID: user_id,
+                    TASKNAME: LookUp(B_TASK, B_TASK = task_id).TASKNAME,
+                    TASKDESCRIPTION: LookUp(B_TASK, B_TASK = task_id).TASKDESCRIPTION,
+                    DATE: LookUp(B_TASK, B_TASK = task_id).DATE,
+                    FINISHTIME: Today(),
+                    FLAG: 1
+                }
+            );
             Refresh(B_TASK);
             Navigate(HomeScreen, ScreenTransition.None);
         Size: =24
