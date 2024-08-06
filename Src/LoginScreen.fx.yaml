@@ -22,6 +22,24 @@ LoginScreen As screen:
 
     LoginScreenSigninButton As button:
         Height: =70
+        OnSelect: |-
+            =Set(
+                tmp,
+                LookUp(
+                    B_USER,
+                    And(USERNAME = LoginScreenUsernameTextField.Text, PASSWORD = LoginScreenPasswordTextField.Text)
+                )
+            );
+            If(
+                IsBlank(tmp),
+                Notify("ユーザー名またはパスワードが間違っています", NotificationType.Error),
+                Set(
+                    user_id,
+                    Int(tmp.USERID)
+                );
+                Navigate(HomeScreen, ScreenTransition.None);
+                Notify("ログインしました", NotificationType.Success)
+            );
         Size: =24
         Text: ="ログイン"
         Width: =280
@@ -31,6 +49,8 @@ LoginScreen As screen:
 
     LoginScreenSignupButton As button:
         Height: =70
+        OnSelect: |
+            =Navigate(SignupScreen, ScreenTransition.None);
         Size: =24
         Text: ="新規登録"
         Width: =280

@@ -1,0 +1,70 @@
+OneTaskShowScreen As screen:
+
+    OneTaskShowScreenEditButton As button:
+        Height: =70
+        Size: =24
+        Text: ="編集"
+        Width: =280
+        ZIndex: =1
+
+    OneTaskShowScreenFinishButton As button:
+        Height: =70
+        OnSelect: |
+            =HomeScreenGallery.Selected.FLAG = 1;
+            Refresh(B_TASK);
+            Navigate(HomeScreen, ScreenTransition.None);
+        Size: =24
+        Text: ="タスクの終了"
+        Width: =280
+        X: =360
+        ZIndex: =2
+
+    OneTaskShowScreenTaskNameTextLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="タスク名"
+        Width: =560
+        Y: =105
+        ZIndex: =3
+
+    OneTaskShowScreenTaskNameTextField As label:
+        Height: =70
+        Size: =21
+        Text: =LookUp(B_TASK, B_TASK=task_id).TASKNAME
+        Width: =560
+        Y: =208
+        ZIndex: =4
+
+    OneTaskShowScreenTaskDescriptionTextLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="詳細"
+        Width: =560
+        Y: =352
+        ZIndex: =5
+
+    OneTaskShowScreenTaskDescriptionTextField As label:
+        Height: =70
+        Size: =21
+        Text: =LookUp(B_TASK, B_TASK=task_id).TASKDESCRIPTION
+        Width: =560
+        Y: =463
+        ZIndex: =6
+
+    OneTaskShowScreenTaskLimitTextLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="期日"
+        Width: =560
+        Y: =612
+        ZIndex: =7
+
+    DatePicker3 As datepicker:
+        DefaultDate: =LookUp(B_TASK, B_TASK=task_id).DATE
+        DisplayMode: =DisplayMode.View
+        Height: =70
+        Size: =24
+        Width: =575
+        Y: =716
+        ZIndex: =8
+

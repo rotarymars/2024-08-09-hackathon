@@ -1,0 +1,94 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr344_b_chats",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr344_b_chat",
+    "Name": "B_CHAT",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "cr344_a": "a",
+      "cr344_b_chat_AsyncOperations": "システム ジョブ ",
+      "cr344_b_chat_BulkDeleteFailures": "一括削除の失敗 ",
+      "cr344_b_chat_MailboxTrackingFolders": "メールボックス自動追跡フォルダー",
+      "cr344_b_chat_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "cr344_b_chat_ProcessSession": "プロセス セッション",
+      "cr344_b_chat_SyncErrors": "同期エラー",
+      "cr344_b_chatid": "B_CHAT",
+      "cr344_receiveuserid": "RECEIVEUSERID",
+      "cr344_senduserid": "SENDUSERID",
+      "cr344_text": "TEXT",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "organizationid": "組織 ID",
+      "overriddencreatedon": "レコード作成日",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "B_CHAT",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "B_CHAT (ビュー)",
+    "Name": "_cr344_b_chat_views",
+    "RelatedEntityName": "B_CHAT",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2178a6cf-0db6-4f6c-ab75-a7607224c63c": "非アクティブなB_CHAT",
+      "3a03e0f8-fa6e-4325-bf83-8d39359ebefa": "アクティブなB_CHAT",
+      "3a63d2ee-5bd9-479a-af7f-8fb8133349cf": "B_CHAT関連ビュー",
+      "895086b6-0668-4745-acff-d422fef90c47": "B_CHAT検索ダイアログ ビュー",
+      "d7e730d3-d58e-4f77-82a3-87c9f9af2083": "B_CHATの高度な検索ビュー"
+    }
+  },
+  {
+    "DisplayName": "状態 (B_CHAT)",
+    "Name": "cr344_b_chat_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "B_CHAT"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "B_CHAT",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (B_CHAT)",
+    "Name": "cr344_b_chat_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "B_CHAT"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "B_CHAT",
+    "Type": "OptionSetInfo"
+  }
+]

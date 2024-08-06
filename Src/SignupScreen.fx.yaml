@@ -1,6 +1,6 @@
 SignupScreen As screen:
 
-    SignupScreenUsernameTextField_1 As text:
+    SignupScreenUsernameTextField As text:
         Default: =""
         Height: =62
         HintText: ="ユーザー名"
@@ -10,7 +10,7 @@ SignupScreen As screen:
         Y: =204
         ZIndex: =1
 
-    SignupScreenPasswordTextField_1 As text:
+    SignupScreenPasswordTextField As text:
         Default: =""
         Height: =62
         HintText: ="パスワード"
@@ -22,10 +22,47 @@ SignupScreen As screen:
 
     SignupScreenSignupButton As button:
         Height: =70
+        OnSelect: |
+            =Set(
+                tmp,
+                LookUp(
+                    B_USER,
+                    USERNAME = SignupScreenUsernameTextField.Text
+                )
+            );
+            If(
+                SignupScreenCheckbox.Value,
+                Set(parentorchild,"P"),
+                Set(parentorchild, "C")
+            );
+            If(
+                IsBlank(tmp),
+                Patch(
+                    B_USER,
+                    Defaults(B_USER),
+                    {
+                        USERNAME: SignupScreenUsernameTextField.Text,
+                        PASSWORD: SignupScreenPasswordTextField.Text,
+                        FLAG: parentorchild
+                    }
+                );
+                Navigate(HomeScreen, ScreenTransition.None);
+                Notify("ログインしました", NotificationType.Success),
+                Notify("このユーザー名は使えません", NotificationType.Error)
+            );
         Size: =24
         Text: ="新規登録"
         Width: =280
         X: =191
         Y: =824
         ZIndex: =4
+
+    SignupScreenCheckbox As checkbox:
+        Height: =97
+        Size: =21
+        Text: ="保護者用アカウントとして作成"
+        Width: =427
+        X: =118
+        Y: =580
+        ZIndex: =5
 

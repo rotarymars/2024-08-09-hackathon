@@ -1,0 +1,32 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_hws_b_task_forms",
+      "Namespace": "B_TASK (フォーム)",
+      "Values": {
+        "情報": "645bfa3a-3249-427c-b7b7-e51495dda8a3"
+      }
+    },
+    {
+      "Kind": "default.cds_hws_b_rate_forms",
+      "Namespace": "B_RATE (フォーム)",
+      "Values": {
+        "情報": "e06da98f-c6de-406a-9e8d-e031bf0eadef"
+      }
+    },
+    {
+      "Kind": "default.cds_cr344_b_chat_forms",
+      "Namespace": "B_CHAT (フォーム)",
+      "Values": {
+        "情報": "77f270eb-931a-4354-97c2-d20b32502cf1"
+      }
+    },
+    {
+      "Kind": "default.cds_hws_b_user_forms",
+      "Namespace": "B_USER (フォーム)",
+      "Values": {
+        "情報": "5075db95-b041-4054-9d5d-ea760593dd82"
+      }
+    }
+  ]
+}

@@ -10,7 +10,7 @@
     "MSAppStructureVersion": "2.0"
   },
   "Properties": {
-    "AppCopilotSchemaName": null,
+    "AppCopilotSchemaName": "",
     "AppCreationSource": "AppFromScratch",
     "AppDescription": "",
     "AppPreviewFlagsMap": {
@@ -117,8 +117,7 @@
     "FileID": "89fb4899-5868-4b44-8842-0469de7a4651",
     "Id": "89fb4899-5868-4b44-8842-0469de7a4651",
     "InstrumentationKey": "",
-    "LocalDatabaseReferences": "",
-    "ManualOfflineProfileId": null,
+    "ManualOfflineProfileId": "",
     "Name": "B_APP",
     "OriginatingVersion": "1.343",
     "ParserErrorCount": 0,
@@ -137,6 +136,12 @@
   },
   "ScreenOrder": [
     "LoginScreen",
-    "SignupScreen"
+    "SignupScreen",
+    "HomeScreen",
+    "OneTaskShowScreen",
+    "TaskEditScreen",
+    "ChatScreen",
+    "RateScreen",
+    "TaskScreen"
   ]
 }
