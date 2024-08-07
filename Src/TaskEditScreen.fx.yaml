@@ -1,13 +1,5 @@
 TaskEditScreen As screen:
 
-    TaskEditScreenFinishButton As button:
-        Height: =70
-        OnSelect: =Back(ScreenTransition.None);
-        Size: =24
-        Text: ="タスクの終了"
-        Width: =280
-        ZIndex: =2
-
     TaskEditScreenTaskNameTextLabel As label:
         Height: =70
         Size: =21
@@ -58,8 +50,39 @@ TaskEditScreen As screen:
         Y: =728
         ZIndex: =10
 
-    TaskEditScreenSubmit As button:
+    TaskEditScreenCheckbox As checkbox:
+        Height: =85
+        Size: =21
+        Text: =
+        Width: =280
+        Y: =900
+        ZIndex: =12
+
+    Label3 As label:
         Height: =70
+        Size: =21
+        Text: ="終了"
+        Width: =560
+        Y: =830
+        ZIndex: =13
+
+    TaskEditScreenFinishTimeDateField As datepicker:
+        DefaultDate: =LookUp(B_TASK, B_TASK=task_id).FINISHTIME
+        Height: =70
+        Size: =24
+        Visible: =TaskEditScreenCheckbox.Value
+        Width: =575
+        Y: =1013
+        ZIndex: =14
+
+    Icon2 As icon.ArrowLeft:
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back(ScreenTransition.None);
+        Y: =3
+        ZIndex: =15
+
+    Icon3 As icon.Check:
+        Icon: =Icon.Check
         OnSelect: |-
             =If(
                 IsBlank(task_id),
@@ -99,34 +122,6 @@ TaskEditScreen As screen:
                 )
             );
             Navigate(HomeScreen, ScreenTransition.None);
-        Size: =24
-        Text: ="決定"
-        Width: =280
-        X: =360
-        ZIndex: =11
-
-    TaskEditScreenCheckbox As checkbox:
-        Height: =85
-        Size: =21
-        Text: =
-        Width: =280
-        Y: =900
-        ZIndex: =12
-
-    Label3 As label:
-        Height: =70
-        Size: =21
-        Text: ="終了"
-        Width: =560
-        Y: =830
-        ZIndex: =13
-
-    TaskEditScreenFinishTimeDateField As datepicker:
-        DefaultDate: =LookUp(B_TASK, B_TASK=task_id).FINISHTIME
-        Height: =70
-        Size: =24
-        Visible: =TaskEditScreenCheckbox.Value
-        Width: =575
-        Y: =1013
-        ZIndex: =14
+        X: =576
+        ZIndex: =16
 

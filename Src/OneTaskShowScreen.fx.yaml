@@ -1,42 +1,8 @@
 OneTaskShowScreen As screen:
 
-    OneTaskShowScreenEditButton As button:
-        Height: =70
-        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
-        Size: =24
-        Text: ="編集"
-        Width: =280
-        ZIndex: =1
-
-    OneTaskShowScreenFinishButton As button:
-        Height: =70
-        OnSelect: |
-            =/*
-                LookUp(B_TASK, B_TASK = task_id).FLAG
-                1
-            */
-            Patch(
-                B_TASK,
-                LookUp(B_TASK, B_TASK = task_id),
-                {
-                    USERID: user_id,
-                    TASKNAME: LookUp(B_TASK, B_TASK = task_id).TASKNAME,
-                    TASKDESCRIPTION: LookUp(B_TASK, B_TASK = task_id).TASKDESCRIPTION,
-                    DATE: LookUp(B_TASK, B_TASK = task_id).DATE,
-                    FINISHTIME: Today(),
-                    FLAG: 1
-                }
-            );
-            Refresh(B_TASK);
-            Navigate(HomeScreen, ScreenTransition.None);
-        Size: =24
-        Text: ="タスクの終了"
-        Width: =280
-        X: =360
-        ZIndex: =2
-
     OneTaskShowScreenTaskNameTextLabel As label:
         Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
         Size: =21
         Text: ="タスク名"
         Width: =560
@@ -45,6 +11,7 @@ OneTaskShowScreen As screen:
 
     OneTaskShowScreenTaskNameTextField As label:
         Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
         Size: =21
         Text: =LookUp(B_TASK, B_TASK=task_id).TASKNAME
         Width: =560
@@ -53,6 +20,7 @@ OneTaskShowScreen As screen:
 
     OneTaskShowScreenTaskDescriptionTextLabel As label:
         Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
         Size: =21
         Text: ="詳細"
         Width: =560
@@ -61,6 +29,7 @@ OneTaskShowScreen As screen:
 
     OneTaskShowScreenTaskDescriptionTextField As label:
         Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
         Size: =21
         Text: =LookUp(B_TASK, B_TASK=task_id).TASKDESCRIPTION
         Width: =560
@@ -69,6 +38,7 @@ OneTaskShowScreen As screen:
 
     OneTaskShowScreenTaskLimitTextLabel As label:
         Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
         Size: =21
         Text: ="期日"
         Width: =560
@@ -79,17 +49,88 @@ OneTaskShowScreen As screen:
         DefaultDate: =LookUp(B_TASK, B_TASK=task_id).DATE
         DisplayMode: =DisplayMode.View
         Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
         Size: =24
         Width: =575
         Y: =716
         ZIndex: =8
 
-    Button2 As button:
-        Height: =70
+    Icon7 As icon.ArrowLeft:
+        Icon: =Icon.ArrowLeft
         OnSelect: =Back();
-        Size: =24
-        Text: ="戻る"
-        Width: =280
+        Y: =3
+        ZIndex: =16
+
+    Icon8 As icon.Edit:
+        Icon: =Icon.Edit
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
+        X: =224
+        ZIndex: =17
+
+    HomeScreenHomeIcon_1 As icon.Home:
+        Icon: =Icon.Home
+        OnSelect: =Navigate(HomeScreen, ScreenTransition.None);
+        X: =339
         Y: =1066
-        ZIndex: =9
+        ZIndex: =18
+
+    HomeScreenTaskIcon_1 As icon.Note:
+        Icon: =Icon.Note
+        OnSelect: =Navigate(TaskScreen, ScreenTransition.None);
+        X: =232
+        Y: =1066
+        ZIndex: =19
+
+    HomeScreenSettingsIcon_1 As icon.Settings:
+        Icon: =Icon.Settings
+        OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
+        X: =527
+        Y: =1066
+        ZIndex: =20
+
+    HomeScreenProgressIcon_1 As icon.Trending:
+        Icon: =Icon.Trending
+        OnSelect: =Navigate(RateScreen, ScreenTransition.None);
+        X: =447
+        Y: =1072
+        ZIndex: =21
+
+    HomeScreenMailIcon_1 As icon.Mail:
+        Icon: =Icon.Mail
+        OnSelect: =Navigate(ChatScreen, ScreenTransition.None);
+        X: =147
+        Y: =1066
+        ZIndex: =22
+
+    HomeScreenLogoutIcon_1 As icon.Lock:
+        Icon: =Icon.Lock
+        OnSelect: |-
+            =Set(
+                user_id,
+                Blank()
+            );
+            Navigate(LoginScreen, ScreenTransition.None);
+        X: =64
+        Y: =1066
+        ZIndex: =23
+
+    Icon1 As icon.Check:
+        Icon: =Icon.Check
+        OnSelect: |-
+            =Patch(
+                B_TASK,
+                LookUp(
+                    B_TASK,
+                    B_TASK = task_id
+                ),
+                {
+                    USERID: user_id,
+                    TASKNAME: LookUp(B_TASK, B_TASK=task_id).TASKNAME,
+                    TASKDESCRIPTION: LookUp(B_TASK, B_TASK=task_id).TASKDESCRIPTION,
+                    DATE: LookUp(B_TASK, B_TASK=task_id).DATE,
+                    FINISHTIME: Today()
+                }
+            );
+        X: =575
+        ZIndex: =24
 

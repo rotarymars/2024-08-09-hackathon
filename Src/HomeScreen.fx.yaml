@@ -1,21 +1,8 @@
 HomeScreen As screen:
 
-    HomeScreenLogoutButton As button:
-        Height: =70
-        OnSelect: |-
-            =Set(
-                user_id,
-                Blank()
-            );
-            Navigate(LoginScreen, ScreenTransition.None);
-        Size: =24
-        Text: ="ログアウト"
-        Width: =280
-        ZIndex: =1
-
     "HomeScreenGallery As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =996
+        Height: =1066
         Items: |-
             =Sort(
                 Filter(
@@ -36,7 +23,6 @@ HomeScreen As screen:
             Navigate(OneTaskShowScreen, ScreenTransition.None);
         TemplatePadding: =0
         TemplateSize: =116
-        Y: =70
         ZIndex: =1
 
         Title3 As label:
@@ -114,39 +100,50 @@ HomeScreen As screen:
             Width: =4
             ZIndex: =6
 
-    HomeScreenChatButton As button:
-        Height: =70
-        Size: =24
-        Text: ="チャット"
-        Width: =280
-        X: =360
-        ZIndex: =2
-
-    HomeScreenRateButton As button:
-        Height: =70
-        Size: =24
-        Text: ="レート"
-        Width: =115
-        X: =525
+    HomeScreenHomeIcon As icon.Home:
+        Icon: =Icon.Home
+        OnSelect: =Navigate(HomeScreen, ScreenTransition.None);
+        X: =300
         Y: =1066
-        ZIndex: =3
+        ZIndex: =6
 
-    HomeScreenTaskButton As button:
-        Height: =70
+    HomeScreenTaskIcon As icon.Note:
+        Icon: =Icon.Note
         OnSelect: =Navigate(TaskScreen, ScreenTransition.None);
-        Size: =24
-        Text: ="タスク"
-        Width: =167
+        X: =193
         Y: =1066
-        ZIndex: =4
+        ZIndex: =7
 
-    Button3 As button:
-        Height: =70
+    HomeScreenSettingsIcon As icon.Settings:
+        Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
-        Size: =24
-        Text: ="設定"
-        Width: =280
-        X: =180
+        X: =488
         Y: =1066
-        ZIndex: =5
+        ZIndex: =8
+
+    HomeScreenProgressIcon As icon.Trending:
+        Icon: =Icon.Trending
+        OnSelect: =Navigate(RateScreen, ScreenTransition.None);
+        X: =408
+        Y: =1072
+        ZIndex: =9
+
+    HomeScreenMailIcon As icon.Mail:
+        Icon: =Icon.Mail
+        OnSelect: =Navigate(ChatScreen, ScreenTransition.None);
+        X: =108
+        Y: =1066
+        ZIndex: =10
+
+    HomeScreenLogoutIcon As icon.Lock:
+        Icon: =Icon.Lock
+        OnSelect: |-
+            =Set(
+                user_id,
+                Blank()
+            );
+            Navigate(LoginScreen, ScreenTransition.None);
+        X: =25
+        Y: =1066
+        ZIndex: =11
 
