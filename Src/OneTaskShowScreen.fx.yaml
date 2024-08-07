@@ -86,7 +86,7 @@ OneTaskShowScreen As screen:
             =If(
                 is_parent,
                 Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
-                Navigate(HomeScreen, ScreenTransition.None)
+                Navigate(TaskScreen, ScreenTransition.None)
             );
         X: =196
         Y: =1066
