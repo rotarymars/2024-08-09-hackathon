@@ -1,4 +1,5 @@
 LoginScreen As screen:
+    Fill: =RGBA(240,239,228,1)
 
     LoginScreenUsernameTextField As text:
         Default: =""
@@ -38,8 +39,21 @@ LoginScreen As screen:
                     user_id,
                     Int(tmp.USERID)
                 );
-                Navigate(HomeScreen, ScreenTransition.None);
-                Notify("ログインしました", NotificationType.Success)
+                If(
+                    tmp.FLAG = "P",
+                    Navigate(ParentScreen, ScreenTransition.None);
+                    Set(
+                        is_parent,
+                        true
+                    );
+                    Notify("保護者アカウントとして認識してログインしました。", NotificationType.Success),
+                    Navigate(HomeScreen, ScreenTransition.None);
+                    Set(
+                        is_parent,
+                        false
+                    );
+                    Notify("ログインしました", NotificationType.Success)
+                )
             );
         Size: =24
         Text: ="ログイン"

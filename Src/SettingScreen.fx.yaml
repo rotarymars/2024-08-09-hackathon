@@ -1,9 +1,11 @@
 SettingScreen As screen:
+    Fill: =RGBA(240,239,228,1)
 
     SettingScreenCheckbox As checkbox:
         Height: =80
         Size: =21
         Text: ="保護者アカウントと結びつける"
+        Visible: =Not(is_parent)
         Width: =475
         X: =106
         Y: =60
@@ -60,7 +62,8 @@ SettingScreen As screen:
                         PARENTID: Int(tmp.USERID)
                     }
                 );
-                Notify("連携しました", NotificationType.Success)
+                Notify("連携しました", NotificationType.Success);
+                Navigate(HomeScreen,ScreenTransition.None)
             );
         Size: =24
         Text: ="承認する"
@@ -87,4 +90,9 @@ SettingScreen As screen:
         X: =40
         Y: =1058
         ZIndex: =6
+
+    Icon9 As icon.ArrowLeft:
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back()
+        ZIndex: =7
 

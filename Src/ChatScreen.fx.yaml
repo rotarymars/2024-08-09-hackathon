@@ -1,2 +1,258 @@
 ChatScreen As screen:
+    Fill: =RGBA(240,239,228,1)
+
+    ChatScreenHomeIcon As icon.Home:
+        Icon: =Icon.Home
+        OnSelect: |-
+            =If(
+                is_parent,
+                Navigate(ParentScreen, ScreenTransition.None),
+                Navigate(HomeScreen, ScreenTransition.None)
+            );
+        X: =300
+        Y: =1066
+        ZIndex: =1
+
+    ChatScreenTaskIcon As icon.Note:
+        Icon: =Icon.Note
+        OnSelect: |-
+            =If(
+                is_parent,
+                Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
+                Navigate(HomeScreen, ScreenTransition.None)
+            );
+        X: =193
+        Y: =1066
+        ZIndex: =2
+
+    ChatScreenSettingsIcon As icon.Settings:
+        Icon: =Icon.Settings
+        OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
+        X: =488
+        Y: =1066
+        ZIndex: =3
+
+    ChatScreenProgressIcon As icon.Trending:
+        Icon: =Icon.Trending
+        OnSelect: =Navigate(RateScreen, ScreenTransition.None);
+        X: =408
+        Y: =1072
+        ZIndex: =4
+
+    ChatScreenMailIcon As icon.Mail:
+        Icon: =Icon.Mail
+        OnSelect: |
+            =Refresh(B_USER);
+            Set(
+                send_id,
+                LookUp(
+                    B_USER,
+                    USERID=Text(user_id),
+                    PARENTID
+                )
+            );
+            If(
+                IsBlank(send_id),
+                Notify(
+                    "対応する保護者が見つかりません。設定から設定してください。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    ChatScreen,
+                    ScreenTransition.None
+                )
+            );
+        X: =108
+        Y: =1066
+        ZIndex: =5
+
+    ChatScreenLogoutIcon As icon.Lock:
+        Icon: =Icon.Lock
+        OnSelect: |-
+            =Set(
+                user_id,
+                Blank()
+            );
+            Navigate(LoginScreen, ScreenTransition.None);
+        X: =25
+        Y: =1066
+        ZIndex: =6
+
+    "ChatScreenMessageGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =772
+        Items: |-
+            =Sort(
+                Filter(B_CHAT, Or(RECEIVEUSERID = user_id, SENDUSERID = user_id)),
+                作成日,
+                SortOrder.Descending
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =119
+        Y: =28
+        ZIndex: =7
+
+        ChatScreenTextTextField As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =84
+            OnSelect: =Select(Parent)
+            Overflow: =Overflow.Scroll
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.TEXT
+            VerticalAlign: =VerticalAlign.Top
+            Width: =407
+            X: =115
+            Y: =6
+            ZIndex: =3
+
+        ChatScreenRLabel As label:
+            Fill: |-
+                =If(
+                    ThisItem.RECEIVEUSERID = user_id,
+                    RGBA(215, 223, 240, 1),
+                    RGBA(0, 0, 0, 0)
+                )
+            Height: =99
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: |-
+                =If(
+                    ThisItem.RECEIVEUSERID = user_id,
+                    LookUp(
+                        B_USER,
+                        USERID = Text(ThisItem.SENDUSERID),
+                        USERNAME
+                    )
+                )
+            Width: =99
+            X: =3
+            Y: =6
+            ZIndex: =7
+
+        ChatScreenSLabel As label:
+            Fill: |-
+                =If(
+                    ThisItem.SENDUSERID = user_id,
+                    RGBA(215, 223, 240, 1),
+                    RGBA(0, 0, 0, 0)
+                )
+            Height: =99
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: |-
+                =If(
+                    ThisItem.SENDUSERID = user_id,
+                    LookUp(
+                        B_USER,
+                        USERID = Text(ThisItem.SENDUSERID),
+                        USERNAME
+                    )
+                )
+            Width: =91
+            X: =537
+            Y: =6
+            ZIndex: =8
+
+        ChatScreenDayLabel As label:
+            Height: =28
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: |-
+                =Text(
+                    ThisItem.作成日,
+                    "mm",
+                    "ja"
+                ) & "/" & Text(
+                    ThisItem.作成日,
+                    "dd",
+                    "ja"
+                ) & " " & Text(
+                    ThisItem.作成日,
+                    "H:mm",
+                    "ja"
+                )
+            Width: =168
+            X: =354
+            Y: =90
+            ZIndex: =9
+
+    ChatScreenMessageTextField As text:
+        Default: =""
+        Height: =120
+        Mode: =TextMode.MultiLine
+        Size: =21
+        Width: =424
+        X: =25
+        Y: =899
+        ZIndex: =8
+
+    ChatScreenSendIcon As icon.Send:
+        Height: =94
+        Icon: =Icon.Send
+        OnSelect: |-
+            =If(
+                ChatScreenTextTextField.Text = "rotarymars",
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ),
+                    {CHAT: 1}
+                );
+                Notify("称号-将来のビルゲイツ",NotificationType.Success),
+                Patch(
+                    B_CHAT,
+                    Defaults(B_CHAT),
+                    {
+                        SENDUSERID: user_id,
+                        RECEIVEUSERID: send_id,
+                        TEXT: ChatScreenMessageTextField.Text
+                    }
+                )
+            );
+            Refresh(B_CHAT);
+            Reset(ChatScreenMessageTextField)
+        Width: =74
+        X: =552
+        Y: =912
+        ZIndex: =9
+
+    ChatScreenSendPointIcon As icon.Currency:
+        Height: =62
+        Icon: =Icon.Currency
+        OnSelect: |
+            =Set(_rate, "今のレート:" & Text(10) & "今日のポイント:" & "");/*レートの変数教えて*/
+            Patch(
+                B_CHAT,
+                Defaults(B_CHAT),
+                {
+                    SENDUSERID: Int(user_id),
+                    RECEIVEUSERID: RUSER_ID,
+                    TEXT: _rate
+                }
+            );
+            Refresh(B_CHAT);
+        Width: =71
+        X: =460
+        Y: =928
+        ZIndex: =10
+
+    Icon6 As icon.Reset:
+        Icon: =Icon.Reset
+        OnSelect: |-
+            =Refresh(B_CHAT);
+            Refresh(B_RATE);
+            Refresh(B_TASK);
+            Refresh(B_TROPHY);
+            Refresh(B_USER);
+        X: =557
+        Y: =1066
+        ZIndex: =11
 

@@ -102,7 +102,7 @@
       "zeroalltabindexes": true
     },
     "Author": "",
-    "BindingErrorCount": 0,
+    "BindingErrorCount": 3,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "Phone",
@@ -144,6 +144,6 @@
     "RateScreen",
     "TaskScreen",
     "SettingScreen",
-    "Screen1"
+    "ParentScreen"
   ]
 }

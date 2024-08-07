@@ -1,4 +1,5 @@
 SignupScreen As screen:
+    Fill: =RGBA(240,239,228,1)
 
     SignupScreenUsernameTextField As text:
         Default: =""
@@ -33,7 +34,15 @@ SignupScreen As screen:
             );
             If(
                 SignupScreenCheckbox.Value,
-                Set(parentorchild,"P"),
+                Set(parentorchild,"P");
+                Set(
+                    is_parent,
+                    true
+                ),
+                Set(
+                    is_parent,
+                    false
+                );
                 Set(parentorchild, "C")
             );
             If(

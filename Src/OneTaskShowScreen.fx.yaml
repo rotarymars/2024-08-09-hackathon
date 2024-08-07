@@ -1,4 +1,5 @@
 OneTaskShowScreen As screen:
+    Fill: =RGBA(240,239,228,1)
 
     OneTaskShowScreenTaskNameTextLabel As label:
         Height: =70
@@ -69,36 +70,66 @@ OneTaskShowScreen As screen:
 
     HomeScreenHomeIcon_1 As icon.Home:
         Icon: =Icon.Home
-        OnSelect: =Navigate(HomeScreen, ScreenTransition.None);
-        X: =339
+        OnSelect: |-
+            =If(
+                is_parent,
+                Navigate(ParentScreen, ScreenTransition.None),
+                Navigate(HomeScreen, ScreenTransition.None)
+            );
+        X: =288
         Y: =1066
         ZIndex: =18
 
     HomeScreenTaskIcon_1 As icon.Note:
         Icon: =Icon.Note
-        OnSelect: =Navigate(TaskScreen, ScreenTransition.None);
-        X: =232
+        OnSelect: |-
+            =If(
+                is_parent,
+                Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
+                Navigate(HomeScreen, ScreenTransition.None)
+            );
+        X: =196
         Y: =1066
         ZIndex: =19
 
     HomeScreenSettingsIcon_1 As icon.Settings:
         Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
-        X: =527
-        Y: =1066
+        X: =471
+        Y: =1072
         ZIndex: =20
 
     HomeScreenProgressIcon_1 As icon.Trending:
         Icon: =Icon.Trending
         OnSelect: =Navigate(RateScreen, ScreenTransition.None);
-        X: =447
+        X: =367
         Y: =1072
         ZIndex: =21
 
     HomeScreenMailIcon_1 As icon.Mail:
         Icon: =Icon.Mail
-        OnSelect: =Navigate(ChatScreen, ScreenTransition.None);
-        X: =147
+        OnSelect: |
+            =Refresh(B_USER);
+            Set(
+                send_id,
+                LookUp(
+                    B_USER,
+                    USERID=Text(user_id),
+                    PARENTID
+                )
+            );
+            If(
+                IsBlank(send_id),
+                Notify(
+                    "対応する保護者が見つかりません。設定から設定してください。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    ChatScreen,
+                    ScreenTransition.None
+                )
+            );
+        X: =112
         Y: =1066
         ZIndex: =22
 
@@ -110,8 +141,8 @@ OneTaskShowScreen As screen:
                 Blank()
             );
             Navigate(LoginScreen, ScreenTransition.None);
-        X: =64
-        Y: =1066
+        X: =29
+        Y: =1072
         ZIndex: =23
 
     Icon1 As icon.Check:
@@ -131,6 +162,19 @@ OneTaskShowScreen As screen:
                     FINISHTIME: Today()
                 }
             );
+            Back(ScreenTransition.None);
         X: =575
         ZIndex: =24
+
+    Icon5 As icon.Reset:
+        Icon: =Icon.Reset
+        OnSelect: |-
+            =Refresh(B_CHAT);
+            Refresh(B_RATE);
+            Refresh(B_TASK);
+            Refresh(B_TROPHY);
+            Refresh(B_USER);
+        X: =560
+        Y: =1066
+        ZIndex: =25
 

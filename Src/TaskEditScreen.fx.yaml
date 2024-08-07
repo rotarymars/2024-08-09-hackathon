@@ -1,4 +1,5 @@
 TaskEditScreen As screen:
+    Fill: =RGBA(240,239,228,1)
 
     TaskEditScreenTaskNameTextLabel As label:
         Height: =70

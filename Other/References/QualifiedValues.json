@@ -27,6 +27,13 @@
       "Values": {
         "情報": "5075db95-b041-4054-9d5d-ea760593dd82"
       }
+    },
+    {
+      "Kind": "default.cds_hws_268d9e1444bd44baa5dadebf04e71033_forms",
+      "Namespace": "B_TROPHY (フォーム)",
+      "Values": {
+        "情報": "61dd4e42-7208-4e1a-ba02-97e68d44fcaa"
+      }
     }
   ]
 }
