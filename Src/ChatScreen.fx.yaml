@@ -197,7 +197,7 @@ ChatScreen As screen:
         Icon: =Icon.Send
         OnSelect: |-
             =If(
-                ChatScreenTextTextField.Text = "rotarymars",
+                ChatScreenMessageTextField.Text = "rotarymars",
                 Patch(
                     B_TROPHY,
                     LookUp(
