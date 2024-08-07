@@ -77,7 +77,7 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.DATE
+            Text: =Concatenate("締め切り：", Year(ThisItem.DATE), "年", Month(ThisItem.DATE), "月", Day(ThisItem.DATE), "日")
             VerticalAlign: =VerticalAlign.Top
             Width: =Title3.Width
             X: =Title3.X
@@ -126,8 +126,8 @@ HomeScreen As screen:
         Height: =70
         Size: =24
         Text: ="レート"
-        Width: =280
-        X: =360
+        Width: =115
+        X: =525
         Y: =1066
         ZIndex: =3
 
@@ -136,7 +136,17 @@ HomeScreen As screen:
         OnSelect: =Navigate(TaskScreen, ScreenTransition.None);
         Size: =24
         Text: ="タスク"
-        Width: =280
+        Width: =167
         Y: =1066
         ZIndex: =4
+
+    Button3 As button:
+        Height: =70
+        OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
+        Size: =24
+        Text: ="設定"
+        Width: =280
+        X: =180
+        Y: =1066
+        ZIndex: =5
 

@@ -84,3 +84,12 @@ OneTaskShowScreen As screen:
         Y: =716
         ZIndex: =8
 
+    Button2 As button:
+        Height: =70
+        OnSelect: =Back();
+        Size: =24
+        Text: ="戻る"
+        Width: =280
+        Y: =1066
+        ZIndex: =9
+

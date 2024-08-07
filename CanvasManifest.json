@@ -142,6 +142,8 @@
     "TaskEditScreen",
     "ChatScreen",
     "RateScreen",
-    "TaskScreen"
+    "TaskScreen",
+    "SettingScreen",
+    "Screen1"
   ]
 }

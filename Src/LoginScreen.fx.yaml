@@ -14,6 +14,7 @@ LoginScreen As screen:
         Default: =""
         Height: =62
         HintText: ="パスワード"
+        Mode: =TextMode.Password
         Size: =21
         Width: =427
         X: =118

@@ -13,3 +13,12 @@ TaskScreen As screen:
         Width: =280
         ZIndex: =1
 
+    Button1 As button:
+        Height: =70
+        OnSelect: =Back();
+        Size: =24
+        Text: ="戻る"
+        Width: =280
+        X: =360
+        ZIndex: =2
+

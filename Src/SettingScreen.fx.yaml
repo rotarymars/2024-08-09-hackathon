@@ -1,0 +1,90 @@
+SettingScreen As screen:
+
+    SettingScreenCheckbox As checkbox:
+        Height: =80
+        Size: =21
+        Text: ="保護者アカウントと結びつける"
+        Width: =475
+        X: =106
+        Y: =60
+        ZIndex: =1
+
+    SettingScreenParentUser As text:
+        Default: =""
+        Height: =70
+        HintText: ="保護者のユーザー名"
+        Size: =21
+        Visible: =SettingScreenCheckbox.Value
+        Width: =560
+        X: =63
+        Y: =292
+        ZIndex: =2
+
+    SettingScreenParentPassword As text:
+        Default: =""
+        Height: =70
+        HintText: ="保護者のパスワード"
+        Mode: =TextMode.Password
+        Size: =21
+        Visible: =SettingScreenCheckbox.Value
+        Width: =560
+        X: =63
+        Y: =529
+        ZIndex: =3
+
+    SettingScreenSubmitButton As button:
+        Height: =70
+        OnSelect: |-
+            =Set(
+                tmp,
+                LookUp(
+                    B_USER,
+                    And(USERNAME = SettingScreenParentUser.Text, PASSWORD = SettingScreenParentPassword.Text, FLAG = "P")
+                )
+            );
+            If(
+                IsBlank(tmp),
+                Notify("保護者アカウントと結びつけるのに失敗しました。保護者のユーザー名とパスワードを再確認してください。", NotificationType.Error),
+                Set(tmp_username, LookUp(B_USER, USERID = Text(user_id)).USERNAME);
+                Set(tmp_password, LookUp(B_USER, USERID = Text(user_id)).PASSWORD);
+                Patch(
+                    B_USER,
+                    LookUp(
+                        B_USER,
+                        USERID = Text(user_id)
+                    ),
+                    {
+                        hws_username: tmp_username,
+                        hws_password: tmp_password,
+                        FLAG: "C",
+                        PARENTID: Int(tmp.USERID)
+                    }
+                );
+                Notify("連携しました", NotificationType.Success)
+            );
+        Size: =24
+        Text: ="承認する"
+        Visible: =SettingScreenCheckbox.Value
+        Width: =280
+        X: =203
+        Y: =725
+        ZIndex: =4
+
+    Label1 As label:
+        Height: =70
+        Size: =21
+        Text: =tmp_username
+        Width: =560
+        X: =40
+        Y: =958
+        ZIndex: =5
+
+    Label1_1 As label:
+        Height: =70
+        Size: =21
+        Text: =tmp_password
+        Width: =560
+        X: =40
+        Y: =1058
+        ZIndex: =6
+
