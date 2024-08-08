@@ -38,7 +38,9 @@
     "id": "968a2724-e1e3-4190-975c-a47744bec96a"
   },
   "f9c09b69-74f7-4554-a0cf-88c46314bb61": {
-    "appActions": [],
+    "appActions": [
+      "Run"
+    ],
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "ロジック フロー",

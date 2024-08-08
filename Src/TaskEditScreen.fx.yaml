@@ -1,5 +1,6 @@
 TaskEditScreen As screen:
     Fill: =RGBA(240,239,228,1)
+    OnVisible: =
 
     TaskEditScreenTaskNameTextLabel As label:
         Height: =70
@@ -66,7 +67,7 @@ TaskEditScreen As screen:
         Text: ="終了"
         Width: =560
         X: =15
-        Y: =884
+        Y: =904
         ZIndex: =13
 
     TaskEditScreenFinishTimeDateField As datepicker:
@@ -172,6 +173,38 @@ TaskEditScreen As screen:
         Size: =21
         Width: =560
         X: =7
-        Y: =767
+        Y: =743
         ZIndex: =18
+
+    Label6 As label:
+        Height: =72
+        Overflow: =Overflow.Scroll
+        Size: =21
+        Text: |-
+            ="AIの勧める
+            ポイント数："&TaskEditScreenresult
+        Width: =289
+        X: =271
+        Y: =832
+        ZIndex: =19
+
+    Button1 As button:
+        Height: =72
+        OnSelect: |-
+            =Set(
+                TaskEditScreenresult,
+                AzureOpenAIServiceConector.Run(
+                    "算数のワーク1ページ10ポイント、読書感想文200ポイント、皿洗い50ポイント、家全体の掃除100ポイントを元にして、このあと渡すタスクのポイントをタスク名、タスクの詳細、タスクの期日を考慮して32ビット変数に収まる数値で答えてください。答える内容は想定する数字だけをすべて算用数字のみを用いて表示してください。",
+                    "タスク名："&TaskEditScreenTaskNameTextField.Text&"
+                    詳細："&TaskEditScreenTaskDescriptionTextField.Text&"
+                    期日："&Text(TaskEditScreenTaskDateDateField.SelectedDate)&"
+                    今日の日付："&Text(Today())
+                ).res
+            );
+        Size: =18
+        Text: ="AIからの推奨ポイントを見る"
+        Width: =197
+        X: =15
+        Y: =832
+        ZIndex: =20
 

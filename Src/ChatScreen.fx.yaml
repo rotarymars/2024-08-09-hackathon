@@ -103,10 +103,28 @@ ChatScreen As screen:
 
     "ChatScreenMessageGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =772
+        Height: =822
         Items: |-
             =Sort(
-                Filter(B_CHAT, Or(RECEIVEUSERID = user_id, SENDUSERID = user_id)),
+                Filter(
+                    B_CHAT,
+                    Or(
+                        And(
+                            is_parent,
+                            Or(
+                                SENDUSERID = send_id,
+                                RECEIVEUSERID = send_id
+                            )
+                        ),
+                        And(
+                            Or(
+                                RECEIVEUSERID = user_id,
+                                SENDUSERID = user_id
+                            ),
+                            Not(is_parent)
+                        )
+                    )
+                ),
                 作成日,
                 SortOrder.Descending
             )
@@ -255,14 +273,10 @@ ChatScreen As screen:
         Height: =62
         Icon: =Icon.Currency
         OnSelect: |+
-            =Set(_point,)
-            
-            
-            
-            If(
+            =If(
                 !IsBlank(LookUp(B_TROPHY, CHATRATE <> 1 && USERID = Text(user_id))),
                 Notify("称号-事務報告", NotificationType.Success),
-                Set(_rate, "今のレート:" & Rating& Text(10) & " 今日のポイント:" & )
+                Set(_rate, "今のレート:" & Rating& Text(10) & " 今日のポイント:" & Today_Rate)
             );
             
             Patch(

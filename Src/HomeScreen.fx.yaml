@@ -1,9 +1,27 @@
 HomeScreen As screen:
     Fill: =RGBA(240,239,228,1)
+    OnVisible: |
+        =ClearCollect(
+            temp,
+            ShowColumns(
+                B_TASK,
+                FLAG,
+                TASKNAME,
+                TASKDESCRIPTION,
+                USERID
+            )
+        );
+        Set(
+            HomeScreenresult,
+            AzureOpenAIServiceConector.Run(
+                "これはあるサービスの全員のタスクのJSONファイルです。現在貴方はUSERIDが"&Text(user_id)&"の人のコメンテーターでそのUSERIDのユーザー名は"&user_name&"です。ユーザー名は"&user_name&"FLAGが1のときはそのタスクが終了していることを表し、反対に0のときは終わっていないことを表します。DATEは期限を表し、FINISHDATEは実際に終了した日付を表します。この人に適切なアドバイスをを100字程度で具体的に生成してください。",
+                JSON(temp)
+            ).res
+        );
 
     "HomeScreenGallery As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =1066
+        Height: =608
         Items: |-
             =Sort(
                 Filter(
@@ -24,6 +42,7 @@ HomeScreen As screen:
             Navigate(OneTaskShowScreen, ScreenTransition.None);
         TemplatePadding: =0
         TemplateSize: =116
+        Y: =458
         ZIndex: =1
 
         Title3 As label:
@@ -212,4 +231,29 @@ HomeScreen As screen:
         X: =384
         Y: =1072
         ZIndex: =8
+
+    HomeScreenLabel1 As label:
+        Height: =86
+        Size: =25
+        Text: ="今日の未完了タスク"
+        Width: =327
+        X: =116
+        Y: =372
+        ZIndex: =9
+
+    HomeScreenLabel2 As label:
+        Height: =52
+        Size: =21
+        Text: ="AIからのコメント"
+        Width: =560
+        ZIndex: =10
+
+    HomeScreenAIComment As label:
+        Height: =293
+        Overflow: =Overflow.Scroll
+        Size: =21
+        Text: =HomeScreenresult
+        Width: =640
+        Y: =52
+        ZIndex: =11
 
