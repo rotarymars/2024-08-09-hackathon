@@ -1,1 +1,74 @@
-{}
+{
+  "968a2724-e1e3-4190-975c-a47744bec96a": {
+    "connectionRef": {
+      "displayName": "ロジック フロー",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "Dalle3Connector"
+        },
+        "workflowEntityId": {
+          "value": "37e39095-e74b-ef11-a317-000d3acd5738"
+        },
+        "workflowName": {
+          "value": "6f99eee8-7002-bd14-52a7-9b53b56359f0"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "Dalle3Connector"
+        },
+        "workflowEntityId": {
+          "value": "37e39095-e74b-ef11-a317-000d3acd5738"
+        },
+        "workflowName": {
+          "value": "6f99eee8-7002-bd14-52a7-9b53b56359f0"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Dalle3Connector"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "968a2724-e1e3-4190-975c-a47744bec96a"
+  },
+  "f9c09b69-74f7-4554-a0cf-88c46314bb61": {
+    "connectionRef": {
+      "displayName": "ロジック フロー",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "AzureOpenAIServiceConector"
+        },
+        "workflowEntityId": {
+          "value": "48da5680-3b4b-ef11-a317-000d3acd5738"
+        },
+        "workflowName": {
+          "value": "0bd8c6a3-251f-c747-7af9-8a1f793919ce"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "AzureOpenAIServiceConector"
+        },
+        "workflowEntityId": {
+          "value": "48da5680-3b4b-ef11-a317-000d3acd5738"
+        },
+        "workflowName": {
+          "value": "0bd8c6a3-251f-c747-7af9-8a1f793919ce"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "AzureOpenAIServiceConector"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "f9c09b69-74f7-4554-a0cf-88c46314bb61"
+  }
+}

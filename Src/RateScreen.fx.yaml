@@ -1,7 +1,7 @@
 RateScreen As screen:
     Fill: =RGBA(240,239,228,1)
 
-    Icon10 As icon.ArrowLeft:
+    RateScreenBackIcon As icon.ArrowLeft:
         Icon: =Icon.ArrowLeft
         OnSelect: =Back()
         ZIndex: =1

@@ -73,25 +73,7 @@ SettingScreen As screen:
         Y: =725
         ZIndex: =4
 
-    Label1 As label:
-        Height: =70
-        Size: =21
-        Text: =tmp_username
-        Width: =560
-        X: =40
-        Y: =958
-        ZIndex: =5
-
-    Label1_1 As label:
-        Height: =70
-        Size: =21
-        Text: =tmp_password
-        Width: =560
-        X: =40
-        Y: =1058
-        ZIndex: =6
-
-    Icon9 As icon.ArrowLeft:
+    SettingScreenBackIcon As icon.ArrowLeft:
         Icon: =Icon.ArrowLeft
         OnSelect: =Back()
         ZIndex: =7

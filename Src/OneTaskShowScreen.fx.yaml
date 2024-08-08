@@ -46,7 +46,7 @@ OneTaskShowScreen As screen:
         Y: =612
         ZIndex: =7
 
-    DatePicker3 As datepicker:
+    OneTaskShowScreenDatePicker As datepicker:
         DefaultDate: =LookUp(B_TASK, B_TASK=task_id).DATE
         DisplayMode: =DisplayMode.View
         Height: =70
@@ -56,19 +56,19 @@ OneTaskShowScreen As screen:
         Y: =716
         ZIndex: =8
 
-    Icon7 As icon.ArrowLeft:
+    OneTaskShowScreenBackIcon As icon.ArrowLeft:
         Icon: =Icon.ArrowLeft
         OnSelect: =Back();
         Y: =3
         ZIndex: =16
 
-    Icon8 As icon.Edit:
+    OneTaskShowScreenEditIcon As icon.Edit:
         Icon: =Icon.Edit
         OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
         X: =224
         ZIndex: =17
 
-    HomeScreenHomeIcon_1 As icon.Home:
+    OneTaskShowScreenHomeIcon As icon.Home:
         Icon: =Icon.Home
         OnSelect: |-
             =If(
@@ -80,7 +80,7 @@ OneTaskShowScreen As screen:
         Y: =1066
         ZIndex: =18
 
-    HomeScreenTaskIcon_1 As icon.Note:
+    OneTaskShowScreenTaskIcon As icon.Note:
         Icon: =Icon.Note
         OnSelect: |-
             =If(
@@ -92,21 +92,21 @@ OneTaskShowScreen As screen:
         Y: =1066
         ZIndex: =19
 
-    HomeScreenSettingsIcon_1 As icon.Settings:
+    OneTaskShowScreenSettingIcon As icon.Settings:
         Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
         X: =471
         Y: =1072
         ZIndex: =20
 
-    HomeScreenProgressIcon_1 As icon.Trending:
+    OneTaskShowScreenProgressIcon As icon.Trending:
         Icon: =Icon.Trending
         OnSelect: =Navigate(RateScreen, ScreenTransition.None);
         X: =367
         Y: =1072
         ZIndex: =21
 
-    HomeScreenMailIcon_1 As icon.Mail:
+    OneTaskShowScreenMailIcon As icon.Mail:
         Icon: =Icon.Mail
         OnSelect: |
             =Refresh(B_USER);
@@ -133,7 +133,7 @@ OneTaskShowScreen As screen:
         Y: =1066
         ZIndex: =22
 
-    HomeScreenLogoutIcon_1 As icon.Lock:
+    OneTaskShowScreenLogoutIcon As icon.Lock:
         Icon: =Icon.Lock
         OnSelect: |-
             =Set(
@@ -145,7 +145,7 @@ OneTaskShowScreen As screen:
         Y: =1072
         ZIndex: =23
 
-    Icon1 As icon.Check:
+    OneTaskShowScreenFinishIcon As icon.Check:
         Icon: =Icon.Check
         OnSelect: |-
             =Patch(
@@ -159,14 +159,15 @@ OneTaskShowScreen As screen:
                     TASKNAME: LookUp(B_TASK, B_TASK=task_id).TASKNAME,
                     TASKDESCRIPTION: LookUp(B_TASK, B_TASK=task_id).TASKDESCRIPTION,
                     DATE: LookUp(B_TASK, B_TASK=task_id).DATE,
-                    FINISHTIME: Today()
+                    FINISHTIME: Today(),
+                    FLAG: 1
                 }
             );
             Back(ScreenTransition.None);
         X: =575
         ZIndex: =24
 
-    Icon5 As icon.Reset:
+    OneTaskShowScreenRefreshIcon As icon.Reset:
         Icon: =Icon.Reset
         OnSelect: |-
             =Refresh(B_CHAT);

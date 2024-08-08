@@ -59,7 +59,7 @@ TaskEditScreen As screen:
         Y: =900
         ZIndex: =12
 
-    Label3 As label:
+    TaskEditScreenFinishLabel As label:
         Height: =70
         Size: =21
         Text: ="終了"
@@ -76,13 +76,13 @@ TaskEditScreen As screen:
         Y: =1013
         ZIndex: =14
 
-    Icon2 As icon.ArrowLeft:
+    TaskEditScreenBackIcon As icon.ArrowLeft:
         Icon: =Icon.ArrowLeft
         OnSelect: =Back(ScreenTransition.None);
         Y: =3
         ZIndex: =15
 
-    Icon3 As icon.Check:
+    TaskEditScreenSaveIcon As icon.Check:
         Icon: =Icon.Check
         OnSelect: |-
             =If(
@@ -93,7 +93,10 @@ TaskEditScreen As screen:
                 ),
                 Set(
                     tmp_address,
-                    LookUp(B_TASK, B_TASK = task_id)
+                    LookUp(
+                        B_TASK,
+                        B_TASK = task_id
+                    )
                 )
             );
             If(
@@ -122,7 +125,29 @@ TaskEditScreen As screen:
                     }
                 )
             );
-            Navigate(HomeScreen, ScreenTransition.None);
+            If(
+                TaskEditScreenTaskNameTextField.Text = "404",
+                Notify(
+                    "称号-見つかりません！",
+                    NotificationType.Success
+                );
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ),
+                    {'404T': 1}
+                )
+            );
+            Navigate(
+                HomeScreen,
+                ScreenTransition.None
+            );
+            Reset(TaskEditScreenTaskNameTextField);
+            Reset(TaskEditScreenFinishTimeDateField);
+            Reset(TaskEditScreenCheckbox);
+            Reset(TaskEditScreenTaskDescriptionTextField)
         X: =576
         ZIndex: =16
 

@@ -34,7 +34,10 @@ SignupScreen As screen:
             );
             If(
                 SignupScreenCheckbox.Value,
-                Set(parentorchild,"P");
+                Set(
+                    parentorchild,
+                    "P"
+                );
                 Set(
                     is_parent,
                     true
@@ -43,7 +46,10 @@ SignupScreen As screen:
                     is_parent,
                     false
                 );
-                Set(parentorchild, "C")
+                Set(
+                    parentorchild,
+                    "C"
+                )
             );
             If(
                 IsBlank(tmp),
@@ -56,9 +62,32 @@ SignupScreen As screen:
                         FLAG: parentorchild
                     }
                 );
-                Navigate(HomeScreen, ScreenTransition.None);
-                Notify("ログインしました", NotificationType.Success),
-                Notify("このユーザー名は使えません", NotificationType.Error)
+                Navigate(
+                    HomeScreen,
+                    ScreenTransition.None
+                );
+                Set(
+                    user_id,
+                    Int(
+                        LookUp(
+                            B_USER,
+                            And(USERNAME = SignupScreenUsernameTextField.Text, PASSWORD = SignupScreenPasswordTextField.Text)
+                        ).USERID
+                    )
+                );
+                Patch(
+                    B_TROPHY,
+                    Defaults(B_TROPHY),
+                    {USERID: user_id}
+                );
+                Notify(
+                    "称号-はじめの一歩",
+                    NotificationType.Success
+                ),
+                Notify(
+                    "このユーザー名は使えません",
+                    NotificationType.Error
+                )
             );
         Size: =24
         Text: ="新規登録"

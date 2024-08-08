@@ -173,11 +173,12 @@ HomeScreen As screen:
                 Blank()
             );
             Navigate(LoginScreen, ScreenTransition.None);
+            Reset(LoginScreenPasswordTextField)
         X: =25
         Y: =1066
         ZIndex: =11
 
-    Icon4 As icon.Reset:
+    HomeScreenRefreshIcon As icon.Reset:
         Icon: =Icon.Reset
         OnSelect: |-
             =Refresh(B_CHAT);

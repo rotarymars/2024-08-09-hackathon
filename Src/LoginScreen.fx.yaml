@@ -55,6 +55,21 @@ LoginScreen As screen:
                     Notify("ログインしました", NotificationType.Success)
                 )
             );
+            If(
+                Text(Today(), "DDMM") = "2902",
+                Notify("今日誕生日？", NotificationType.Success)
+            );
+            If(LookUp(B_TROPHY,USERID=Text(user_id),BIRTHDAY <> 1),If(
+                Or(
+                    Text(Today(), "MMDD") = "0420",
+                    Text(Today(), "MMDD") = "0831",
+                    Text(Today(), "MMDD") = "0613",
+                    Text(Today(), "MMDD") = "1108"
+                ),
+                Notify("Happy Birthday", NotificationType.Success);
+                Patch(B_TROPHY,LookUp(B_TROPHY,USERID=Text(user_id)),{BIRTHDAY:1})
+                )
+            );
         Size: =24
         Text: ="ログイン"
         Width: =280

@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "hws_268d9e1444bd44baa5dadebf04e71033",
+    "MaxGetRowsCount": 500,
     "Name": "B_TROPHY",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "所有者",
@@ -21,6 +22,7 @@
       "hws_268d9e1444bd44baa5dadebf04e71033id": "新しいテーブル",
       "hws_birthday": "BIRTHDAY",
       "hws_chat": "CHAT",
+      "hws_chatrate": "CHATRATE",
       "hws_day": "DAY",
       "hws_point": "POINT",
       "hws_rank": "RANK",

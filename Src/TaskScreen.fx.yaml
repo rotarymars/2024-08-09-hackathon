@@ -1,7 +1,7 @@
 TaskScreen As screen:
     Fill: =RGBA(240,239,228,1)
 
-    Button5 As button:
+    TaskScreenTaskAddButton As button:
         Height: =70
         OnSelect: |-
             =Set(
@@ -14,7 +14,7 @@ TaskScreen As screen:
         Width: =280
         ZIndex: =1
 
-    Button1 As button:
+    TaskScreenBackButton As button:
         Height: =70
         OnSelect: =Back();
         Size: =24

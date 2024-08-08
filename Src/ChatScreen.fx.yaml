@@ -34,7 +34,30 @@ ChatScreen As screen:
 
     ChatScreenProgressIcon As icon.Trending:
         Icon: =Icon.Trending
-        OnSelect: =Navigate(RateScreen, ScreenTransition.None);
+        OnSelect: |
+            =Navigate(
+                RateScreen,
+                ScreenTransition.None
+            );
+            If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id),
+                    IsBlank(RANK)
+                ),
+                Notify(
+                    "称号-登山開始",
+                    NotificationType.Success
+                );
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ),
+                    {RANK: 0}
+                )
+            );
         X: =408
         Y: =1072
         ZIndex: =4
@@ -90,14 +113,17 @@ ChatScreen As screen:
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =119
+        TemplateSize: =143
         Y: =28
         ZIndex: =7
 
         ChatScreenTextTextField As label:
+            DisabledBorderColor: =RGBA(26, 26, 26, 1)
             Fill: =RGBA(241, 244, 249, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =84
+            HoverBorderColor: =RGBA(0,0,0,1)
+            HoverColor: =RGBA(0, 0, 0, 1)
             OnSelect: =Select(Parent)
             Overflow: =Overflow.Scroll
             PaddingBottom: =0
@@ -107,8 +133,8 @@ ChatScreen As screen:
             Text: =ThisItem.TEXT
             VerticalAlign: =VerticalAlign.Top
             Width: =407
-            X: =115
-            Y: =6
+            X: =116
+            Y: =13
             ZIndex: =3
 
         ChatScreenRLabel As label:
@@ -118,9 +144,10 @@ ChatScreen As screen:
                     RGBA(215, 223, 240, 1),
                     RGBA(0, 0, 0, 0)
                 )
-            Height: =99
+            Height: =84
+            LineHeight: =1
             OnSelect: =Select(Parent)
-            Size: =21
+            Size: =17
             Text: |-
                 =If(
                     ThisItem.RECEIVEUSERID = user_id,
@@ -130,9 +157,9 @@ ChatScreen As screen:
                         USERNAME
                     )
                 )
-            Width: =99
-            X: =3
-            Y: =6
+            Width: =89
+            X: =11
+            Y: =13
             ZIndex: =7
 
         ChatScreenSLabel As label:
@@ -179,7 +206,7 @@ ChatScreen As screen:
                 )
             Width: =168
             X: =354
-            Y: =90
+            Y: =103
             ZIndex: =9
 
     ChatScreenMessageTextField As text:
@@ -227,24 +254,31 @@ ChatScreen As screen:
     ChatScreenSendPointIcon As icon.Currency:
         Height: =62
         Icon: =Icon.Currency
-        OnSelect: |
-            =Set(_rate, "今のレート:" & Text(10) & "今日のポイント:" & "");/*レートの変数教えて*/
+        OnSelect: |+
+            =If(
+                !IsBlank(LookUp(B_TROPHY, CHATRATE <> 1 && USERID = Text(user_id))),
+                Notify("称号-事務報告", NotificationType.Success),
+                Set(_rate, "今のレート:" & Text(10) & " 今日のポイント:")
+            );
+            
             Patch(
                 B_CHAT,
                 Defaults(B_CHAT),
                 {
                     SENDUSERID: Int(user_id),
-                    RECEIVEUSERID: RUSER_ID,
+                    RECEIVEUSERID: send_id,
                     TEXT: _rate
                 }
             );
+            
             Refresh(B_CHAT);
+            
         Width: =71
         X: =460
         Y: =928
         ZIndex: =10
 
-    Icon6 As icon.Reset:
+    ChatScreenRefreshIcon As icon.Reset:
         Icon: =Icon.Reset
         OnSelect: |-
             =Refresh(B_CHAT);
