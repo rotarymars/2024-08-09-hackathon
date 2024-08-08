@@ -80,7 +80,7 @@ ParentScreen As screen:
                 Navigate(ParentScreen, ScreenTransition.None),
                 Navigate(HomeScreen, ScreenTransition.None)
             );
-        X: =300
+        X: =288
         Y: =1066
         ZIndex: =3
 
@@ -92,15 +92,15 @@ ParentScreen As screen:
                 Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
                 Navigate(TaskScreen, ScreenTransition.None)
             );
-        X: =193
-        Y: =1066
+        X: =198
+        Y: =1072
         ZIndex: =4
 
     HomeScreenSettingsIcon_2 As icon.Settings:
         Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
-        X: =488
-        Y: =1066
+        X: =476
+        Y: =1072
         ZIndex: =5
 
     HomeScreenProgressIcon_2 As icon.Trending:
@@ -109,9 +109,9 @@ ParentScreen As screen:
             =If(
                 is_parent,
                 Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
-                Navigate(RateScreen, ScreenTransition.None)
+                Navigate(RatingScreen, ScreenTransition.None)
             );
-        X: =408
+        X: =376
         Y: =1072
         ZIndex: =6
 
@@ -137,8 +137,8 @@ ParentScreen As screen:
                     ScreenTransition.None
                 )
             );
-        X: =108
-        Y: =1066
+        X: =101
+        Y: =1072
         ZIndex: =7
 
     HomeScreenLogoutIcon_2 As icon.Lock:
@@ -149,7 +149,7 @@ ParentScreen As screen:
                 Blank()
             );
             Navigate(LoginScreen, ScreenTransition.None);
-        X: =25
+        X: =11
         Y: =1066
         ZIndex: =8
 
@@ -161,7 +161,7 @@ ParentScreen As screen:
             Refresh(B_TASK);
             Refresh(B_TROPHY);
             Refresh(B_USER);
-        X: =576
+        X: =560
         Y: =1072
         ZIndex: =9
 

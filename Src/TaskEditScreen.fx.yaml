@@ -14,7 +14,7 @@ TaskEditScreen As screen:
         Size: =21
         Text: ="詳細"
         Width: =560
-        Y: =352
+        Y: =287
         ZIndex: =5
 
     TaskEditScreenTaskLimitTextLabel As label:
@@ -22,7 +22,7 @@ TaskEditScreen As screen:
         Size: =21
         Text: ="期日"
         Width: =560
-        Y: =612
+        Y: =467
         ZIndex: =7
 
     TaskEditScreenTaskNameTextField As text:
@@ -40,7 +40,7 @@ TaskEditScreen As screen:
         HintText: ="詳細を入力"
         Size: =21
         Width: =560
-        Y: =470
+        Y: =374
         ZIndex: =9
 
     TaskEditScreenTaskDateDateField As datepicker:
@@ -48,7 +48,7 @@ TaskEditScreen As screen:
         Height: =70
         Size: =24
         Width: =575
-        Y: =728
+        Y: =580
         ZIndex: =10
 
     TaskEditScreenCheckbox As checkbox:
@@ -56,7 +56,8 @@ TaskEditScreen As screen:
         Size: =21
         Text: =
         Width: =280
-        Y: =900
+        X: =1
+        Y: =954
         ZIndex: =12
 
     TaskEditScreenFinishLabel As label:
@@ -64,7 +65,8 @@ TaskEditScreen As screen:
         Size: =21
         Text: ="終了"
         Width: =560
-        Y: =830
+        X: =15
+        Y: =884
         ZIndex: =13
 
     TaskEditScreenFinishTimeDateField As datepicker:
@@ -73,7 +75,8 @@ TaskEditScreen As screen:
         Size: =24
         Visible: =TaskEditScreenCheckbox.Value
         Width: =575
-        Y: =1013
+        X: =7
+        Y: =1051
         ZIndex: =14
 
     TaskEditScreenBackIcon As icon.ArrowLeft:
@@ -110,7 +113,8 @@ TaskEditScreen As screen:
                         TASKDESCRIPTION: TaskEditScreenTaskDescriptionTextField.Text,
                         FLAG: 1,
                         DATE: TaskEditScreenTaskDateDateField.SelectedDate,
-                        FINISHTIME: TaskEditScreenFinishTimeDateField.SelectedDate
+                        FINISHTIME: TaskEditScreenFinishTimeDateField.SelectedDate,
+                        DEFAULTPOINT: Int(TaskEditScreenPointTextField.Text)
                     }
                 ),
                 Patch(
@@ -121,7 +125,8 @@ TaskEditScreen As screen:
                         TASKNAME: TaskEditScreenTaskNameTextField.Text,
                         TASKDESCRIPTION: TaskEditScreenTaskDescriptionTextField.Text,
                         FLAG: 0,
-                        DATE: TaskEditScreenTaskDateDateField.SelectedDate
+                        DATE: TaskEditScreenTaskDateDateField.SelectedDate,
+                        DEFAULTPOINT: Int(TaskEditScreenPointTextField.Text)
                     }
                 )
             );
@@ -150,4 +155,23 @@ TaskEditScreen As screen:
             Reset(TaskEditScreenTaskDescriptionTextField)
         X: =576
         ZIndex: =16
+
+    TaskEditScreenPointLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="ポイント"
+        Width: =560
+        X: =7
+        Y: =673
+        ZIndex: =17
+
+    TaskEditScreenPointTextField As text:
+        Default: =LookUp(B_TASK, B_TASK=task_id).DEFAULTPOINT
+        Format: =TextFormat.Number
+        Height: =70
+        Size: =21
+        Width: =560
+        X: =7
+        Y: =767
+        ZIndex: =18
 

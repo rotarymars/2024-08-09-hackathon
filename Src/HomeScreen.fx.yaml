@@ -109,9 +109,9 @@ HomeScreen As screen:
                 Navigate(ParentScreen, ScreenTransition.None),
                 Navigate(HomeScreen, ScreenTransition.None)
             );
-        X: =300
-        Y: =1066
-        ZIndex: =6
+        X: =288
+        Y: =1072
+        ZIndex: =2
 
     HomeScreenTaskIcon As icon.Note:
         Icon: =Icon.Note
@@ -121,23 +121,16 @@ HomeScreen As screen:
                 Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
                 Navigate(TaskScreen, ScreenTransition.None)
             );
-        X: =193
-        Y: =1066
-        ZIndex: =7
+        X: =198
+        Y: =1072
+        ZIndex: =3
 
     HomeScreenSettingsIcon As icon.Settings:
         Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
-        X: =488
-        Y: =1066
-        ZIndex: =8
-
-    HomeScreenProgressIcon As icon.Trending:
-        Icon: =Icon.Trending
-        OnSelect: =Navigate(RateScreen, ScreenTransition.None);
-        X: =408
+        X: =480
         Y: =1072
-        ZIndex: =9
+        ZIndex: =4
 
     HomeScreenMailIcon As icon.Mail:
         Icon: =Icon.Mail
@@ -161,9 +154,9 @@ HomeScreen As screen:
                     ScreenTransition.None
                 )
             );
-        X: =108
-        Y: =1066
-        ZIndex: =10
+        X: =111
+        Y: =1072
+        ZIndex: =5
 
     HomeScreenLogoutIcon As icon.Lock:
         Icon: =Icon.Lock
@@ -174,9 +167,9 @@ HomeScreen As screen:
             );
             Navigate(LoginScreen, ScreenTransition.None);
             Reset(LoginScreenPasswordTextField)
-        X: =25
+        X: =15
         Y: =1066
-        ZIndex: =11
+        ZIndex: =6
 
     HomeScreenRefreshIcon As icon.Reset:
         Icon: =Icon.Reset
@@ -186,7 +179,37 @@ HomeScreen As screen:
             Refresh(B_TASK);
             Refresh(B_TROPHY);
             Refresh(B_USER);
-        X: =576
+        X: =559
         Y: =1072
-        ZIndex: =12
+        ZIndex: =7
+
+    HomeScreenProgressIcon As icon.Trending:
+        Icon: =Icon.Trending
+        OnSelect: |
+            =Navigate(
+                RatingScreen,
+                ScreenTransition.None
+            );
+            If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id),
+                    IsBlank(RANK)
+                ),
+                Notify(
+                    "称号-登山開始",
+                    NotificationType.Success
+                );
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ),
+                    {RANK: 0}
+                )
+            );
+        X: =384
+        Y: =1072
+        ZIndex: =8
 

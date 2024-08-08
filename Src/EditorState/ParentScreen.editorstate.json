@@ -87,7 +87,7 @@
       "MetaDataIDKey": "",
       "Name": "HomeScreenHomeIcon_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -433,7 +433,7 @@
       "MetaDataIDKey": "",
       "Name": "HomeScreenMailIcon_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -606,7 +606,7 @@
       "MetaDataIDKey": "",
       "Name": "HomeScreenProgressIcon_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -779,7 +779,7 @@
       "MetaDataIDKey": "",
       "Name": "HomeScreenSettingsIcon_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -952,7 +952,7 @@
       "MetaDataIDKey": "",
       "Name": "HomeScreenTaskIcon_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

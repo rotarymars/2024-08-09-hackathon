@@ -24,50 +24,124 @@ LoginScreen As screen:
 
     LoginScreenSigninButton As button:
         Height: =70
-        OnSelect: |-
+        OnSelect: |
             =Set(
                 tmp,
                 LookUp(
                     B_USER,
-                    And(USERNAME = LoginScreenUsernameTextField.Text, PASSWORD = LoginScreenPasswordTextField.Text)
+                    And(
+                        USERNAME = LoginScreenUsernameTextField.Text,
+                        PASSWORD = LoginScreenPasswordTextField.Text
+                    )
                 )
             );
             If(
                 IsBlank(tmp),
-                Notify("ユーザー名またはパスワードが間違っています", NotificationType.Error),
+                Notify(
+                    "ユーザー名またはパスワードが間違っています",
+                    NotificationType.Error
+                ),
                 Set(
                     user_id,
                     Int(tmp.USERID)
                 );
+                Set(
+                    user_name,
+                    LoginScreenUsernameTextField.Text
+                );
+                Set(
+                    user_password,
+                    LoginScreenPasswordTextField.Text
+                );
                 If(
                     tmp.FLAG = "P",
-                    Navigate(ParentScreen, ScreenTransition.None);
+                    Navigate(
+                        ParentScreen,
+                        ScreenTransition.None
+                    );
                     Set(
                         is_parent,
                         true
                     );
-                    Notify("保護者アカウントとして認識してログインしました。", NotificationType.Success),
-                    Navigate(HomeScreen, ScreenTransition.None);
+                    Notify(
+                        "保護者アカウントとして認識してログインしました。",
+                        NotificationType.Success
+                    ),
+                    Navigate(
+                        HomeScreen,
+                        ScreenTransition.None
+                    );
                     Set(
                         is_parent,
                         false
                     );
-                    Notify("ログインしました", NotificationType.Success)
+                    Notify(
+                        "ログインしました",
+                        NotificationType.Success
+                    )
                 )
             );
             If(
-                Text(Today(), "DDMM") = "2902",
-                Notify("今日誕生日？", NotificationType.Success)
+                Text(
+                    Today(),
+                    "DDMM"
+                ) = "2902",
+                Notify(
+                    "今日誕生日？",
+                    NotificationType.Success
+                )
             );
-            If(LookUp(B_TROPHY,USERID=Text(user_id),BIRTHDAY <> 1),If(
-                Or(
-                    Text(Today(), "MMDD") = "0420",
-                    Text(Today(), "MMDD") = "0831",
-                    Text(Today(), "MMDD") = "0613",
-                    Text(Today(), "MMDD") = "1108"
+            If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id),
+                    BIRTHDAY <> 1
                 ),
-                Notify("Happy Birthday", NotificationType.Success);
-                Patch(B_TROPHY,LookUp(B_TROPHY,USERID=Text(user_id)),{BIRTHDAY:1})
+                If(
+                    Or(
+                        Text(
+                            Today(),
+                            "MMDD"
+                        ) = "0420",
+                        Text(
+                            Today(),
+                            "MMDD"
+                        ) = "0831",
+                        Text(
+                            Today(),
+                            "MMDD"
+                        ) = "0613",
+                        Text(
+                            Today(),
+                            "MMDD"
+                        ) = "1108"
+                    ),
+                    Notify(
+                        "Happy Birthday",
+                        NotificationType.Success
+                    );
+                    Patch(
+                        B_TROPHY,
+                        LookUp(
+                            B_TROPHY,
+                            USERID = Text(user_id)
+                        ),
+                        {BIRTHDAY: 1}
+                    )
+                )
+            );
+            If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id)
+                ).LASTDAY <> Today(),
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ),
+                    {LASTDAY: Today()}
                 )
             );
         Size: =24

@@ -18,8 +18,8 @@ SettingScreen As screen:
         Size: =21
         Visible: =SettingScreenCheckbox.Value
         Width: =560
-        X: =63
-        Y: =292
+        X: =21
+        Y: =233
         ZIndex: =2
 
     SettingScreenParentPassword As text:
@@ -30,8 +30,8 @@ SettingScreen As screen:
         Size: =21
         Visible: =SettingScreenCheckbox.Value
         Width: =560
-        X: =63
-        Y: =529
+        X: =21
+        Y: =397
         ZIndex: =3
 
     SettingScreenSubmitButton As button:
@@ -47,8 +47,10 @@ SettingScreen As screen:
             If(
                 IsBlank(tmp),
                 Notify("保護者アカウントと結びつけるのに失敗しました。保護者のユーザー名とパスワードを再確認してください。", NotificationType.Error),
+                /*
                 Set(tmp_username, LookUp(B_USER, USERID = Text(user_id)).USERNAME);
                 Set(tmp_password, LookUp(B_USER, USERID = Text(user_id)).PASSWORD);
+                */
                 Patch(
                     B_USER,
                     LookUp(
@@ -56,8 +58,8 @@ SettingScreen As screen:
                         USERID = Text(user_id)
                     ),
                     {
-                        hws_username: tmp_username,
-                        hws_password: tmp_password,
+                        hws_username: user_name,
+                        hws_password: user_password,
                         FLAG: "C",
                         PARENTID: Int(tmp.USERID)
                     }
@@ -69,12 +71,33 @@ SettingScreen As screen:
         Text: ="承認する"
         Visible: =SettingScreenCheckbox.Value
         Width: =280
-        X: =203
-        Y: =725
+        X: =161
+        Y: =586
         ZIndex: =4
 
     SettingScreenBackIcon As icon.ArrowLeft:
         Icon: =Icon.ArrowLeft
         OnSelect: =Back()
         ZIndex: =7
+
+    SettingScreenInformationLabel As label:
+        Height: =156
+        Size: =20
+        Text: |-
+            ="Created by DICE
+            
+            
+            Powered by PowerApps"
+        Width: =319
+        X: =21
+        Y: =965
+        ZIndex: =8
+
+    SettingScreenDICEiconImage As image:
+        Height: =116
+        Image: =DICE_icon
+        Width: =116
+        X: =441
+        Y: =985
+        ZIndex: =9
 

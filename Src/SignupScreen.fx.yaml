@@ -71,14 +71,38 @@ SignupScreen As screen:
                     Int(
                         LookUp(
                             B_USER,
-                            And(USERNAME = SignupScreenUsernameTextField.Text, PASSWORD = SignupScreenPasswordTextField.Text)
+                            And(
+                                USERNAME = SignupScreenUsernameTextField.Text,
+                                PASSWORD = SignupScreenPasswordTextField.Text
+                            )
                         ).USERID
                     )
+                );
+                Set(
+                    user_name,
+                    SignupScreenUsernameTextField.Text
+                );
+                Set(
+                    user_password,
+                    SignupScreenPasswordTextField.Text
                 );
                 Patch(
                     B_TROPHY,
                     Defaults(B_TROPHY),
-                    {USERID: user_id}
+                    {
+                        USERID: user_id,
+                        LASTDAY: Today(),
+                        TASK: 0,
+                        POINT: 0
+                    }
+                );
+                Patch(
+                    B_RATE,
+                    Defaults(B_RATE),
+                    {
+                        USERID: user_id,
+                        RATE: 0
+                    }
                 );
                 Notify(
                     "称号-はじめの一歩",

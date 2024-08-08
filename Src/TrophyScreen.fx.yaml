@@ -1,0 +1,9 @@
+TrophyScreen As screen:
+
+    Icon2 As icon.ArrowLeft:
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Navigate(RatingScreen,ScreenTransition.None)
+        X: =24
+        Y: =20
+        ZIndex: =1
+

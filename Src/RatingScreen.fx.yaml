@@ -1,0 +1,403 @@
+RatingScreen As screen:
+    OnVisible: |
+        =Set(
+            CntEnd,
+            0
+        );
+        Set(
+            Cnt,
+            8
+        );
+        Set(
+            Display_Rating,
+            false
+        );
+
+    RatingScreenTaskPointTitle As label:
+        Height: =70
+        Size: =20
+        Text: ="今日完了したタスクと獲得ポイント"
+        Width: =460
+        X: =90
+        ZIndex: =1
+
+    "RatingScreenFinishedTaskGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =211
+        Items: =Sort(Filter(B_TASK,FLAG = 1,USERID = user_id,FINISHTIME = Today()),TASKNAME,SortOrder.Ascending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =104
+        Visible: |
+            =If(
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        And(
+                            FLAG = 1,
+                            USERID = user_id,
+                            FINISHTIME = Today()
+                        )
+                    )
+                ),
+                true,
+                false
+            )
+        Y: =58
+        ZIndex: =2
+
+        Image1 As image:
+            Height: =72
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =72
+            X: =17
+            Y: =12
+            ZIndex: =1
+
+        Title1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.TASKNAME
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =103
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
+            ZIndex: =2
+
+        Subtitle1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.POINT&"pt獲得しました。"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =Title1.Y + Title1.Height
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="項目の詳細の表示"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle1 As rectangle:
+            Height: =Parent.TemplateHeight - Separator1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+    RatingScreenRatingTitle As label:
+        Height: =96
+        Size: =21
+        Text: |-
+            ="                         今日の時点での実績
+            
+                        ポイント　　　　　レーティング平均"
+        Width: =640
+        Y: =298
+        ZIndex: =3
+
+    RatingScreenPointLabel As label:
+        Height: =70
+        Size: =25
+        Text: ="×"&Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))
+        Width: =172
+        X: =108
+        Y: =411
+        ZIndex: =4
+
+    RatingScreenRatingLabel As label:
+        Height: =70
+        Size: =25
+        Text: =Round(Rating,2)
+        Visible: =Display_Rating
+        Width: =144
+        X: =377
+        Y: =411
+        ZIndex: =5
+
+    RatingScreenInformationLabel As label:
+        Height: =92
+        Text: ="ポイントは一日ごとにリセットされ、レーティングは、昨日と今日でそれぞれポイントの平均を2で割ったものの合計で、レーティングで順位が決まります。"
+        Width: =432
+        X: =207
+        Y: =1044
+        ZIndex: =6
+
+    RatingScreenHomeButton As button:
+        Height: =48
+        OnSelect: =Navigate(HomeScreen);
+        Size: =16
+        Text: ="ホームに戻る"
+        Width: =154
+        X: =25
+        Y: =1066
+        ZIndex: =7
+
+    RatingScreenRankLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="位 　　　称号を見る"
+        Width: =277
+        X: =158
+        Y: =944
+        ZIndex: =8
+
+    RatingScreenYourTitleLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="あなたの今の順位と称号"
+        Width: =324
+        X: =158
+        Y: =874
+        ZIndex: =9
+
+    RatingScreenRatingLineChart As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        Title2 As label:
+            Align: =Align.Center
+            Height: =35
+            Size: =18
+            Text: ="レーティングの推移"
+            Width: =640
+            Y: =528
+            ZIndex: =11
+
+        LineChart1 As lineChart:
+            Height: =327
+            Items: =Roop1
+            Size: =14
+            Width: =640
+            Y: =547
+            ZIndex: =12
+
+    RatingScreenTimer As timer:
+        AutoPause: =false
+        AutoStart: =true
+        Duration: =1
+        Height: =30
+        OnTimerEnd: |
+            =If(
+                Cnt > CntEnd,
+                If(
+                    Cnt = 8,
+                    ClearCollect(
+                        Roop1,
+                        {No: 1}
+                    );
+                    Clear(Roop1),
+                    Set(
+                        Yesterday_Rate,
+                        Round(
+                            Sum(
+                                B_TASK,
+                                If(
+                                    And(
+                                        FLAG = 1,
+                                        USERID = user_id,
+                                        FINISHTIME = DateAdd(
+                                            Today(),
+                                            -Cnt,
+                                            TimeUnit.Days
+                                        )
+                                    ),
+                                    POINT
+                                )
+                            ) / CountRows(
+                                Filter(
+                                    B_TASK,
+                                    And(
+                                        FLAG = 1,
+                                        USERID = user_id,
+                                        FINISHTIME = DateAdd(
+                                            Today(),
+                                            -Cnt,
+                                            TimeUnit.Days
+                                        )
+                                    )
+                                )
+                            ),
+                            2
+                        ) / 2
+                    );
+                    Set(
+                        Today_Rate,
+                        Round(
+                            Sum(
+                                B_TASK,
+                                If(
+                                    And(
+                                        FLAG = 1,
+                                        USERID = user_id,
+                                        FINISHTIME = DateAdd(
+                                            Today(),
+                                            -Cnt + 1,
+                                            TimeUnit.Days
+                                        )
+                                    ),
+                                    POINT
+                                )
+                            ) / CountRows(
+                                Filter(
+                                    B_TASK,
+                                    And(
+                                        FLAG = 1,
+                                        USERID = user_id,
+                                        FINISHTIME = DateAdd(
+                                            Today(),
+                                            -Cnt + 1,
+                                            TimeUnit.Days
+                                        )
+                                    )
+                                )
+                            ),
+                            2
+                        ) / 2
+                    );
+                    Collect(
+                        Roop1,
+                        {
+                            No: Yesterday_Rate + Today_Rate,
+                            Date: DateAdd(
+                                Today(),
+                                -Cnt + 1,
+                                TimeUnit.Days
+                            )
+                        }
+                    );
+                );
+                Set(
+                    Cnt,
+                    Cnt - 1
+                );
+                ,
+                Reset(RatingScreenTimer);
+                
+            );
+            If(
+                Cnt = 0,
+                Set(
+                    Rating,
+                    Average(
+                        Roop1,
+                        No
+                    )
+                );
+                Set(
+                    Display_Rating,
+                    true
+                );
+                Patch(
+                    B_RATE,
+                    LookUp(
+                        B_RATE,
+                        USERID = user_id
+                    ),
+                    {
+                        RATE: Round(
+                            Rating,
+                            0
+                        )
+                    }
+                );
+                Collect(
+                    B_RATE_RANK,
+                    B_RATE
+                );
+                Set(
+                    B_RATE_RANK,
+                    Sort(
+                        B_RATE_RANK,
+                        RATE,
+                        SortOrder.Descending
+                    );
+                );
+                ForAll(
+                    B_RATE_RANK,
+                    AddColumns(
+                        Sequence(
+                            CountRows(B_RATE_RANK),
+                            1
+                        ),
+                        RANK,
+                        Index(
+                            B_RATE_RANK,
+                            Value
+                        );
+                    );
+                );
+                Set(
+                    Current_Rank,
+                    LookUp(
+                        B_RATE_RANK,
+                        USERID = user_id
+                    )
+                );
+                Set(
+                    Cnt,
+                    Cnt - 1
+                );
+                
+            );
+        Repeat: =true
+        Visible: =false
+        Width: =118
+        X: =521
+        Y: =1014
+        ZIndex: =13
+
+    RatingScreenPointImage As image:
+        Height: =73
+        Image: =point
+        Width: =73
+        X: =35
+        Y: =408
+        ZIndex: =14
+
+    Icon1 As icon.Ribbon:
+        Icon: =Icon.Ribbon
+        OnSelect: =Navigate(TrophyScreen);
+        X: =457
+        Y: =950
+        ZIndex: =15
+

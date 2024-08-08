@@ -1,6 +1,8 @@
 {
   "968a2724-e1e3-4190-975c-a47744bec96a": {
+    "appActions": [],
     "connectionRef": {
+      "apiTier": "Standard",
       "displayName": "ロジック フロー",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
@@ -36,7 +38,9 @@
     "id": "968a2724-e1e3-4190-975c-a47744bec96a"
   },
   "f9c09b69-74f7-4554-a0cf-88c46314bb61": {
+    "appActions": [],
     "connectionRef": {
+      "apiTier": "Standard",
       "displayName": "ロジック フロー",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",

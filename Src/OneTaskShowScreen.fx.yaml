@@ -16,7 +16,7 @@ OneTaskShowScreen As screen:
         Size: =21
         Text: =LookUp(B_TASK, B_TASK=task_id).TASKNAME
         Width: =560
-        Y: =208
+        Y: =175
         ZIndex: =4
 
     OneTaskShowScreenTaskDescriptionTextLabel As label:
@@ -25,7 +25,7 @@ OneTaskShowScreen As screen:
         Size: =21
         Text: ="詳細"
         Width: =560
-        Y: =352
+        Y: =245
         ZIndex: =5
 
     OneTaskShowScreenTaskDescriptionTextField As label:
@@ -34,7 +34,7 @@ OneTaskShowScreen As screen:
         Size: =21
         Text: =LookUp(B_TASK, B_TASK=task_id).TASKDESCRIPTION
         Width: =560
-        Y: =463
+        Y: =358
         ZIndex: =6
 
     OneTaskShowScreenTaskLimitTextLabel As label:
@@ -43,7 +43,7 @@ OneTaskShowScreen As screen:
         Size: =21
         Text: ="期日"
         Width: =560
-        Y: =612
+        Y: =372
         ZIndex: =7
 
     OneTaskShowScreenDatePicker As datepicker:
@@ -53,7 +53,7 @@ OneTaskShowScreen As screen:
         OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
         Size: =24
         Width: =575
-        Y: =716
+        Y: =488
         ZIndex: =8
 
     OneTaskShowScreenBackIcon As icon.ArrowLeft:
@@ -101,7 +101,7 @@ OneTaskShowScreen As screen:
 
     OneTaskShowScreenProgressIcon As icon.Trending:
         Icon: =Icon.Trending
-        OnSelect: =Navigate(RateScreen, ScreenTransition.None);
+        OnSelect: =Navigate(RatingScreen, ScreenTransition.None);
         X: =367
         Y: =1072
         ZIndex: =21
@@ -178,4 +178,20 @@ OneTaskShowScreen As screen:
         X: =560
         Y: =1066
         ZIndex: =25
+
+    Label1 As label:
+        Height: =70
+        Size: =21
+        Text: ="ポイント"
+        Width: =560
+        Y: =605
+        ZIndex: =26
+
+    Label2 As label:
+        Height: =70
+        Size: =21
+        Text: =LookUp(B_TASK, B_TASK=task_id).DEFAULTPOINT
+        Width: =560
+        Y: =675
+        ZIndex: =27
 

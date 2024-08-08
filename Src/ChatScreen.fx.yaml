@@ -36,7 +36,7 @@ ChatScreen As screen:
         Icon: =Icon.Trending
         OnSelect: |
             =Navigate(
-                RateScreen,
+                RatingScreen,
                 ScreenTransition.None
             );
             If(
@@ -255,10 +255,14 @@ ChatScreen As screen:
         Height: =62
         Icon: =Icon.Currency
         OnSelect: |+
-            =If(
+            =Set(_point,)
+            
+            
+            
+            If(
                 !IsBlank(LookUp(B_TROPHY, CHATRATE <> 1 && USERID = Text(user_id))),
                 Notify("称号-事務報告", NotificationType.Success),
-                Set(_rate, "今のレート:" & Text(10) & " 今日のポイント:")
+                Set(_rate, "今のレート:" & Rating& Text(10) & " 今日のポイント:" & )
             );
             
             Patch(

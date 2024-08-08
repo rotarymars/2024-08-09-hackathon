@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "hws_b_user",
+    "MaxGetRowsCount": 500,
     "Name": "B_USER",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "所有者",
