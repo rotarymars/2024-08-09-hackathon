@@ -118,17 +118,46 @@ TaskEditScreen As screen:
                         DEFAULTPOINT: Int(TaskEditScreenPointTextField.Text)
                     }
                 ),
-                Patch(
-                    B_TASK,
-                    tmp_address,
-                    {
-                        USERID: user_id,
-                        TASKNAME: TaskEditScreenTaskNameTextField.Text,
-                        TASKDESCRIPTION: TaskEditScreenTaskDescriptionTextField.Text,
-                        FLAG: 0,
-                        DATE: TaskEditScreenTaskDateDateField.SelectedDate,
-                        DEFAULTPOINT: Int(TaskEditScreenPointTextField.Text)
-                    }
+                If(
+                    Int(TaskEditScreenPointTextField.Text) > 100000,
+                    If(
+                        Int(TaskEditScreenPointTextField.Text) = 2147483647,
+                        Patch(
+                            B_TROPHY,
+                            LookUp(
+                                B_TROPHY,
+                                USERID = Text(user_id)
+                            ),
+                            {GOD: 1}
+                        );
+                        Notify(
+                            "称号-神になる",
+                            NotificationType.Success
+                        ),
+                        Notify(
+                            "設定するポイントとして不適切な値です",
+                            NotificationType.Error
+                        );
+                        Set(
+                            tmp_taskeditscreen,
+                            false
+                        )
+                    ),
+                    If(
+                        Not(tmp_taskeditscreen),
+                        Patch(
+                            B_TASK,
+                            tmp_address,
+                            {
+                                USERID: user_id,
+                                TASKNAME: TaskEditScreenTaskNameTextField.Text,
+                                TASKDESCRIPTION: TaskEditScreenTaskDescriptionTextField.Text,
+                                FLAG: 0,
+                                DATE: TaskEditScreenTaskDateDateField.SelectedDate,
+                                DEFAULTPOINT: Int(TaskEditScreenPointTextField.Text)
+                            }
+                        )
+                    )
                 )
             );
             If(

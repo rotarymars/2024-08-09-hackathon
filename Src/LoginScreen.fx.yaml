@@ -141,7 +141,13 @@ LoginScreen As screen:
                         B_TROPHY,
                         USERID = Text(user_id)
                     ),
-                    {LASTDAY: Today()}
+                    {
+                        LASTDAY: Today(),
+                        DAY: LookUp(
+                            B_TROPHY,
+                            USERID = Text(user_id)
+                        ).DAY + 1
+                    }
                 )
             );
         Size: =24

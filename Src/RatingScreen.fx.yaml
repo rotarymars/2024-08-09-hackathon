@@ -1,4 +1,5 @@
 RatingScreen As screen:
+    Fill: =RGBA(240,239,228,1)
     OnVisible: |
         =Set(
             CntEnd,
@@ -23,7 +24,7 @@ RatingScreen As screen:
 
     "RatingScreenFinishedTaskGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =211
+        Height: =179
         Items: =Sort(Filter(B_TASK,FLAG = 1,USERID = user_id,FINISHTIME = Today()),TASKNAME,SortOrder.Ascending)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
@@ -122,14 +123,14 @@ RatingScreen As screen:
             ZIndex: =6
 
     RatingScreenRatingTitle As label:
-        Height: =96
+        Height: =112
         Size: =21
         Text: |-
             ="                         今日の時点での実績
             
                         ポイント　　　　　レーティング平均"
         Width: =640
-        Y: =298
+        Y: =260
         ZIndex: =3
 
     RatingScreenPointLabel As label:
@@ -137,8 +138,8 @@ RatingScreen As screen:
         Size: =25
         Text: ="×"&Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))
         Width: =172
-        X: =108
-        Y: =411
+        X: =115
+        Y: =390
         ZIndex: =4
 
     RatingScreenRatingLabel As label:
@@ -147,26 +148,26 @@ RatingScreen As screen:
         Text: =Round(Rating,2)
         Visible: =Display_Rating
         Width: =144
-        X: =377
-        Y: =411
+        X: =382
+        Y: =387
         ZIndex: =5
 
     RatingScreenInformationLabel As label:
         Height: =92
         Text: ="ポイントは一日ごとにリセットされ、レーティングは、昨日と今日でそれぞれポイントの平均を2で割ったものの合計で、レーティングで順位が決まります。"
         Width: =432
-        X: =207
-        Y: =1044
+        X: =208
+        Y: =946
         ZIndex: =6
 
     RatingScreenHomeButton As button:
         Height: =48
-        OnSelect: =Navigate(HomeScreen);
+        OnSelect: =Navigate(HomeScreen, ScreenTransition.None);
         Size: =16
         Text: ="ホームに戻る"
         Width: =154
-        X: =25
-        Y: =1066
+        X: =21
+        Y: =968
         ZIndex: =7
 
     RatingScreenRankLabel As label:
@@ -174,18 +175,9 @@ RatingScreen As screen:
         Size: =21
         Text: ="称号を見る→"
         Width: =199
-        X: =183
-        Y: =956
+        X: =115
+        Y: =860
         ZIndex: =8
-
-    RatingScreenYourTitleLabel As label:
-        Height: =70
-        Size: =23
-        Text: ="あなたの称号"
-        Width: =219
-        X: =158
-        Y: =874
-        ZIndex: =9
 
     RatingScreenRatingLineChart As group:
         Height: =5
@@ -200,7 +192,7 @@ RatingScreen As screen:
             Size: =18
             Text: ="レーティングの推移"
             Width: =640
-            Y: =528
+            Y: =480
             ZIndex: =11
 
         LineChart1 As lineChart:
@@ -208,7 +200,7 @@ RatingScreen As screen:
             Items: =Roop1
             Size: =14
             Width: =640
-            Y: =547
+            Y: =499
             ZIndex: =12
 
     RatingScreenTimer As timer:
@@ -401,14 +393,144 @@ RatingScreen As screen:
         Height: =73
         Image: =point
         Width: =73
-        X: =35
-        Y: =408
+        X: =42
+        Y: =387
         ZIndex: =14
 
     Icon1 As icon.Ribbon:
         Icon: =Icon.Ribbon
-        OnSelect: =Navigate(TrophyScreen);
-        X: =382
-        Y: =953
+        OnSelect: |-
+            =Navigate(TrophyScreen);
+            Set(_tasks,0)
+        X: =360
+        Y: =860
         ZIndex: =15
+
+    HomeScreenHomeIcon_4 As icon.Home:
+        Icon: =Icon.Home
+        OnSelect: |-
+            =If(
+                is_parent,
+                Navigate(ParentScreen, ScreenTransition.None),
+                Navigate(HomeScreen, ScreenTransition.None)
+            );
+        X: =285
+        Y: =1049
+        ZIndex: =16
+
+    HomeScreenTaskIcon_4 As icon.Note:
+        Icon: =Icon.Note
+        OnSelect: |-
+            =If(
+                is_parent,
+                Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
+                Navigate(TaskScreen, ScreenTransition.None)
+            );
+            Set(_task,CountRows(Gallery1.AllItems));
+            If(
+                _task = 0,
+                Set(_task, 1)
+            );
+            Set(
+                _Task,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
+                        DATE = Today()
+                    )
+                )
+            );
+            Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
+        X: =195
+        Y: =1049
+        ZIndex: =17
+
+    HomeScreenSettingsIcon_4 As icon.Settings:
+        Icon: =Icon.Settings
+        OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
+        X: =465
+        Y: =1049
+        ZIndex: =18
+
+    HomeScreenMailIcon_4 As icon.Mail:
+        Icon: =Icon.Mail
+        OnSelect: |
+            =Refresh(B_USER);
+            Set(
+                send_id,
+                LookUp(
+                    B_USER,
+                    USERID=Text(user_id)
+                ).PARENTID
+            );
+            If(
+                IsBlank(send_id),
+                Notify(
+                    "対応する保護者が見つかりません。設定から設定してください。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    ChatScreen,
+                    ScreenTransition.None
+                )
+            );
+        X: =105
+        Y: =1049
+        ZIndex: =19
+
+    HomeScreenLogoutIcon_4 As icon.Lock:
+        Icon: =Icon.Lock
+        OnSelect: |-
+            =Set(
+                user_id,
+                Blank()
+            );
+            Navigate(LoginScreen, ScreenTransition.None);
+            Reset(LoginScreenPasswordTextField)
+        X: =15
+        Y: =1049
+        ZIndex: =20
+
+    HomeScreenRefreshIcon_4 As icon.Reset:
+        Icon: =Icon.Reset
+        OnSelect: |-
+            =Refresh(B_CHAT);
+            Refresh(B_RATE);
+            Refresh(B_TASK);
+            Refresh(B_TROPHY);
+            Refresh(B_USER);
+        X: =555
+        Y: =1049
+        ZIndex: =21
+
+    HomeScreenProgressIcon_4 As icon.Trending:
+        Icon: =Icon.Trending
+        OnSelect: |
+            =Navigate(
+                RatingScreen,
+                ScreenTransition.None
+            );
+            If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id),
+                    IsBlank(RANK)
+                ),
+                Notify(
+                    "称号-登山開始",
+                    NotificationType.Success
+                );
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ),
+                    {RANK: 0}
+                )
+            );
+        X: =375
+        Y: =1049
+        ZIndex: =22
 

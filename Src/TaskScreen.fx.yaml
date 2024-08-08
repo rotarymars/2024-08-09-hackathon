@@ -16,17 +16,13 @@ TaskScreen As screen:
 
     "Gallery1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =1066
-        Items: |-
-            =Filter(
-                B_TASK,
-                USERID = user_id
-            )
+        Height: =783
+        Items: =tmp_taskscreen
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
         TemplateSize: =116
-        Y: =70
+        Y: =150
         ZIndex: =1
 
         Title7 As label:
@@ -52,7 +48,7 @@ TaskScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.TASKDESCRIPTION
+            Text: =ThisItem.新しい列
             VerticalAlign: =VerticalAlign.Top
             Width: =Title7.Width
             X: =Title7.X
@@ -112,4 +108,96 @@ TaskScreen As screen:
         Width: =280
         X: =360
         ZIndex: =2
+
+    Rectangle7 As rectangle:
+        Fill: |
+            =If(
+                Int(_tasks) / 1 + _task > 1,
+                RGBA(100, 0, 100, 0.3),
+                RGBA(0, 10, 400, 0.2)
+            )
+        Height: =42
+        Width: =640
+        Y: =933
+        ZIndex: =3
+
+    Rectangle8 As rectangle:
+        Height: =42
+        OnSelect: |-
+            =Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
+            If(
+                IsBlank(_task),
+                0,
+                _tasks / _task > 1,
+                640 + (640 * (1 / (Int(_tasks) / _task))) - 640,
+                (_tasks / _Task) * 640
+            )
+        Width: |-
+            =If(
+                IsBlank(_task),
+                0,
+                _task / _tasks > 1,
+                640 + (640 * (1 / (Int(_task) / _tasks))) - 640,
+                (_tasks / _Task) * 640
+            )
+        Y: =933
+        ZIndex: =4
+
+    Label8 As label:
+        Height: =46
+        Size: =21
+        Text: ="達成率" & Text((Int(_task) / Int(_tasks)) * 100, "0.0")  & "%" 
+        Width: =220
+        Y: =987
+        ZIndex: =5
+
+    Button2 As button:
+        Height: =58
+        OnSelect: |-
+            =Set(
+                _Task,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
+                        DATE = Today()
+                    )
+                )
+            );
+            Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
+        Size: =24
+        Text: ="達成率を表示"
+        Width: =221
+        X: =231
+        Y: =981
+        ZIndex: =6
+
+    Checkbox1 As checkbox:
+        Height: =60
+        OnCheck: |-
+            =Set(
+                tmp_taskscreen,
+                Filter(
+                    B_TASK,
+                    And(
+                        USERID = user_id,
+                        FLAG = 0
+                    )
+                )
+            );
+        OnUncheck: |-
+            =Set(
+                tmp_taskscreen,
+                Filter(
+                    B_TASK,
+                    And(
+                        USERID = user_id
+                    )
+                )
+            );
+        Size: =21
+        Text: ="終了済みタスクを非表示"
+        Width: =620
+        Y: =70
+        ZIndex: =7
 

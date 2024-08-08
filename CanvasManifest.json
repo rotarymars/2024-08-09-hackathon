@@ -139,12 +139,12 @@
     "SignupScreen",
     "HomeScreen",
     "OneTaskShowScreen",
-    "TaskEditScreen",
     "ChatScreen",
-    "TaskScreen",
-    "SettingScreen",
     "ParentScreen",
     "RatingScreen",
-    "TrophyScreen"
+    "TrophyScreen",
+    "TaskEditScreen",
+    "TaskScreen",
+    "SettingScreen"
   ]
 }

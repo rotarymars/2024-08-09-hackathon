@@ -1,106 +1,6 @@
 ChatScreen As screen:
     Fill: =RGBA(240,239,228,1)
 
-    ChatScreenHomeIcon As icon.Home:
-        Icon: =Icon.Home
-        OnSelect: |-
-            =If(
-                is_parent,
-                Navigate(ParentScreen, ScreenTransition.None),
-                Navigate(HomeScreen, ScreenTransition.None)
-            );
-        X: =300
-        Y: =1066
-        ZIndex: =1
-
-    ChatScreenTaskIcon As icon.Note:
-        Icon: =Icon.Note
-        OnSelect: |-
-            =If(
-                is_parent,
-                Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
-                Navigate(TaskScreen, ScreenTransition.None)
-            );
-        X: =193
-        Y: =1066
-        ZIndex: =2
-
-    ChatScreenSettingsIcon As icon.Settings:
-        Icon: =Icon.Settings
-        OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
-        X: =488
-        Y: =1066
-        ZIndex: =3
-
-    ChatScreenProgressIcon As icon.Trending:
-        Icon: =Icon.Trending
-        OnSelect: |
-            =Navigate(
-                RatingScreen,
-                ScreenTransition.None
-            );
-            If(
-                LookUp(
-                    B_TROPHY,
-                    USERID = Text(user_id),
-                    IsBlank(RANK)
-                ),
-                Notify(
-                    "称号-登山開始",
-                    NotificationType.Success
-                );
-                Patch(
-                    B_TROPHY,
-                    LookUp(
-                        B_TROPHY,
-                        USERID = Text(user_id)
-                    ),
-                    {RANK: 0}
-                )
-            );
-        X: =408
-        Y: =1072
-        ZIndex: =4
-
-    ChatScreenMailIcon As icon.Mail:
-        Icon: =Icon.Mail
-        OnSelect: |
-            =Refresh(B_USER);
-            Set(
-                send_id,
-                LookUp(
-                    B_USER,
-                    USERID=Text(user_id),
-                    PARENTID
-                )
-            );
-            If(
-                IsBlank(send_id),
-                Notify(
-                    "対応する保護者が見つかりません。設定から設定してください。",
-                    NotificationType.Error
-                ),
-                Navigate(
-                    ChatScreen,
-                    ScreenTransition.None
-                )
-            );
-        X: =108
-        Y: =1066
-        ZIndex: =5
-
-    ChatScreenLogoutIcon As icon.Lock:
-        Icon: =Icon.Lock
-        OnSelect: |-
-            =Set(
-                user_id,
-                Blank()
-            );
-            Navigate(LoginScreen, ScreenTransition.None);
-        X: =10
-        Y: =1072
-        ZIndex: =6
-
     "ChatScreenMessageGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =822
@@ -274,13 +174,20 @@ ChatScreen As screen:
     ChatScreenSendPointIcon As icon.Currency:
         Height: =62
         Icon: =Icon.Currency
-        OnSelect: |+
-            =Set(_rate, "今のレート:" & Rating& Char(10) & " 今日のポイント:" & Today_Rate);
-            If(
-                !IsBlank(LookUp(B_TROPHY, CHATRATE <> 1 && USERID = Text(user_id))),
-                Notify("称号-事務報告", NotificationType.Success)
+        OnSelect: |
+            =Set(
+                _rate,
+                "今のレート:" & Rating & Char(10) & " 今日のポイント:" & Today_Rate
             );
-            
+            If(
+                !IsBlank(LookUp(B_TROPHY, And(CHATRATE <> 1, USERID = Text(user_id)))),
+                Notify("称号-事務報告", NotificationType.Success);
+                Patch(
+                    B_TROPHY,
+                    LookUp(B_TROPHY, USERID = Text(user_id)),
+                    { CHATRATE: 1 }
+                )
+            );
             Patch(
                 B_CHAT,
                 Defaults(B_CHAT),
@@ -290,15 +197,99 @@ ChatScreen As screen:
                     TEXT: _rate
                 }
             );
-            
             Refresh(B_CHAT);
-            
         Width: =71
         X: =460
         Y: =928
         ZIndex: =10
 
-    ChatScreenRefreshIcon As icon.Reset:
+    HomeScreenHomeIcon_3 As icon.Home:
+        Icon: =Icon.Home
+        OnSelect: |-
+            =If(
+                is_parent,
+                Navigate(ParentScreen, ScreenTransition.None),
+                Navigate(HomeScreen, ScreenTransition.None)
+            );
+        X: =285
+        Y: =1049
+        ZIndex: =11
+
+    HomeScreenTaskIcon_3 As icon.Note:
+        Icon: =Icon.Note
+        OnSelect: |-
+            =If(
+                is_parent,
+                Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
+                Navigate(TaskScreen, ScreenTransition.None)
+            );
+            Set(_task,CountRows(Gallery1.AllItems));
+            If(
+                _task = 0,
+                Set(_task, 1)
+            );
+            Set(
+                _Task,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
+                        DATE = Today()
+                    )
+                )
+            );
+            Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
+        X: =195
+        Y: =1049
+        ZIndex: =12
+
+    HomeScreenSettingsIcon_3 As icon.Settings:
+        Icon: =Icon.Settings
+        OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
+        X: =465
+        Y: =1049
+        ZIndex: =13
+
+    HomeScreenMailIcon_3 As icon.Mail:
+        Icon: =Icon.Mail
+        OnSelect: |
+            =Refresh(B_USER);
+            Set(
+                send_id,
+                LookUp(
+                    B_USER,
+                    USERID=Text(user_id)
+                ).PARENTID
+            );
+            If(
+                IsBlank(send_id),
+                Notify(
+                    "対応する保護者が見つかりません。設定から設定してください。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    ChatScreen,
+                    ScreenTransition.None
+                )
+            );
+        X: =105
+        Y: =1049
+        ZIndex: =14
+
+    HomeScreenLogoutIcon_3 As icon.Lock:
+        Icon: =Icon.Lock
+        OnSelect: |-
+            =Set(
+                user_id,
+                Blank()
+            );
+            Navigate(LoginScreen, ScreenTransition.None);
+            Reset(LoginScreenPasswordTextField)
+        X: =15
+        Y: =1049
+        ZIndex: =15
+
+    HomeScreenRefreshIcon_2 As icon.Reset:
         Icon: =Icon.Reset
         OnSelect: |-
             =Refresh(B_CHAT);
@@ -306,7 +297,37 @@ ChatScreen As screen:
             Refresh(B_TASK);
             Refresh(B_TROPHY);
             Refresh(B_USER);
-        X: =557
-        Y: =1066
-        ZIndex: =11
+        X: =555
+        Y: =1049
+        ZIndex: =16
+
+    HomeScreenProgressIcon_3 As icon.Trending:
+        Icon: =Icon.Trending
+        OnSelect: |
+            =Navigate(
+                RatingScreen,
+                ScreenTransition.None
+            );
+            If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id),
+                    IsBlank(RANK)
+                ),
+                Notify(
+                    "称号-登山開始",
+                    NotificationType.Success
+                );
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ),
+                    {RANK: 0}
+                )
+            );
+        X: =375
+        Y: =1049
+        ZIndex: =17
 
