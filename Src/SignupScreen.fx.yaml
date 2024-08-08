@@ -93,7 +93,8 @@ SignupScreen As screen:
                         USERID: user_id,
                         LASTDAY: Today(),
                         TASK: 0,
-                        POINT: 0
+                        POINT: 0,
+                        FTASK:1
                     }
                 );
                 Patch(

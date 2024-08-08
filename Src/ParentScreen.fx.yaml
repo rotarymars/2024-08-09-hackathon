@@ -149,8 +149,8 @@ ParentScreen As screen:
                 Blank()
             );
             Navigate(LoginScreen, ScreenTransition.None);
-        X: =11
-        Y: =1066
+        X: =10
+        Y: =1072
         ZIndex: =8
 
     Icon4_1 As icon.Reset:

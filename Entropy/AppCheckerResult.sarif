@@ -14,6 +14,86 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "HomeScreen.HomeScreenGallery.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeScreen.HomeScreenGallery.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 38,
+                  "charOffset": 91,
+                  "snippet": {
+                    "text": "DateDiff(DATE, Today(), TimeUnit.Days)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeScreen",
+                "type": "HomeScreen.HomeScreenGallery"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DateDiff"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeScreen.HomeScreenGallery.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeScreen.HomeScreenGallery.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 130,
+                  "snippet": {
+                    "text": "<="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "HomeScreen",
+                "type": "HomeScreen.HomeScreenGallery"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "RatingScreen.RatingScreenPointLabel.Text"
                 }
               ],
@@ -63,10 +143,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 471,
-                  "charOffset": 217,
+                  "charLength": 527,
+                  "charOffset": 892,
                   "snippet": {
-                    "text": "Sum(\n                    B_TASK,\n                    If(\n                        And(\n                            FLAG = 1,\n                            USERID = user_id,\n                            FINISHTIME = DateAdd(\n                                Today(),\n                                -Cnt,\n                                TimeUnit.Days\n                            )\n                        ),\n                        POINT\n                    )\n                )"
+                    "text": "Sum(\n                        B_TASK,\n                        If(\n                            And(\n                                FLAG = 1,\n                                USERID = user_id,\n                                FINISHTIME = DateAdd(\n                                    Today(),\n                                    -Cnt,\n                                    TimeUnit.Days\n                                )\n                            ),\n                            POINT\n                        )\n                    )"
                   }
                 }
               },
@@ -103,10 +183,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 475,
-                  "charOffset": 1266,
+                  "charLength": 531,
+                  "charOffset": 2615,
                   "snippet": {
-                    "text": "Sum(\n                    B_TASK,\n                    If(\n                        And(\n                            FLAG = 1,\n                            USERID = user_id,\n                            FINISHTIME = DateAdd(\n                                Today(),\n                                -Cnt + 1,\n                                TimeUnit.Days\n                            )\n                        ),\n                        POINT\n                    )\n                )"
+                    "text": "Sum(\n                        B_TASK,\n                        If(\n                            And(\n                                FLAG = 1,\n                                USERID = user_id,\n                                FINISHTIME = DateAdd(\n                                    Today(),\n                                    -Cnt + 1,\n                                    TimeUnit.Days\n                                )\n                            ),\n                            POINT\n                        )\n                    )"
                   }
                 }
               },
@@ -3344,19 +3424,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.Current_Rank"
+                  "fullyQualifiedName": "TaskScreen.Gallery1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.Current_Rank",
+                  "fullyQualifiedName": "TaskScreen.Gallery1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "Current_Rank",
-                "module": "App",
-                "type": "App"
+                "member": "AccessibleLabel",
+                "module": "TaskScreen",
+                "type": "TaskScreen.Gallery1"
               }
             }
           ],
@@ -3366,27 +3446,27 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "RatingScreen.RatingScreenTimer.OnTimerEnd"
+                  "fullyQualifiedName": "TaskScreen.Gallery1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "RatingScreen.RatingScreenTimer.OnTimerEnd",
+                  "fullyQualifiedName": "TaskScreen.Gallery1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "OnTimerEnd",
-                "module": "RatingScreen",
-                "type": "RatingScreen.RatingScreenTimer"
+                "member": "TabIndex",
+                "module": "TaskScreen",
+                "type": "TaskScreen.Gallery1"
               }
             }
           ],
@@ -3396,8 +3476,8 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 5
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
         }
       ],
       "tool": {
@@ -3473,40 +3553,6 @@
                 "level": "Medium",
                 "primaryCategory": "accessibility",
                 "whyFix": "If the focus isn't visible, people who don't use a mouse won't be able to see it when they're interacting with the app."
-              }
-            },
-            {
-              "id": "app-UnusedVariables",
-              "messageStrings": {
-                "issue": {
-                  "text": "未使用の変数"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "未使用の変数を削除してください。"
-                ],
-                "level": "Medium",
-                "primaryCategory": "performance",
-                "whyFix": "この変数は、宣言されていますが、どのコントロールによっても参照されていないため、不要です。"
-              }
-            },
-            {
-              "id": "app-CollectDelegatableDataSource",
-              "messageStrings": {
-                "issue": {
-                  "text": "データ ソースから取得した行が完全でない可能性があります。"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "フィルター処理関数 ('Filter'、'Search' など) を含むように数式 \"Collect(B_RATE_RANK, B_RATE)\" を更新して、データ ソースから収集されるデータを制限します。"
-                ],
-                "level": "Medium",
-                "primaryCategory": "performance",
-                "whyFix": "'Collect' 関数を使用して接続先データ ソースからコレクションを直接作成する場合、データ ソースが大きすぎると、すべての行を読み込めないことがあります。"
               }
             }
           ],

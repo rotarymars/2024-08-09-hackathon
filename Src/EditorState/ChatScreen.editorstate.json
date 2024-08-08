@@ -391,7 +391,7 @@
       "MetaDataIDKey": "",
       "Name": "ChatScreenHomeIcon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -531,8 +531,22 @@
         "PressedFill",
         "HoverFill",
         "DisplayMode",
-        "X",
-        "Y",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "X",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Y",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Width",
         "Height",
         "BorderStyle",
@@ -564,7 +578,7 @@
       "MetaDataIDKey": "",
       "Name": "ChatScreenLogoutIcon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -737,7 +751,7 @@
       "MetaDataIDKey": "",
       "Name": "ChatScreenMailIcon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1527,7 +1541,7 @@
       "MetaDataIDKey": "",
       "Name": "ChatScreenRefreshIcon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2336,7 +2350,7 @@
       "MetaDataIDKey": "",
       "Name": "ChatScreenSettingsIcon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2785,7 +2799,7 @@
       "MetaDataIDKey": "",
       "Name": "ChatScreenTaskIcon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

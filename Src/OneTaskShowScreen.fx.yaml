@@ -141,7 +141,7 @@ OneTaskShowScreen As screen:
                 Blank()
             );
             Navigate(LoginScreen, ScreenTransition.None);
-        X: =29
+        X: =10
         Y: =1072
         ZIndex: =23
 
