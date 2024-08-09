@@ -1,0 +1,309 @@
+OneTaskShowScreen As screen:
+    Fill: =RGBA(240,239,228,1)
+
+    OneTaskShowScreenTaskNameTextLabel As label:
+        Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
+        Size: =21
+        Text: ="タスク名"
+        Width: =560
+        Y: =105
+        ZIndex: =3
+
+    OneTaskShowScreenTaskNameTextField As label:
+        Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
+        Size: =21
+        Text: =LookUp(B_TASK, B_TASK=task_id).TASKNAME
+        Width: =560
+        Y: =175
+        ZIndex: =4
+
+    OneTaskShowScreenTaskDescriptionTextLabel As label:
+        Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
+        Size: =21
+        Text: ="詳細"
+        Width: =560
+        Y: =245
+        ZIndex: =5
+
+    OneTaskShowScreenTaskDescriptionTextField As label:
+        Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
+        Size: =21
+        Text: =LookUp(B_TASK, B_TASK=task_id).TASKDESCRIPTION
+        Width: =560
+        Y: =320
+        ZIndex: =6
+
+    OneTaskShowScreenTaskLimitTextLabel As label:
+        Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
+        Size: =21
+        Text: ="期日"
+        Width: =560
+        Y: =390
+        ZIndex: =7
+
+    OneTaskShowScreenDatePicker As datepicker:
+        DefaultDate: =LookUp(B_TASK, B_TASK=task_id).DATE
+        DisplayMode: =DisplayMode.View
+        Height: =70
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
+        Size: =24
+        Width: =575
+        Y: =488
+        ZIndex: =8
+
+    OneTaskShowScreenBackIcon As icon.ArrowLeft:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back();
+        Y: =3
+        ZIndex: =16
+
+    OneTaskShowScreenEditIcon As icon.Edit:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Edit
+        OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
+        X: =224
+        ZIndex: =17
+
+    OneTaskShowScreenFinishIcon As icon.Check:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Check
+        OnSelect: |
+            =Patch(
+                B_TASK,
+                LookUp(
+                    B_TASK,
+                    B_TASK = task_id
+                ),
+                {
+                    USERID: user_id,
+                    TASKNAME: LookUp(
+                        B_TASK,
+                        B_TASK = task_id
+                    ).TASKNAME,
+                    TASKDESCRIPTION: LookUp(
+                        B_TASK,
+                        B_TASK = task_id
+                    ).TASKDESCRIPTION,
+                    DATE: LookUp(
+                        B_TASK,
+                        B_TASK = task_id
+                    ).DATE,
+                    FINISHTIME: Today(),
+                    FLAG: 1
+                }
+            );
+            Patch(
+                B_TROPHY,
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id)
+                ),
+                {
+                    TASK: LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ).TASK + 1
+                }
+            );
+            Back(ScreenTransition.None);
+            If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id)
+                ).POINT < Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT)),
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)),
+                        {POINT: Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))}
+                    )
+                );If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id)
+                ).RATE < Today_Rate,
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)),
+                        {RATE: Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))}
+                    )
+            )
+        X: =575
+        ZIndex: =24
+
+    Label1 As label:
+        Height: =70
+        Size: =21
+        Text: ="ポイント"
+        Width: =560
+        Y: =605
+        ZIndex: =26
+
+    Label2 As label:
+        Height: =70
+        Size: =21
+        Text: =LookUp(B_TASK, B_TASK=task_id).DEFAULTPOINT
+        Width: =560
+        Y: =675
+        ZIndex: =27
+
+    HomeScreenHomeIcon_1 As icon.Home:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Home
+        OnSelect: |-
+            =If(
+                is_parent,
+                Navigate(ParentScreen, ScreenTransition.None),
+                Navigate(HomeScreen, ScreenTransition.None)
+            );
+        X: =285
+        Y: =1049
+        ZIndex: =28
+
+    HomeScreenTaskIcon_1 As icon.Note:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Note
+        OnSelect: |-
+            =If(
+                is_parent,
+                Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
+                Navigate(TaskScreen, ScreenTransition.None)
+            );
+            Set(_task,CountRows(Gallery1.AllItems));
+            If(
+                _task = 0,
+                Set(_task, 1)
+            );
+            Set(
+                _Task,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
+                        FINISHTIME = Today()
+                    )
+                )
+            );
+            Set(
+                _Tasks,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
+                        DATE = Today()
+                    )
+                )
+            );
+        X: =195
+        Y: =1049
+        ZIndex: =29
+
+    HomeScreenSettingsIcon_1 As icon.Settings:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Settings
+        OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
+        X: =465
+        Y: =1049
+        ZIndex: =30
+
+    HomeScreenMailIcon_1 As icon.Mail:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Mail
+        OnSelect: |
+            =Refresh(B_USER);
+            Set(
+                send_id,
+                LookUp(
+                    B_USER,
+                    USERID=Text(user_id)
+                ).PARENTID
+            );
+            If(
+                IsBlank(send_id),
+                Notify(
+                    "対応する保護者が見つかりません。設定から設定してください。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    ChatScreen,
+                    ScreenTransition.None
+                )
+            );
+        X: =105
+        Y: =1049
+        ZIndex: =31
+
+    HomeScreenLogoutIcon_1 As icon.Lock:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Lock
+        OnSelect: |-
+            =Set(
+                user_id,
+                Blank()
+            );
+            Navigate(LoginScreen, ScreenTransition.None);
+            Reset(LoginScreenPasswordTextField)
+        X: =15
+        Y: =1049
+        ZIndex: =32
+
+    HomeScreenRefreshIcon_1 As icon.Reset:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Reset
+        OnSelect: |-
+            =Refresh(B_CHAT);
+            Refresh(B_RATE);
+            Refresh(B_TASK);
+            Refresh(B_TROPHY);
+            Refresh(B_USER);
+        X: =555
+        Y: =1049
+        ZIndex: =33
+
+    HomeScreenProgressIcon_1 As icon.Trending:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Trending
+        OnSelect: |
+            =If(
+                is_parent,
+                Notify(
+                    "保護者アカウントではこの機能は無効化されています。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    RatingScreen,
+                    ScreenTransition.None
+                )
+            );
+            If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id),
+                    IsBlank(RANK)
+                ),
+                Notify(
+                    "称号-登山開始",
+                    NotificationType.Success
+                );
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ),
+                    {RANK: 0}
+                )
+            );
+        X: =375
+        Y: =1049
+        ZIndex: =34
+

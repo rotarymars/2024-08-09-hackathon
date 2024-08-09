@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "c86f4489-792a-44e8-9e80-17f97612f741",
+    "Name": "Dalle3Connector",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "37e39095-e74b-ef11-a317-000d3acd5738"
+  }
+]

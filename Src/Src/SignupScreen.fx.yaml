@@ -1,0 +1,166 @@
+SignupScreen As screen:
+    Fill: =RGBA(240,239,228,1)
+
+    SignupScreenUsernameTextField As text:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
+        Default: =""
+        Height: =62
+        HintText: ="ユーザー名"
+        HoverFill: =ColorFade(Self.BorderColor, 20%)
+        Size: =21
+        Width: =427
+        X: =118
+        Y: =204
+        ZIndex: =1
+
+    SignupScreenPasswordTextField As text:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
+        Default: =""
+        Height: =62
+        HintText: ="パスワード"
+        HoverFill: =ColorFade(Self.BorderColor, 20%)
+        Mode: =TextMode.Password
+        Size: =21
+        Width: =427
+        X: =118
+        Y: =384
+        ZIndex: =2
+
+    SignupScreenSignupButton As button:
+        Fill: =RGBA(192, 79, 21, 0.8)
+        Height: =70
+        HoverFill: =ColorFade(Self.Fill, -20%)
+        OnSelect: |
+            =Set(
+                tmp,
+                LookUp(
+                    B_USER,
+                    USERNAME = SignupScreenUsernameTextField.Text
+                )
+            );
+            If(
+                SignupScreenCheckbox.Value,
+                Set(
+                    parentorchild,
+                    "P"
+                );
+                Set(
+                    is_parent,
+                    true
+                ),
+                Set(
+                    is_parent,
+                    false
+                );
+                Set(
+                    parentorchild,
+                    "C"
+                )
+            );
+            If(
+                IsBlank(tmp),
+                Patch(
+                    B_USER,
+                    Defaults(B_USER),
+                    {
+                        USERNAME: SignupScreenUsernameTextField.Text,
+                        PASSWORD: SignupScreenPasswordTextField.Text,
+                        FLAG: parentorchild
+                    }
+                );
+                If(
+                    is_parent,
+                    Navigate(
+                        ParentScreen,
+                        ScreenTransition.None
+                    ),
+                    Navigate(
+                        HomeScreen,
+                        ScreenTransition.None
+                    )
+                );
+                Set(
+                    user_id,
+                    Int(
+                        LookUp(
+                            B_USER,
+                            And(
+                                USERNAME = SignupScreenUsernameTextField.Text,
+                                PASSWORD = SignupScreenPasswordTextField.Text
+                            )
+                        ).USERID
+                    )
+                );
+                Set(
+                    user_name,
+                    SignupScreenUsernameTextField.Text
+                );
+                Set(
+                    user_password,
+                    SignupScreenPasswordTextField.Text
+                );
+                Patch(
+                    B_TROPHY,
+                    Defaults(B_TROPHY),
+                    {
+                        USERID: user_id,
+                        LASTDAY: Today(),
+                        TASK: 0,
+                        POINT: 0,
+                        FTASK: 1,
+                        DAY: 1
+                    }
+                );
+                Patch(
+                    B_RATE,
+                    Defaults(B_RATE),
+                    {
+                        USERID: user_id,
+                        RATE: 0
+                    }
+                );
+                Notify(
+                    "称号-はじめの一歩",
+                    NotificationType.Success
+                ),
+                Notify(
+                    "このユーザー名は使えません",
+                    NotificationType.Error
+                )
+            );
+        Size: =24
+        Text: ="新規登録"
+        Width: =280
+        X: =191
+        Y: =824
+        ZIndex: =4
+
+    SignupScreenCheckbox As checkbox:
+        CheckboxBorderColor: =RGBA(192, 79, 21, 0.8)
+        Height: =97
+        Size: =21
+        Text: ="保護者用アカウントとして作成"
+        Width: =427
+        X: =118
+        Y: =580
+        ZIndex: =5
+
+    Label4 As label:
+        Height: =70
+        Size: =21
+        Text: ="ログインは"
+        Width: =560
+        Y: =942
+        ZIndex: =6
+
+    Label5 As label:
+        Color: =RGBA(136, 160, 209, 1)
+        Height: =70
+        OnSelect: =Navigate(LoginScreen, ScreenTransition.None);
+        Size: =21
+        Text: ="こちら"
+        Width: =491
+        X: =149
+        Y: =942
+        ZIndex: =7
+

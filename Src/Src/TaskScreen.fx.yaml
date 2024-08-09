@@ -1,0 +1,186 @@
+TaskScreen As screen:
+    Fill: =RGBA(240,239,228,1)
+
+    TaskScreenTaskAddButton As button:
+        Fill: =RGBA(192, 79, 21, 0.8)
+        Height: =70
+        OnSelect: |-
+            =Set(
+                task_id,
+                Blank()
+            );
+            Navigate(TaskEditScreen,ScreenTransition.None);
+        Size: =24
+        Text: ="タスクを追加"
+        Width: =280
+        ZIndex: =1
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =783
+        Items: =tmp_taskscreen
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =116
+        Y: =150
+        ZIndex: =1
+
+        Title7 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.TASKNAME
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 86
+            X: =16
+            Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle4.Size*1.8 + 2 + Body2.Size*1.8)) / 2
+            ZIndex: =1
+
+        Subtitle4 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.新しい列
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title7.Width
+            X: =Title7.X
+            Y: =Title7.Y + Title7.Height
+            ZIndex: =2
+
+        Body2 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =Concatenate("締め切り：", Year(ThisItem.DATE), "年", Month(ThisItem.DATE), "月", Day(ThisItem.DATE), "日")
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title7.Width
+            X: =Title7.X
+            Y: =Subtitle4.Y + Subtitle4.Height
+            ZIndex: =3
+
+        NextArrow6 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="項目の詳細の表示"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator6 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle6 As rectangle:
+            Height: =Parent.TemplateHeight - Separator6.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+    TaskScreenBackButton As button:
+        Fill: =RGBA(192, 79, 21, 0.8)
+        Height: =70
+        OnSelect: =Back();
+        Size: =24
+        Text: ="戻る"
+        Width: =280
+        X: =360
+        ZIndex: =2
+
+    Rectangle7 As rectangle:
+        Fill: |
+            =If(
+                Int(_tasks) / 1 + _task > 1,
+                RGBA(100, 0, 100, 0.3),
+                RGBA(0, 10, 400, 0.2)
+            )
+        Height: =42
+        Width: =640
+        Y: =933
+        ZIndex: =3
+
+    Rectangle8 As rectangle:
+        Fill: =RGBA(192, 79, 21, 0.8)
+        Height: =42
+        OnSelect: |-
+            =If(
+                IsBlank(_Tasks),
+                0,
+                _Task / _Tasks > 1,
+                640 + (640 * (1 / (Int(_Task) / _Tasks))) - 640,
+                (_Task / _Tasks) * 640
+            )
+        Width: |-
+            =If(
+                IsBlank(_Tasks),
+                0,
+                _Task / _Tasks > 1,
+                640 + (640 * (1 / (Int(_Task) / _Tasks))) - 640,
+                (_Task / _Tasks) * 640
+            )
+        Y: =933
+        ZIndex: =4
+
+    Label8 As label:
+        Height: =46
+        Size: =21
+        Text: ="達成率" & If(IsBlank(_Tasks),Text(0),Text((Int(_Task) / (_Tasks)) * 100, "0.0"))  & "%" 
+        Width: =220
+        Y: =987
+        ZIndex: =5
+
+    Checkbox1 As checkbox:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
+        CheckboxBorderColor: =RGBA(192, 79, 21, 0.8)
+        Height: =60
+        OnCheck: |-
+            =Set(
+                tmp_taskscreen,
+                Filter(
+                    B_TASK,
+                    And(
+                        USERID = user_id,
+                        FLAG = 0
+                    )
+                )
+            );
+        OnUncheck: |-
+            =Set(
+                tmp_taskscreen,
+                Filter(
+                    B_TASK,
+                    And(
+                        USERID = user_id
+                    )
+                )
+            );
+        Size: =21
+        Text: ="終了済みタスクを非表示"
+        Width: =620
+        Y: =70
+        ZIndex: =7
+

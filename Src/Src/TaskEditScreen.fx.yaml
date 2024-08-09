@@ -1,0 +1,239 @@
+TaskEditScreen As screen:
+    Fill: =RGBA(240,239,228,1)
+    OnVisible: =
+
+    TaskEditScreenTaskNameTextLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="タスク名"
+        Width: =560
+        Y: =105
+        ZIndex: =3
+
+    TaskEditScreenTaskDescriptionTextLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="詳細"
+        Width: =560
+        Y: =287
+        ZIndex: =5
+
+    TaskEditScreenTaskLimitTextLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="期日"
+        Width: =560
+        Y: =467
+        ZIndex: =7
+
+    TaskEditScreenTaskNameTextField As text:
+        Default: =LookUp(B_TASK, B_TASK=task_id).TASKNAME
+        Height: =70
+        HintText: ="タスク名を入力"
+        Size: =21
+        Width: =560
+        Y: =190
+        ZIndex: =8
+
+    TaskEditScreenTaskDescriptionTextField As text:
+        Default: =LookUp(B_TASK, B_TASK=task_id).TASKDESCRIPTION
+        Height: =70
+        HintText: ="詳細を入力"
+        Size: =21
+        Width: =560
+        Y: =374
+        ZIndex: =9
+
+    TaskEditScreenTaskDateDateField As datepicker:
+        DefaultDate: =LookUp(B_TASK, B_TASK=task_id).DATE
+        Height: =70
+        Size: =24
+        Width: =575
+        Y: =580
+        ZIndex: =10
+
+    TaskEditScreenCheckbox As checkbox:
+        Height: =85
+        Size: =21
+        Text: =
+        Width: =280
+        X: =1
+        Y: =954
+        ZIndex: =12
+
+    TaskEditScreenFinishLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="終了"
+        Width: =560
+        X: =15
+        Y: =904
+        ZIndex: =13
+
+    TaskEditScreenFinishTimeDateField As datepicker:
+        DefaultDate: =LookUp(B_TASK, B_TASK=task_id).FINISHTIME
+        Height: =70
+        Size: =24
+        Visible: =TaskEditScreenCheckbox.Value
+        Width: =575
+        X: =7
+        Y: =1051
+        ZIndex: =14
+
+    TaskEditScreenBackIcon As icon.ArrowLeft:
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back(ScreenTransition.None);
+        Y: =3
+        ZIndex: =15
+
+    TaskEditScreenSaveIcon As icon.Check:
+        Icon: =Icon.Check
+        OnSelect: |-
+            =If(
+                IsBlank(task_id),
+                Set(
+                    tmp_address,
+                    Defaults(B_TASK)
+                ),
+                Set(
+                    tmp_address,
+                    LookUp(
+                        B_TASK,
+                        B_TASK = task_id
+                    )
+                )
+            );
+            If(
+                TaskEditScreenCheckbox.Value,
+                Patch(
+                    B_TASK,
+                    tmp_address,
+                    {
+                        USERID: user_id,
+                        TASKNAME: TaskEditScreenTaskNameTextField.Text,
+                        TASKDESCRIPTION: TaskEditScreenTaskDescriptionTextField.Text,
+                        FLAG: 1,
+                        DATE: TaskEditScreenTaskDateDateField.SelectedDate,
+                        FINISHTIME: TaskEditScreenFinishTimeDateField.SelectedDate,
+                        DEFAULTPOINT: Int(TaskEditScreenPointTextField.Text)
+                    }
+                ),
+                If(
+                    Int(TaskEditScreenPointTextField.Text) > 100000,
+                    If(
+                        Int(TaskEditScreenPointTextField.Text) = 2147483647,
+                        Patch(
+                            B_TROPHY,
+                            LookUp(
+                                B_TROPHY,
+                                USERID = Text(user_id)
+                            ),
+                            {GOD: 1}
+                        );
+                        Notify(
+                            "称号-神になる",
+                            NotificationType.Success
+                        ),
+                        Notify(
+                            "設定するポイントとして不適切な値です",
+                            NotificationType.Error
+                        );
+                        Set(
+                            tmp_taskeditscreen,
+                            false
+                        )
+                    ),
+                    If(
+                        Not(tmp_taskeditscreen),
+                        Patch(
+                            B_TASK,
+                            tmp_address,
+                            {
+                                USERID: user_id,
+                                TASKNAME: TaskEditScreenTaskNameTextField.Text,
+                                TASKDESCRIPTION: TaskEditScreenTaskDescriptionTextField.Text,
+                                FLAG: 0,
+                                DATE: TaskEditScreenTaskDateDateField.SelectedDate,
+                                DEFAULTPOINT: Int(TaskEditScreenPointTextField.Text)
+                            }
+                        )
+                    )
+                )
+            );
+            If(
+                TaskEditScreenTaskNameTextField.Text = "404",
+                Notify(
+                    "称号-見つかりません！",
+                    NotificationType.Success
+                );
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ),
+                    {'404T': 1}
+                )
+            );
+            Navigate(
+                HomeScreen,
+                ScreenTransition.None
+            );
+            Reset(TaskEditScreenTaskNameTextField);
+            Reset(TaskEditScreenFinishTimeDateField);
+            Reset(TaskEditScreenCheckbox);
+            Reset(TaskEditScreenTaskDescriptionTextField)
+        X: =576
+        ZIndex: =16
+
+    TaskEditScreenPointLabel As label:
+        Height: =70
+        Size: =21
+        Text: ="ポイント"
+        Width: =560
+        X: =7
+        Y: =673
+        ZIndex: =17
+
+    TaskEditScreenPointTextField As text:
+        Default: =LookUp(B_TASK, B_TASK=task_id).DEFAULTPOINT
+        Format: =TextFormat.Number
+        Height: =70
+        Size: =21
+        Width: =560
+        X: =7
+        Y: =743
+        ZIndex: =18
+
+    Label6 As label:
+        Height: =72
+        Overflow: =Overflow.Scroll
+        Size: =21
+        Text: |-
+            ="AIの勧める
+            ポイント数："&TaskEditScreenresult
+        Width: =289
+        X: =271
+        Y: =832
+        ZIndex: =19
+
+    Button1 As button:
+        Height: =72
+        OnSelect: |-
+            =Set(
+                TaskEditScreenresult,
+                AzureOpenAIServiceConector.Run(
+                    "算数のワーク1ページ10ポイント、読書感想文200ポイント、皿洗い50ポイント、家全体の掃除100ポイントを元にして、このあと渡すタスクのポイントをタスク名、タスクの詳細、タスクの期日を考慮して32ビット変数に収まる数値で答えてください。答える内容は想定する数字だけをすべて算用数字のみを用いて表示してください。",
+                    "タスク名："&TaskEditScreenTaskNameTextField.Text&"
+                    詳細："&TaskEditScreenTaskDescriptionTextField.Text&"
+                    期日："&Text(TaskEditScreenTaskDateDateField.SelectedDate)&"
+                    今日の日付："&Text(Today())
+                ).res
+            );
+        Size: =18
+        Text: ="AIからの推奨ポイントを見る"
+        Width: =197
+        X: =15
+        Y: =832
+        ZIndex: =20
+

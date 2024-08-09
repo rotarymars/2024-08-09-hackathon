@@ -1,0 +1,640 @@
+TrophyScreen As screen:
+    Fill: =RGBA(240,239,228,1)
+
+    Icon2 As icon.ArrowLeft:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Navigate(RatingScreen,ScreenTransition.None)
+        X: =24
+        Y: =20
+        ZIndex: =1
+
+    Image2 As image:
+        Height: =76
+        Image: =画像
+        Width: =88
+        X: =53
+        Y: =798
+        ZIndex: =2
+
+    Image2_1 As image:
+        Height: =76
+        Image: |-
+            =If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id)
+                ).'404T' = 1,
+                '画像 (5)',
+                '画像 (6)'
+            )
+        Width: =88
+        X: =53
+        Y: =918
+        ZIndex: =5
+
+    Image2_4 As image:
+        Height: =76
+        Image: |
+            =If(
+                And(
+                    LookUp(B_TROPHY, USERID = Text(user_id)).'404T' = 1,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).BIRTHDAY = 1,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).CHAT = 1,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).DAY >= 365,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).POINT >= 5000,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).RATE >= 5000,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).TASK >= 999,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).CHATRATE = 1,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).UDAY = 1
+                ),
+                '画像 (4)',
+                '画像 (6)'
+            )
+        Width: =88
+        X: =278
+        Y: =180
+        ZIndex: =8
+
+    Image2_7 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).GOD=1,'画像 (5)','画像 (6)')
+        Width: =88
+        X: =164
+        Y: =918
+        ZIndex: =13
+
+    Image2_9 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).CHAT=1,'画像 (5)','画像 (6)')
+        Width: =88
+        X: =284
+        Y: =918
+        ZIndex: =17
+
+    Image2_10 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).UDAY=1,'画像 (5)','画像 (6)')
+        Width: =88
+        X: =402
+        Y: =918
+        ZIndex: =19
+
+    Image2_11 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).BIRTHDAY=1,'画像 (5)','画像 (6)')
+        Width: =88
+        X: =517
+        Y: =918
+        ZIndex: =21
+
+    Image2_8 As image:
+        Height: =76
+        Image: |-
+            =If(
+                IsBlank(
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ).RANK
+                ),
+                '画像 (6)',
+                画像
+            )
+        Width: =88
+        X: =164
+        Y: =798
+        ZIndex: =22
+
+    Image2_12 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).CHATRATE=1,画像,'画像 (6)')
+        Width: =88
+        X: =284
+        Y: =798
+        ZIndex: =23
+
+    Image2_13 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT> 500,画像,'画像 (6)')
+        Width: =88
+        X: =508
+        Y: =798
+        ZIndex: =24
+
+    Image2_14 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).DAY > 4,画像,'画像 (6)')
+        Width: =88
+        X: =402
+        Y: =798
+        ZIndex: =25
+
+    Image2_15 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).DAY > 19,'画像 (1)','画像 (6)')
+        Width: =88
+        X: =364
+        Y: =672
+        ZIndex: =26
+
+    Image2_16 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).RATE > 799,'画像 (1)','画像 (6)')
+        Width: =88
+        X: =210
+        Y: =672
+        ZIndex: =27
+
+    Image2_17 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).TASK > 99,'画像 (1)','画像 (6)')
+        Width: =88
+        X: =508
+        Y: =672
+        ZIndex: =28
+
+    Image2_18 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT > 999,'画像 (1)','画像 (6)')
+        Width: =88
+        X: =61
+        Y: =672
+        ZIndex: =29
+
+    Image2_19 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).DAY > 99,'画像 (2)','画像 (6)')
+        Width: =88
+        X: =352
+        Y: =542
+        ZIndex: =30
+
+    Image2_20 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).RATE > 1999,'画像 (2)','画像 (6)')
+        Width: =88
+        X: =203
+        Y: =542
+        ZIndex: =31
+
+    Image2_21 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).TASK > 499,'画像 (2)','画像 (6)')
+        Width: =88
+        X: =501
+        Y: =542
+        ZIndex: =32
+
+    Image2_22 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT > 2999,'画像 (2)','画像 (6)')
+        Width: =88
+        X: =54
+        Y: =542
+        ZIndex: =33
+
+    Image2_23 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).DAY > 364,'画像 (3)','画像 (6)')
+        Width: =88
+        X: =348
+        Y: =379
+        ZIndex: =34
+
+    Image2_24 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).RATE > 4999,'画像 (3)','画像 (6)')
+        Width: =88
+        X: =210
+        Y: =379
+        ZIndex: =35
+
+    Image2_25 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).TASK > 998,'画像 (3)','画像 (6)')
+        Width: =88
+        X: =508
+        Y: =379
+        ZIndex: =36
+
+    Image2_26 As image:
+        Height: =76
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT>4999,'画像 (3)','画像 (6)')
+        Width: =88
+        X: =58
+        Y: =379
+        ZIndex: =37
+
+    Label3 As label:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
+        BorderThickness: =2
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(241, 244, 249, 1)
+        Font: =Font.Arial
+        Height: =39
+        Size: =21
+        Text: |
+            =If(
+                And(
+                    LookUp(B_TROPHY, USERID = Text(user_id)).'404T' = 1,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).BIRTHDAY = 1,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).CHAT = 1,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).DAY >= 365,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).POINT >= 5000,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).RATE >= 5000,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).TASK >= 999,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).CHATRATE = 1,
+                    LookUp(B_TROPHY, USERID = Text(user_id)).UDAY = 1
+                ),
+                "ビルゲイツもびっくり",
+                ""
+            )
+        Width: =297
+        X: =185
+        Y: =256
+        ZIndex: =38
+
+    Rectangle5 As rectangle:
+        Height: =44
+        Width: =If(Int(_tasks) / 23> 1,600 + (600 * (1 / (Int(_tasks) / 23))) - 600,Int(_tasks)/23 * 600)
+        X: =19
+        Y: =85
+        ZIndex: =40
+
+    Label7 As label:
+        Height: =39
+        Size: =21
+        Text: ="完了したタスク数：" & LookUp(B_TROPHY,USERID=Text(user_id)).TASK 
+        Width: =352
+        X: =275
+        Y: =84
+        ZIndex: =41
+
+    Label7_1 As label:
+        Height: =39
+        Size: =21
+        Text: ="ログイン日数：" & LookUp(B_TROPHY,USERID=Text(user_id)).DAY
+        Width: =352
+        X: =275
+        Y: =46
+        ZIndex: =42
+
+    Label7_2 As label:
+        Height: =39
+        Size: =21
+        Text: ="最高ポイント：" & LookUp(B_TROPHY,USERID=Text(user_id)).POINT
+        Width: =352
+        X: =275
+        Y: =123
+        ZIndex: =43
+
+    Label9 As label:
+        Height: =25
+        Size: =10
+        Text: ="見つかりません！"
+        Width: =122
+        X: =36
+        Y: =1012
+        ZIndex: =44
+
+    Label9_1 As label:
+        Height: =25
+        Size: =10
+        Text: ="神になる"
+        Width: =75
+        X: =171
+        Y: =1012
+        ZIndex: =45
+
+    Label9_2 As label:
+        Height: =25
+        Size: =10
+        Text: ="将来のビルゲイツ"
+        Width: =122
+        X: =267
+        Y: =1012
+        ZIndex: =46
+
+    Label9_3 As label:
+        Height: =25
+        Size: =10
+        Text: ="今日誕生日？"
+        Width: =122
+        X: =385
+        Y: =1012
+        ZIndex: =47
+
+    Label9_4 As label:
+        Height: =25
+        Size: =10
+        Text: ="HappyBirthday"
+        Width: =122
+        X: =508
+        Y: =1012
+        ZIndex: =48
+
+    Label9_5 As label:
+        Height: =25
+        Size: =10
+        Text: ="はじめの一歩"
+        Width: =122
+        X: =36
+        Y: =883
+        ZIndex: =49
+
+    Label9_6 As label:
+        Height: =25
+        Size: =10
+        Text: ="登山開始"
+        Width: =82
+        X: =167
+        Y: =883
+        ZIndex: =50
+
+    Label9_7 As label:
+        Height: =25
+        Size: =10
+        Text: ="事務報告"
+        Width: =78
+        X: =289
+        Y: =883
+        ZIndex: =51
+
+    Label9_8 As label:
+        Height: =25
+        Size: =10
+        Text: ="継続はカナリめんどい"
+        Width: =147
+        X: =372
+        Y: =883
+        ZIndex: =52
+
+    HomeScreenHomeIcon_5 As icon.Home:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Home
+        OnSelect: |-
+            =If(
+                is_parent,
+                Navigate(ParentScreen, ScreenTransition.None),
+                Navigate(HomeScreen, ScreenTransition.None)
+            );
+        X: =285
+        Y: =1049
+        ZIndex: =53
+
+    HomeScreenTaskIcon_5 As icon.Note:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Note
+        OnSelect: |-
+            =If(
+                is_parent,
+                Notify("保護者アカウントではこの機能は無効化されています。",NotificationType.Error),
+                Navigate(TaskScreen, ScreenTransition.None)
+            );
+            Set(_task,CountRows(Gallery1.AllItems));
+            If(
+                _task = 0,
+                Set(_task, 1)
+            );
+            Set(
+                _Task,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
+                        FINISHTIME = Today()
+                    )
+                )
+            );
+            Set(
+                _Tasks,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
+                        DATE = Today()
+                    )
+                )
+            );
+        X: =195
+        Y: =1049
+        ZIndex: =54
+
+    HomeScreenSettingsIcon_5 As icon.Settings:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Settings
+        OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
+        X: =465
+        Y: =1049
+        ZIndex: =55
+
+    HomeScreenMailIcon_5 As icon.Mail:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Mail
+        OnSelect: |
+            =Refresh(B_USER);
+            Set(
+                send_id,
+                LookUp(
+                    B_USER,
+                    USERID=Text(user_id)
+                ).PARENTID
+            );
+            If(
+                IsBlank(send_id),
+                Notify(
+                    "対応する保護者が見つかりません。設定から設定してください。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    ChatScreen,
+                    ScreenTransition.None
+                )
+            );
+        X: =105
+        Y: =1049
+        ZIndex: =56
+
+    HomeScreenLogoutIcon_5 As icon.Lock:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Lock
+        OnSelect: |-
+            =Set(
+                user_id,
+                Blank()
+            );
+            Navigate(LoginScreen, ScreenTransition.None);
+            Reset(LoginScreenPasswordTextField)
+        X: =15
+        Y: =1049
+        ZIndex: =57
+
+    HomeScreenRefreshIcon_5 As icon.Reset:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Reset
+        OnSelect: |-
+            =Refresh(B_CHAT);
+            Refresh(B_RATE);
+            Refresh(B_TASK);
+            Refresh(B_TROPHY);
+            Refresh(B_USER);
+        X: =555
+        Y: =1049
+        ZIndex: =58
+
+    HomeScreenProgressIcon_5 As icon.Trending:
+        Color: =RGBA(192, 79, 21, 0.8)
+        Icon: =Icon.Trending
+        OnSelect: |
+            =If(
+                is_parent,
+                Notify(
+                    "保護者アカウントではこの機能は無効化されています。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    RatingScreen,
+                    ScreenTransition.None
+                )
+            );
+            If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id),
+                    IsBlank(RANK)
+                ),
+                Notify(
+                    "称号-登山開始",
+                    NotificationType.Success
+                );
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ),
+                    {RANK: 0}
+                )
+            );
+        X: =375
+        Y: =1049
+        ZIndex: =59
+
+    Label9_9 As label:
+        Height: =25
+        Size: =10
+        Text: ="銅の財宝"
+        Width: =71
+        X: =529
+        Y: =886
+        ZIndex: =60
+
+    Label9_10 As label:
+        Height: =25
+        Size: =10
+        Text: ="銀の財宝"
+        Width: =76
+        X: =73
+        Y: =760
+        ZIndex: =61
+
+    Label9_11 As label:
+        Height: =25
+        Size: =10
+        Text: ="初陣"
+        Width: =51
+        X: =228
+        Y: =760
+        ZIndex: =62
+
+    Label9_12 As label:
+        Height: =25
+        Size: =10
+        Text: ="継続はカナり大変"
+        Width: =122
+        X: =347
+        Y: =760
+        ZIndex: =63
+
+    Label9_13 As label:
+        Height: =25
+        Size: =10
+        Text: ="万里の道"
+        Width: =81
+        X: =519
+        Y: =760
+        ZIndex: =64
+
+    Label9_14 As label:
+        Height: =25
+        Size: =10
+        Text: ="ゴールドラッシュ"
+        Width: =122
+        X: =37
+        Y: =632
+        ZIndex: =65
+
+    Label9_15 As label:
+        Height: =25
+        Size: =10
+        Text: ="百戦錬磨"
+        Width: =81
+        X: =207
+        Y: =632
+        ZIndex: =66
+
+    Label9_16 As label:
+        Height: =25
+        Size: =10
+        Text: ="継続はカなり"
+        Width: =92
+        X: =356
+        Y: =632
+        ZIndex: =67
+
+    Label9_17 As label:
+        Height: =25
+        Size: =10
+        Text: ="サーバーもびっくり"
+        Width: =144
+        X: =473
+        Y: =632
+        ZIndex: =68
+
+    Label9_18 As label:
+        Height: =25
+        Size: =10
+        Text: ="金銀財宝"
+        Width: =73
+        X: =65
+        Y: =467
+        ZIndex: =69
+
+    Label9_19 As label:
+        Height: =25
+        Size: =10
+        Text: ="一騎当千"
+        Width: =73
+        X: =220
+        Y: =467
+        ZIndex: =70
+
+    Label9_20 As label:
+        Height: =25
+        Size: =10
+        Text: ="継続は力なり"
+        Width: =104
+        X: =340
+        Y: =467
+        ZIndex: =71
+
+    Label9_21 As label:
+        Height: =25
+        Size: =10
+        Text: ="銀河鉄道"
+        Width: =73
+        X: =516
+        Y: =467
+        ZIndex: =72
+

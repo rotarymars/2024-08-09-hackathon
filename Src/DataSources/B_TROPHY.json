@@ -1,0 +1,109 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "hws_268d9e1444bd44baa5dadebf04e71033s",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "hws_268d9e1444bd44baa5dadebf04e71033",
+    "MaxGetRowsCount": 500,
+    "Name": "B_TROPHY",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "所有者",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "hws_268d9e1444bd44baa5dadebf04e71033_AsyncOperations": "システム ジョブ ",
+      "hws_268d9e1444bd44baa5dadebf04e71033_BulkDeleteFailures": "一括削除の失敗 ",
+      "hws_268d9e1444bd44baa5dadebf04e71033_MailboxTrackingFolders": "メールボックス自動追跡フォルダー",
+      "hws_268d9e1444bd44baa5dadebf04e71033_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "hws_268d9e1444bd44baa5dadebf04e71033_ProcessSession": "プロセス セッション",
+      "hws_268d9e1444bd44baa5dadebf04e71033_SyncErrors": "同期エラー",
+      "hws_268d9e1444bd44baa5dadebf04e71033id": "新しいテーブル",
+      "hws_birthday": "BIRTHDAY",
+      "hws_chat": "CHAT",
+      "hws_chatrate": "CHATRATE",
+      "hws_day": "DAY",
+      "hws_ftask": "FTASK",
+      "hws_god": "GOD",
+      "hws_lastday": "LASTDAY",
+      "hws_point": "POINT",
+      "hws_rank": "RANK",
+      "hws_rank2": "RANK2",
+      "hws_rate": "RATE",
+      "hws_t": "404T",
+      "hws_task": "TASK",
+      "hws_uday": "UDAY",
+      "hws_userid": "USERID",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "overriddencreatedon": "レコード作成日",
+      "owningbusinessunit": "所属部署",
+      "owningteam": "所有チーム",
+      "owninguser": "所有ユーザー",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "B_TROPHY",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "B_TROPHY (ビュー)",
+    "Name": "_hws_268d9e1444bd44baa5dadebf04e71033_views",
+    "RelatedEntityName": "B_TROPHY",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "09cf11e6-da18-4a1b-9549-f52a4b658283": "非アクティブな新しいテーブル",
+      "208b552c-b496-497e-bbc4-a906aeb1304c": "新しいテーブル検索ダイアログ ビュー",
+      "c5de09cd-7af3-4019-a4d4-280a91d3efe2": "新しいテーブル関連ビュー",
+      "ebfb5359-44d1-4812-8075-8cf1b0f5edca": "アクティブな新しいテーブル",
+      "ff3b319b-7a0c-495f-bfa4-b43c1ddc5326": "新しいテーブルの高度な検索ビュー"
+    }
+  },
+  {
+    "DisplayName": "状態 (B_TROPHY)",
+    "Name": "hws_268d9e1444bd44baa5dadebf04e71033_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "B_TROPHY"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "B_TROPHY",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (B_TROPHY)",
+    "Name": "hws_268d9e1444bd44baa5dadebf04e71033_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "B_TROPHY"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "B_TROPHY",
+    "Type": "OptionSetInfo"
+  }
+]

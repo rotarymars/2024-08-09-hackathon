@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "hws_b_users",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "hws_b_user",
+    "MaxGetRowsCount": 500,
+    "Name": "B_USER",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "所有者",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "hws_b_user_AsyncOperations": "システム ジョブ ",
+      "hws_b_user_BulkDeleteFailures": "一括削除の失敗 ",
+      "hws_b_user_MailboxTrackingFolders": "メールボックス自動追跡フォルダー",
+      "hws_b_user_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "hws_b_user_ProcessSession": "プロセス セッション",
+      "hws_b_user_SyncErrors": "同期エラー",
+      "hws_b_userid": "B_USER",
+      "hws_flag": "FLAG",
+      "hws_parentid": "PARENTID",
+      "hws_password": "PASSWORD",
+      "hws_userid": "USERID",
+      "hws_username": "USERNAME",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "overriddencreatedon": "レコード作成日",
+      "owningbusinessunit": "所属部署",
+      "owningteam": "所有チーム",
+      "owninguser": "所有ユーザー",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "B_USER",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "B_USER (ビュー)",
+    "Name": "_hws_b_user_views",
+    "RelatedEntityName": "B_USER",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "06230412-0009-40df-9fa4-344e3ef82a65": "アクティブなB_USER",
+      "382b54a1-1e10-49b9-9fb4-ad04329a1319": "B_USER検索ダイアログ ビュー",
+      "773aaf75-06b9-489d-b317-6706f4eac584": "B_USERの高度な検索ビュー",
+      "81f927eb-78d2-44d0-bdf5-67d25f9b5998": "B_USER関連ビュー",
+      "ccd16043-4769-4567-acea-ce63fd0630cd": "非アクティブなB_USER"
+    }
+  },
+  {
+    "DisplayName": "状態 (B_USER)",
+    "Name": "hws_b_user_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "B_USER"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "B_USER",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (B_USER)",
+    "Name": "hws_b_user_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "B_USER"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "B_USER",
+    "Type": "OptionSetInfo"
+  }
+]

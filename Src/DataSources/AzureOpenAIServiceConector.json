@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "04560b52-9418-4f6c-bd09-ebbe4efbaded",
+    "Name": "AzureOpenAIServiceConector",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "48da5680-3b4b-ef11-a317-000d3acd5738"
+  }
+]

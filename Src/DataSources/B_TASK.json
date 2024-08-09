@@ -1,0 +1,103 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "hws_b_tasks",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "hws_b_task",
+    "MaxGetRowsCount": 500,
+    "Name": "B_TASK",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "所有者",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "hws_071df1100e4a42eb8062e8264c8a09e1": "新しい列",
+      "hws_b_task_AsyncOperations": "システム ジョブ ",
+      "hws_b_task_BulkDeleteFailures": "一括削除の失敗 ",
+      "hws_b_task_MailboxTrackingFolders": "メールボックス自動追跡フォルダー",
+      "hws_b_task_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "hws_b_task_ProcessSession": "プロセス セッション",
+      "hws_b_task_SyncErrors": "同期エラー",
+      "hws_b_taskid": "B_TASK",
+      "hws_date": "DATE",
+      "hws_defaultpoint": "DEFAULTPOINT",
+      "hws_finishtime": "FINISHTIME",
+      "hws_flag": "FLAG",
+      "hws_point": "POINT",
+      "hws_taskdescription": "TASKDESCRIPTION",
+      "hws_taskname": "TASKNAME",
+      "hws_userid": "USERID",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "overriddencreatedon": "レコード作成日",
+      "owningbusinessunit": "所属部署",
+      "owningteam": "所有チーム",
+      "owninguser": "所有ユーザー",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "B_TASK",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "B_TASK (ビュー)",
+    "Name": "_hws_b_task_views",
+    "RelatedEntityName": "B_TASK",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1025b32a-e6da-4177-8004-934d279fc893": "B_TASK検索ダイアログ ビュー",
+      "117b2ce3-b23f-403e-b771-1674074fdf3b": "非アクティブなB_TASK",
+      "4433d6e3-616f-4f01-a081-c839fc3d66ce": "アクティブなB_TASK",
+      "56b55d6e-bad5-4f5e-8a34-57cdf43ababb": "B_TASK関連ビュー",
+      "e0f9b930-2c34-4777-aac7-b56e662fde53": "B_TASKの高度な検索ビュー"
+    }
+  },
+  {
+    "DisplayName": "状態 (B_TASK)",
+    "Name": "hws_b_task_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "B_TASK"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "B_TASK",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (B_TASK)",
+    "Name": "hws_b_task_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "B_TASK"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "B_TASK",
+    "Type": "OptionSetInfo"
+  }
+]
