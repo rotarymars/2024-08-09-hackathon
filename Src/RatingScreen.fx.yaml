@@ -177,8 +177,8 @@ RatingScreen As screen:
         Size: =21
         Text: ="称号を見る→"
         Width: =199
-        X: =115
-        Y: =860
+        X: =327
+        Y: =871
         ZIndex: =8
 
     RatingScreenRatingLineChart As group:
@@ -382,6 +382,33 @@ RatingScreen As screen:
                         )
                     }
                 );
+                Collect(
+                    B_RATE_RANK,
+                    B_RATE
+                );
+                ClearCollect(
+                    B_RATE_RANK,
+                    Sort(
+                        B_RATE_RANK,
+                        RATE,
+                        SortOrder.Descending
+                    )
+                );
+                ForAll(
+                    Sequence(CountRows(B_RATE_RANK)) As Index,
+                    Collect(
+                        B_RANK,
+                        Patch(
+                            Last(
+                                FirstN(
+                                    B_RATE_RANK,
+                                    Index.Value
+                                )
+                            ),
+                            {Index: Index.Value}
+                        )
+                    )
+                );
                 
             );
         Repeat: =true
@@ -405,8 +432,8 @@ RatingScreen As screen:
         OnSelect: |-
             =Navigate(TrophyScreen);
             Set(_tasks,0)
-        X: =360
-        Y: =860
+        X: =526
+        Y: =865
         ZIndex: =15
 
     HomeScreenHomeIcon_4 As icon.Home:
@@ -526,9 +553,16 @@ RatingScreen As screen:
         Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Trending
         OnSelect: |
-            =Navigate(
-                RatingScreen,
-                ScreenTransition.None
+            =If(
+                is_parent,
+                Notify(
+                    "保護者アカウントではこの機能は無効化されています。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    RatingScreen,
+                    ScreenTransition.None
+                )
             );
             If(
                 LookUp(
@@ -552,4 +586,14 @@ RatingScreen As screen:
         X: =375
         Y: =1049
         ZIndex: =22
+
+    Label10 As label:
+        Height: =58
+        Size: =28
+        Text: |-
+            ="順位:"&LookUp(B_RANK,USERID=user_id,Index)&"位"
+        Width: =161
+        X: =90
+        Y: =871
+        ZIndex: =23
 

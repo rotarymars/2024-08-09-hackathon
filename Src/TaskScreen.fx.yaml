@@ -21,6 +21,12 @@ TaskScreen As screen:
         Items: =tmp_taskscreen
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: |-
+            =Set(
+                task_id,
+                Gallery1.Selected.B_TASK
+            );
+            Navigate(TaskEditScreen, ScreenTransition.None);
         TemplatePadding: =0
         TemplateSize: =116
         Y: =150

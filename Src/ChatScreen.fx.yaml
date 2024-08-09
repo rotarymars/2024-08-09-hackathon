@@ -200,6 +200,7 @@ ChatScreen As screen:
                 }
             );
             Refresh(B_CHAT);
+        Visible: =Not(is_parent)
         Width: =71
         X: =460
         Y: =928
@@ -322,9 +323,16 @@ ChatScreen As screen:
         Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Trending
         OnSelect: |
-            =Navigate(
-                RatingScreen,
-                ScreenTransition.None
+            =If(
+                is_parent,
+                Notify(
+                    "保護者アカウントではこの機能は無効化されています。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    RatingScreen,
+                    ScreenTransition.None
+                )
             );
             If(
                 LookUp(

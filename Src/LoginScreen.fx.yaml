@@ -2,9 +2,12 @@ LoginScreen As screen:
     Fill: =RGBA(240,239,228,1)
 
     LoginScreenUsernameTextField As text:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
         Default: =""
         Height: =62
         HintText: ="ユーザー名"
+        HoverBorderColor: =
+        HoverFill: =ColorFade(Self.BorderColor, 20%)
         Size: =21
         Width: =427
         X: =118
@@ -12,9 +15,11 @@ LoginScreen As screen:
         ZIndex: =1
 
     LoginScreenPasswordTextField As text:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
         Default: =""
         Height: =62
         HintText: ="パスワード"
+        HoverFill: =ColorFade(Self.BorderColor, 20%)
         Mode: =TextMode.Password
         Size: =21
         Width: =427

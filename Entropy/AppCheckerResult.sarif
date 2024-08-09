@@ -374,206 +374,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.Label7_2.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrophyScreen.Label7_2.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 67,
-                  "charOffset": 11,
-                  "snippet": {
-                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.Label7_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Sum"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrophyScreen.Image2_26.Image"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrophyScreen.Image2_26.Image",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 67,
-                  "charOffset": 3,
-                  "snippet": {
-                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Image",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.Image2_26"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Sum"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrophyScreen.Image2_22.Image"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrophyScreen.Image2_22.Image",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 67,
-                  "charOffset": 3,
-                  "snippet": {
-                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Image",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.Image2_22"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Sum"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrophyScreen.Image2_18.Image"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrophyScreen.Image2_18.Image",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 67,
-                  "charOffset": 3,
-                  "snippet": {
-                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Image",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.Image2_18"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Sum"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrophyScreen.Image2_13.Image"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrophyScreen.Image2_13.Image",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 67,
-                  "charOffset": 3,
-                  "snippet": {
-                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Image",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.Image2_13"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Sum"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "LoginScreen.LoginScreenUsernameTextField.AccessibleLabel"
                 }
               ],
@@ -4768,6 +4568,36 @@
           },
           "ruleId": "app-UnusedMediaResources",
           "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "RatingScreen.RatingScreenTimer.OnTimerEnd"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "RatingScreen.RatingScreenTimer.OnTimerEnd",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnTimerEnd",
+                "module": "RatingScreen",
+                "type": "RatingScreen.RatingScreenTimer"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 6
         }
       ],
       "tool": {
@@ -4877,6 +4707,23 @@
                 "level": "Medium",
                 "primaryCategory": "performance",
                 "whyFix": "このメディア ファイルは、コントロールの式によって参照されていないため、不要です。削除するとパフォーマンスが向上します。"
+              }
+            },
+            {
+              "id": "app-CollectDelegatableDataSource",
+              "messageStrings": {
+                "issue": {
+                  "text": "データ ソースから取得した行が完全でない可能性があります。"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "フィルター処理関数 ('Filter'、'Search' など) を含むように数式 \"Collect(B_RATE_RANK, B_RATE)\" を更新して、データ ソースから収集されるデータを制限します。"
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "'Collect' 関数を使用して接続先データ ソースからコレクションを直接作成する場合、データ ソースが大きすぎると、すべての行を読み込めないことがあります。"
               }
             }
           ],

@@ -116,7 +116,7 @@ TrophyScreen As screen:
 
     Image2_13 As image:
         Height: =76
-        Image: =If(Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))> 500,画像,'画像 (6)')
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT> 500,画像,'画像 (6)')
         Width: =88
         X: =508
         Y: =798
@@ -156,7 +156,7 @@ TrophyScreen As screen:
 
     Image2_18 As image:
         Height: =76
-        Image: =If(Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT)) > 999,'画像 (1)','画像 (6)')
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT > 999,'画像 (1)','画像 (6)')
         Width: =88
         X: =61
         Y: =672
@@ -188,7 +188,7 @@ TrophyScreen As screen:
 
     Image2_22 As image:
         Height: =76
-        Image: =If(Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT)) > 2999,'画像 (2)','画像 (6)')
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT > 2999,'画像 (2)','画像 (6)')
         Width: =88
         X: =54
         Y: =542
@@ -220,7 +220,7 @@ TrophyScreen As screen:
 
     Image2_26 As image:
         Height: =76
-        Image: =If(Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))>4999,'画像 (3)','画像 (6)')
+        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT>4999,'画像 (3)','画像 (6)')
         Width: =88
         X: =58
         Y: =379
@@ -283,7 +283,7 @@ TrophyScreen As screen:
     Label7_2 As label:
         Height: =39
         Size: =21
-        Text: ="最高ポイント：" &Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))
+        Text: ="最高ポイント：" & LookUp(B_TROPHY,USERID=Text(user_id)).POINT
         Width: =352
         X: =275
         Y: =123
@@ -487,9 +487,16 @@ TrophyScreen As screen:
         Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Trending
         OnSelect: |
-            =Navigate(
-                RatingScreen,
-                ScreenTransition.None
+            =If(
+                is_parent,
+                Notify(
+                    "保護者アカウントではこの機能は無効化されています。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    RatingScreen,
+                    ScreenTransition.None
+                )
             );
             If(
                 LookUp(

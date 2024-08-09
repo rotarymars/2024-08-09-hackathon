@@ -6,6 +6,7 @@ SignupScreen As screen:
         Default: =""
         Height: =62
         HintText: ="ユーザー名"
+        HoverFill: =ColorFade(Self.BorderColor, 20%)
         Size: =21
         Width: =427
         X: =118
@@ -17,6 +18,7 @@ SignupScreen As screen:
         Default: =""
         Height: =62
         HintText: ="パスワード"
+        HoverFill: =ColorFade(Self.BorderColor, 20%)
         Mode: =TextMode.Password
         Size: =21
         Width: =427

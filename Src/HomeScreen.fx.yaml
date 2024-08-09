@@ -257,9 +257,16 @@ HomeScreen As screen:
         Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Trending
         OnSelect: |
-            =Navigate(
-                RatingScreen,
-                ScreenTransition.None
+            =If(
+                is_parent,
+                Notify(
+                    "保護者アカウントではこの機能は無効化されています。",
+                    NotificationType.Error
+                ),
+                Navigate(
+                    RatingScreen,
+                    ScreenTransition.None
+                )
             );
             If(
                 LookUp(
