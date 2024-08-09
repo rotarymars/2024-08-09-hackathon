@@ -23,7 +23,9 @@ LoginScreen As screen:
         ZIndex: =2
 
     LoginScreenSigninButton As button:
+        Fill: =RGBA(192, 79, 21, 0.8)
         Height: =70
+        HoverFill: =ColorFade(Self.Fill, -20%)
         OnSelect: |
             =Set(
                 tmp,
@@ -158,7 +160,9 @@ LoginScreen As screen:
         ZIndex: =3
 
     LoginScreenSignupButton As button:
+        Fill: =RGBA(192, 79, 21, 0.8)
         Height: =70
+        HoverFill: =ColorFade(Self.Fill, -20%)
         OnSelect: |
             =Navigate(SignupScreen, ScreenTransition.None);
         Size: =24

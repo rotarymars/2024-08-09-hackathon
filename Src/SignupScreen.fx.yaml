@@ -2,6 +2,7 @@ SignupScreen As screen:
     Fill: =RGBA(240,239,228,1)
 
     SignupScreenUsernameTextField As text:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
         Default: =""
         Height: =62
         HintText: ="ユーザー名"
@@ -12,6 +13,7 @@ SignupScreen As screen:
         ZIndex: =1
 
     SignupScreenPasswordTextField As text:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
         Default: =""
         Height: =62
         HintText: ="パスワード"
@@ -23,7 +25,9 @@ SignupScreen As screen:
         ZIndex: =2
 
     SignupScreenSignupButton As button:
+        Fill: =RGBA(192, 79, 21, 0.8)
         Height: =70
+        HoverFill: =ColorFade(Self.Fill, -20%)
         OnSelect: |
             =Set(
                 tmp,
@@ -130,6 +134,7 @@ SignupScreen As screen:
         ZIndex: =4
 
     SignupScreenCheckbox As checkbox:
+        CheckboxBorderColor: =RGBA(192, 79, 21, 0.8)
         Height: =97
         Size: =21
         Text: ="保護者用アカウントとして作成"

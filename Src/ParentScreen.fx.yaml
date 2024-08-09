@@ -73,6 +73,7 @@ ParentScreen As screen:
         ZIndex: =2
 
     HomeScreenHomeIcon_2 As icon.Home:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Home
         OnSelect: |-
             =If(
@@ -85,6 +86,7 @@ ParentScreen As screen:
         ZIndex: =3
 
     HomeScreenTaskIcon_2 As icon.Note:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Note
         OnSelect: |-
             =If(
@@ -103,16 +105,26 @@ ParentScreen As screen:
                     Filter(
                         B_TASK,
                         USERID = user_id,
+                        FINISHTIME = Today()
+                    )
+                )
+            );
+            Set(
+                _Tasks,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
                         DATE = Today()
                     )
                 )
             );
-            Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
         X: =195
         Y: =1049
         ZIndex: =4
 
     HomeScreenSettingsIcon_2 As icon.Settings:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
         X: =465
@@ -120,6 +132,7 @@ ParentScreen As screen:
         ZIndex: =5
 
     HomeScreenMailIcon_2 As icon.Mail:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Mail
         OnSelect: |
             =Refresh(B_USER);
@@ -146,6 +159,7 @@ ParentScreen As screen:
         ZIndex: =6
 
     HomeScreenLogoutIcon_2 As icon.Lock:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Lock
         OnSelect: |-
             =Set(
@@ -159,6 +173,7 @@ ParentScreen As screen:
         ZIndex: =7
 
     HomeScreenRefreshIcon_3 As icon.Reset:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Reset
         OnSelect: |-
             =Refresh(B_CHAT);
@@ -171,6 +186,7 @@ ParentScreen As screen:
         ZIndex: =8
 
     HomeScreenProgressIcon_2 As icon.Trending:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Trending
         OnSelect: |
             =Navigate(

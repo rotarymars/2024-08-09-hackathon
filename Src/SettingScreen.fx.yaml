@@ -2,6 +2,8 @@ SettingScreen As screen:
     Fill: =RGBA(240,239,228,1)
 
     SettingScreenCheckbox As checkbox:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
+        CheckboxBorderColor: =RGBA(192, 79, 21, 0.8)
         Height: =80
         Size: =21
         Text: ="保護者アカウントと結びつける"
@@ -76,6 +78,7 @@ SettingScreen As screen:
         ZIndex: =4
 
     SettingScreenBackIcon As icon.ArrowLeft:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.ArrowLeft
         OnSelect: =Back()
         ZIndex: =7

@@ -26,7 +26,7 @@ HomeScreen As screen:
                     user_id,
                     "の人のコメンテーターでそのUSERIDのユーザー名は",
                     user_name,
-                    "です。ユーザー名は",
+                    "です。",
                     user_name,
                     "FLAGが1のときはそのタスクが終了していることを表し、反対に0のときは終わっていないことを表します。DATEは期限を表し、FINISHDATEは実際に終了した日付を表します。この人の進捗を表すのに適切な画像を山登りをコンセプトに生成してください。
             ",
@@ -38,7 +38,7 @@ HomeScreen As screen:
     "HomeScreenGallery As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         BorderColor: =RGBA(192,79,21,50)
         DelayItemLoading: =true
-        Height: =402
+        Height: =599
         Items: |-
             =Sort(
                 Filter(
@@ -59,7 +59,7 @@ HomeScreen As screen:
             Navigate(OneTaskShowScreen, ScreenTransition.None);
         TemplatePadding: =0
         TemplateSize: =116
-        Y: =635
+        Y: =437
         ZIndex: =1
 
         Title3 As label:
@@ -141,6 +141,7 @@ HomeScreen As screen:
             ZIndex: =6
 
     HomeScreenHomeIcon As icon.Home:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Home
         OnSelect: |-
             =If(
@@ -153,6 +154,7 @@ HomeScreen As screen:
         ZIndex: =2
 
     HomeScreenTaskIcon As icon.Note:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Note
         OnSelect: |-
             =If(
@@ -171,16 +173,26 @@ HomeScreen As screen:
                     Filter(
                         B_TASK,
                         USERID = user_id,
+                        FINISHTIME = Today()
+                    )
+                )
+            );
+            Set(
+                _Tasks,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
                         DATE = Today()
                     )
                 )
             );
-            Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
         X: =195
         Y: =1049
         ZIndex: =3
 
     HomeScreenSettingsIcon As icon.Settings:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
         X: =465
@@ -188,6 +200,7 @@ HomeScreen As screen:
         ZIndex: =4
 
     HomeScreenMailIcon As icon.Mail:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Mail
         OnSelect: |
             =Refresh(B_USER);
@@ -214,6 +227,7 @@ HomeScreen As screen:
         ZIndex: =5
 
     HomeScreenLogoutIcon As icon.Lock:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Lock
         OnSelect: |-
             =Set(
@@ -227,6 +241,7 @@ HomeScreen As screen:
         ZIndex: =6
 
     HomeScreenRefreshIcon As icon.Reset:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Reset
         OnSelect: |-
             =Refresh(B_CHAT);
@@ -239,6 +254,7 @@ HomeScreen As screen:
         ZIndex: =7
 
     HomeScreenProgressIcon As icon.Trending:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Trending
         OnSelect: |
             =Navigate(
@@ -273,8 +289,8 @@ HomeScreen As screen:
         Size: =25
         Text: ="今日の未完了タスク"
         Width: =327
-        X: =156
-        Y: =527
+        X: =153
+        Y: =339
         ZIndex: =9
 
     HomeScreenLabel2 As label:
@@ -282,6 +298,7 @@ HomeScreen As screen:
         Size: =21
         Text: ="AIからのコメント"
         Width: =560
+        Y: =85
         ZIndex: =10
 
     HomeScreenAIComment As label:
@@ -290,24 +307,6 @@ HomeScreen As screen:
         Size: =21
         Text: =HomeScreenresult
         Width: =640
-        Y: =52
+        Y: =151
         ZIndex: =11
-
-    Image3 As image:
-        Height: =200
-        Image: =HomeScreenPictureResult
-        Width: =245
-        X: =197
-        Y: =310
-        ZIndex: =12
-
-    Label10 As label:
-        Align: =Align.Center
-        Height: =70
-        Size: =21
-        Text: ="現在のタスクの進み具合"
-        Width: =560
-        X: =37
-        Y: =240
-        ZIndex: =13
 

@@ -94,6 +94,166 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenFinishIcon.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenFinishIcon.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 67,
+                  "charOffset": 765,
+                  "snippet": {
+                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.OneTaskShowScreenFinishIcon"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Sum"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenFinishIcon.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenFinishIcon.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 67,
+                  "charOffset": 958,
+                  "snippet": {
+                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.OneTaskShowScreenFinishIcon"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Sum"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenFinishIcon.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenFinishIcon.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 67,
+                  "charOffset": 1256,
+                  "snippet": {
+                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.OneTaskShowScreenFinishIcon"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Sum"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ChatScreen.ChatScreenSendPointIcon.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ChatScreen.ChatScreenSendPointIcon.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 67,
+                  "charOffset": 65,
+                  "snippet": {
+                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "ChatScreen",
+                "type": "ChatScreen.ChatScreenSendPointIcon"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Sum"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "RatingScreen.RatingScreenPointLabel.Text"
                 }
               ],
@@ -194,6 +354,206 @@
                 "member": "OnTimerEnd",
                 "module": "RatingScreen",
                 "type": "RatingScreen.RatingScreenTimer"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Sum"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.Label7_2.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.Label7_2.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 67,
+                  "charOffset": 11,
+                  "snippet": {
+                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.Label7_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Sum"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.Image2_26.Image"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.Image2_26.Image",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 67,
+                  "charOffset": 3,
+                  "snippet": {
+                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Image",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.Image2_26"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Sum"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.Image2_22.Image"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.Image2_22.Image",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 67,
+                  "charOffset": 3,
+                  "snippet": {
+                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Image",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.Image2_22"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Sum"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.Image2_18.Image"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.Image2_18.Image",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 67,
+                  "charOffset": 3,
+                  "snippet": {
+                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Image",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.Image2_18"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Sum"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.Image2_13.Image"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.Image2_13.Image",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 67,
+                  "charOffset": 3,
+                  "snippet": {
+                    "text": "Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Image",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.Image2_13"
               }
             }
           ],
@@ -934,66 +1294,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenFinishIcon.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenFinishIcon.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.OneTaskShowScreenFinishIcon"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenFinishIcon.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenFinishIcon.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.OneTaskShowScreenFinishIcon"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "OneTaskShowScreen.OneTaskShowScreenBackIcon.AccessibleLabel"
                 }
               ],
@@ -1384,49 +1684,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenProgressIcon_2.TabIndex"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenLogoutIcon_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenProgressIcon_2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenProgressIcon_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenProgressIcon_2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenProgressIcon_2.AccessibleLabel",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenLogoutIcon_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenProgressIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenLogoutIcon_1"
               }
             }
           ],
@@ -1444,19 +1714,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenRefreshIcon_3.TabIndex"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenLogoutIcon_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenRefreshIcon_3.TabIndex",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenLogoutIcon_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenRefreshIcon_3"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenLogoutIcon_1"
               }
             }
           ],
@@ -1474,19 +1744,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenRefreshIcon_3.AccessibleLabel"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenMailIcon_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenRefreshIcon_3.AccessibleLabel",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenMailIcon_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenRefreshIcon_3"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenMailIcon_1"
               }
             }
           ],
@@ -1504,19 +1774,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenLogoutIcon_2.TabIndex"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenMailIcon_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenLogoutIcon_2.TabIndex",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenMailIcon_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenLogoutIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenMailIcon_1"
               }
             }
           ],
@@ -1534,19 +1804,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenLogoutIcon_2.AccessibleLabel"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenTaskIcon_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenLogoutIcon_2.AccessibleLabel",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenTaskIcon_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenLogoutIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenTaskIcon_1"
               }
             }
           ],
@@ -1564,19 +1834,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenMailIcon_2.TabIndex"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenTaskIcon_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenMailIcon_2.TabIndex",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenTaskIcon_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenMailIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenTaskIcon_1"
               }
             }
           ],
@@ -1594,19 +1864,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenMailIcon_2.AccessibleLabel"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenHomeIcon_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenMailIcon_2.AccessibleLabel",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenHomeIcon_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenMailIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenHomeIcon_1"
               }
             }
           ],
@@ -1624,19 +1894,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenSettingsIcon_2.TabIndex"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenHomeIcon_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenSettingsIcon_2.TabIndex",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenHomeIcon_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenSettingsIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenHomeIcon_1"
               }
             }
           ],
@@ -1654,19 +1924,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenSettingsIcon_2.AccessibleLabel"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenProgressIcon_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenSettingsIcon_2.AccessibleLabel",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenProgressIcon_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenSettingsIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenProgressIcon_1"
               }
             }
           ],
@@ -1684,19 +1954,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenTaskIcon_2.TabIndex"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenProgressIcon_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenTaskIcon_2.TabIndex",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenProgressIcon_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenTaskIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenProgressIcon_1"
               }
             }
           ],
@@ -1714,19 +1984,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenTaskIcon_2.AccessibleLabel"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenSettingsIcon_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenTaskIcon_2.AccessibleLabel",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenSettingsIcon_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenTaskIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenSettingsIcon_1"
               }
             }
           ],
@@ -1744,19 +2014,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenHomeIcon_2.TabIndex"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenSettingsIcon_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenHomeIcon_2.TabIndex",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenSettingsIcon_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenHomeIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenSettingsIcon_1"
               }
             }
           ],
@@ -1774,19 +2044,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenHomeIcon_2.AccessibleLabel"
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenRefreshIcon_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ParentScreen.HomeScreenHomeIcon_2.AccessibleLabel",
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenRefreshIcon_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "ParentScreen",
-                "type": "ParentScreen.HomeScreenHomeIcon_2"
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenRefreshIcon_1"
               }
             }
           ],
@@ -1798,6 +2068,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenRefreshIcon_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenRefreshIcon_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "OneTaskShowScreen",
+                "type": "OneTaskShowScreen.HomeScreenRefreshIcon_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -1954,169 +2254,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ChatScreen.ChatScreenSendPointIcon.AccessibleLabel"
+                  "fullyQualifiedName": "ChatScreen.HomeScreenLogoutIcon_3.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ChatScreen.ChatScreenSendPointIcon.AccessibleLabel",
+                  "fullyQualifiedName": "ChatScreen.HomeScreenLogoutIcon_3.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "ChatScreen",
-                "type": "ChatScreen.ChatScreenSendPointIcon"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ChatScreen.ChatScreenSendPointIcon.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ChatScreen.ChatScreenSendPointIcon.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "ChatScreen",
-                "type": "ChatScreen.ChatScreenSendPointIcon"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenProgressIcon_3.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenProgressIcon_3.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "ChatScreen",
-                "type": "ChatScreen.HomeScreenProgressIcon_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenProgressIcon_3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenProgressIcon_3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "ChatScreen",
-                "type": "ChatScreen.HomeScreenProgressIcon_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenRefreshIcon_2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenRefreshIcon_2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "ChatScreen",
-                "type": "ChatScreen.HomeScreenRefreshIcon_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenRefreshIcon_2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenRefreshIcon_2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "ChatScreen",
-                "type": "ChatScreen.HomeScreenRefreshIcon_2"
+                "type": "ChatScreen.HomeScreenLogoutIcon_3"
               }
             }
           ],
@@ -2164,19 +2314,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenLogoutIcon_3.AccessibleLabel"
+                  "fullyQualifiedName": "ChatScreen.HomeScreenMailIcon_3.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenLogoutIcon_3.AccessibleLabel",
+                  "fullyQualifiedName": "ChatScreen.HomeScreenMailIcon_3.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "ChatScreen",
-                "type": "ChatScreen.HomeScreenLogoutIcon_3"
+                "type": "ChatScreen.HomeScreenMailIcon_3"
               }
             }
           ],
@@ -2224,79 +2374,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenMailIcon_3.AccessibleLabel"
+                  "fullyQualifiedName": "ChatScreen.HomeScreenTaskIcon_3.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenMailIcon_3.AccessibleLabel",
+                  "fullyQualifiedName": "ChatScreen.HomeScreenTaskIcon_3.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "ChatScreen",
-                "type": "ChatScreen.HomeScreenMailIcon_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenSettingsIcon_3.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenSettingsIcon_3.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "ChatScreen",
-                "type": "ChatScreen.HomeScreenSettingsIcon_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenSettingsIcon_3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenSettingsIcon_3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "ChatScreen",
-                "type": "ChatScreen.HomeScreenSettingsIcon_3"
+                "type": "ChatScreen.HomeScreenTaskIcon_3"
               }
             }
           ],
@@ -2344,19 +2434,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenTaskIcon_3.AccessibleLabel"
+                  "fullyQualifiedName": "ChatScreen.HomeScreenHomeIcon_3.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenTaskIcon_3.AccessibleLabel",
+                  "fullyQualifiedName": "ChatScreen.HomeScreenHomeIcon_3.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "ChatScreen",
-                "type": "ChatScreen.HomeScreenTaskIcon_3"
+                "type": "ChatScreen.HomeScreenHomeIcon_3"
               }
             }
           ],
@@ -2404,19 +2494,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenHomeIcon_3.AccessibleLabel"
+                  "fullyQualifiedName": "ChatScreen.HomeScreenProgressIcon_3.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ChatScreen.HomeScreenHomeIcon_3.AccessibleLabel",
+                  "fullyQualifiedName": "ChatScreen.HomeScreenProgressIcon_3.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "ChatScreen",
-                "type": "ChatScreen.HomeScreenHomeIcon_3"
+                "type": "ChatScreen.HomeScreenProgressIcon_3"
               }
             }
           ],
@@ -2428,6 +2518,156 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ChatScreen.HomeScreenProgressIcon_3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ChatScreen.HomeScreenProgressIcon_3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "ChatScreen",
+                "type": "ChatScreen.HomeScreenProgressIcon_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ChatScreen.HomeScreenSettingsIcon_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ChatScreen.HomeScreenSettingsIcon_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "ChatScreen",
+                "type": "ChatScreen.HomeScreenSettingsIcon_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ChatScreen.HomeScreenSettingsIcon_3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ChatScreen.HomeScreenSettingsIcon_3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "ChatScreen",
+                "type": "ChatScreen.HomeScreenSettingsIcon_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ChatScreen.HomeScreenRefreshIcon_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ChatScreen.HomeScreenRefreshIcon_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "ChatScreen",
+                "type": "ChatScreen.HomeScreenRefreshIcon_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ChatScreen.HomeScreenRefreshIcon_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ChatScreen.HomeScreenRefreshIcon_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "ChatScreen",
+                "type": "ChatScreen.HomeScreenRefreshIcon_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -3004,49 +3244,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenLogoutIcon_1.TabIndex"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenLogoutIcon_2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenLogoutIcon_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenLogoutIcon_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenLogoutIcon_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenLogoutIcon_1.AccessibleLabel",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenLogoutIcon_2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenLogoutIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenLogoutIcon_2"
               }
             }
           ],
@@ -3064,19 +3274,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenMailIcon_1.TabIndex"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenLogoutIcon_2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenMailIcon_1.TabIndex",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenLogoutIcon_2.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenMailIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenLogoutIcon_2"
               }
             }
           ],
@@ -3094,19 +3304,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenMailIcon_1.AccessibleLabel"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenMailIcon_2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenMailIcon_1.AccessibleLabel",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenMailIcon_2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenMailIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenMailIcon_2"
               }
             }
           ],
@@ -3124,19 +3334,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenSettingsIcon_1.TabIndex"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenMailIcon_2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenSettingsIcon_1.TabIndex",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenMailIcon_2.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenSettingsIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenMailIcon_2"
               }
             }
           ],
@@ -3154,19 +3364,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenSettingsIcon_1.AccessibleLabel"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenTaskIcon_2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenSettingsIcon_1.AccessibleLabel",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenTaskIcon_2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenSettingsIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenTaskIcon_2"
               }
             }
           ],
@@ -3184,19 +3394,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenTaskIcon_1.TabIndex"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenTaskIcon_2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenTaskIcon_1.TabIndex",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenTaskIcon_2.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenTaskIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenTaskIcon_2"
               }
             }
           ],
@@ -3214,19 +3424,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenTaskIcon_1.AccessibleLabel"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenHomeIcon_2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenTaskIcon_1.AccessibleLabel",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenHomeIcon_2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenTaskIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenHomeIcon_2"
               }
             }
           ],
@@ -3244,19 +3454,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenHomeIcon_1.TabIndex"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenHomeIcon_2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenHomeIcon_1.TabIndex",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenHomeIcon_2.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenHomeIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenHomeIcon_2"
               }
             }
           ],
@@ -3274,19 +3484,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenHomeIcon_1.AccessibleLabel"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenProgressIcon_2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenHomeIcon_1.AccessibleLabel",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenProgressIcon_2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenHomeIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenProgressIcon_2"
               }
             }
           ],
@@ -3304,19 +3514,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenRefreshIcon_1.TabIndex"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenProgressIcon_2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenRefreshIcon_1.TabIndex",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenProgressIcon_2.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenRefreshIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenProgressIcon_2"
               }
             }
           ],
@@ -3334,19 +3544,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenRefreshIcon_1.AccessibleLabel"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenSettingsIcon_2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenRefreshIcon_1.AccessibleLabel",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenSettingsIcon_2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenRefreshIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenSettingsIcon_2"
               }
             }
           ],
@@ -3364,19 +3574,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenProgressIcon_1.TabIndex"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenSettingsIcon_2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenProgressIcon_1.TabIndex",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenSettingsIcon_2.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenProgressIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenSettingsIcon_2"
               }
             }
           ],
@@ -3394,19 +3604,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenProgressIcon_1.AccessibleLabel"
+                  "fullyQualifiedName": "ParentScreen.HomeScreenRefreshIcon_3.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "OneTaskShowScreen.HomeScreenProgressIcon_1.AccessibleLabel",
+                  "fullyQualifiedName": "ParentScreen.HomeScreenRefreshIcon_3.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "OneTaskShowScreen",
-                "type": "OneTaskShowScreen.HomeScreenProgressIcon_1"
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenRefreshIcon_3"
               }
             }
           ],
@@ -3418,6 +3628,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ParentScreen.HomeScreenRefreshIcon_3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ParentScreen.HomeScreenRefreshIcon_3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "ParentScreen",
+                "type": "ParentScreen.HomeScreenRefreshIcon_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -3544,19 +3784,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.Icon2.AccessibleLabel"
+                  "fullyQualifiedName": "RatingScreen.HomeScreenLogoutIcon_4.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "TrophyScreen.Icon2.AccessibleLabel",
+                  "fullyQualifiedName": "RatingScreen.HomeScreenLogoutIcon_4.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.Icon2"
+                "module": "RatingScreen",
+                "type": "RatingScreen.HomeScreenLogoutIcon_4"
               }
             }
           ],
@@ -3574,199 +3814,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.Icon2.TabIndex"
+                  "fullyQualifiedName": "RatingScreen.HomeScreenLogoutIcon_4.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "TrophyScreen.Icon2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.Icon2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenHomeIcon_4.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenHomeIcon_4.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "RatingScreen",
-                "type": "RatingScreen.HomeScreenHomeIcon_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenHomeIcon_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenHomeIcon_4.TabIndex",
+                  "fullyQualifiedName": "RatingScreen.HomeScreenLogoutIcon_4.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "RatingScreen",
-                "type": "RatingScreen.HomeScreenHomeIcon_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenTaskIcon_4.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenTaskIcon_4.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "RatingScreen",
-                "type": "RatingScreen.HomeScreenTaskIcon_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenTaskIcon_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenTaskIcon_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "RatingScreen",
-                "type": "RatingScreen.HomeScreenTaskIcon_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenSettingsIcon_4.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenSettingsIcon_4.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "RatingScreen",
-                "type": "RatingScreen.HomeScreenSettingsIcon_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenSettingsIcon_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenSettingsIcon_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "RatingScreen",
-                "type": "RatingScreen.HomeScreenSettingsIcon_4"
+                "type": "RatingScreen.HomeScreenLogoutIcon_4"
               }
             }
           ],
@@ -3844,19 +3904,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenLogoutIcon_4.AccessibleLabel"
+                  "fullyQualifiedName": "RatingScreen.HomeScreenTaskIcon_4.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenLogoutIcon_4.AccessibleLabel",
+                  "fullyQualifiedName": "RatingScreen.HomeScreenTaskIcon_4.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "RatingScreen",
-                "type": "RatingScreen.HomeScreenLogoutIcon_4"
+                "type": "RatingScreen.HomeScreenTaskIcon_4"
               }
             }
           ],
@@ -3874,19 +3934,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenLogoutIcon_4.TabIndex"
+                  "fullyQualifiedName": "RatingScreen.HomeScreenTaskIcon_4.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenLogoutIcon_4.TabIndex",
+                  "fullyQualifiedName": "RatingScreen.HomeScreenTaskIcon_4.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "RatingScreen",
-                "type": "RatingScreen.HomeScreenLogoutIcon_4"
+                "type": "RatingScreen.HomeScreenTaskIcon_4"
               }
             }
           ],
@@ -3904,19 +3964,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenRefreshIcon_4.AccessibleLabel"
+                  "fullyQualifiedName": "RatingScreen.HomeScreenHomeIcon_4.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenRefreshIcon_4.AccessibleLabel",
+                  "fullyQualifiedName": "RatingScreen.HomeScreenHomeIcon_4.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "RatingScreen",
-                "type": "RatingScreen.HomeScreenRefreshIcon_4"
+                "type": "RatingScreen.HomeScreenHomeIcon_4"
               }
             }
           ],
@@ -3934,19 +3994,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenRefreshIcon_4.TabIndex"
+                  "fullyQualifiedName": "RatingScreen.HomeScreenHomeIcon_4.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "RatingScreen.HomeScreenRefreshIcon_4.TabIndex",
+                  "fullyQualifiedName": "RatingScreen.HomeScreenHomeIcon_4.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "RatingScreen",
-                "type": "RatingScreen.HomeScreenRefreshIcon_4"
+                "type": "RatingScreen.HomeScreenHomeIcon_4"
               }
             }
           ],
@@ -4024,19 +4084,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenHomeIcon_5.AccessibleLabel"
+                  "fullyQualifiedName": "RatingScreen.HomeScreenSettingsIcon_4.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenHomeIcon_5.AccessibleLabel",
+                  "fullyQualifiedName": "RatingScreen.HomeScreenSettingsIcon_4.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.HomeScreenHomeIcon_5"
+                "module": "RatingScreen",
+                "type": "RatingScreen.HomeScreenSettingsIcon_4"
               }
             }
           ],
@@ -4054,19 +4114,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenHomeIcon_5.TabIndex"
+                  "fullyQualifiedName": "RatingScreen.HomeScreenSettingsIcon_4.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenHomeIcon_5.TabIndex",
+                  "fullyQualifiedName": "RatingScreen.HomeScreenSettingsIcon_4.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.HomeScreenHomeIcon_5"
+                "module": "RatingScreen",
+                "type": "RatingScreen.HomeScreenSettingsIcon_4"
               }
             }
           ],
@@ -4084,19 +4144,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenTaskIcon_5.AccessibleLabel"
+                  "fullyQualifiedName": "RatingScreen.HomeScreenRefreshIcon_4.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenTaskIcon_5.AccessibleLabel",
+                  "fullyQualifiedName": "RatingScreen.HomeScreenRefreshIcon_4.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.HomeScreenTaskIcon_5"
+                "module": "RatingScreen",
+                "type": "RatingScreen.HomeScreenRefreshIcon_4"
               }
             }
           ],
@@ -4114,19 +4174,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenTaskIcon_5.TabIndex"
+                  "fullyQualifiedName": "RatingScreen.HomeScreenRefreshIcon_4.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenTaskIcon_5.TabIndex",
+                  "fullyQualifiedName": "RatingScreen.HomeScreenRefreshIcon_4.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.HomeScreenTaskIcon_5"
+                "module": "RatingScreen",
+                "type": "RatingScreen.HomeScreenRefreshIcon_4"
               }
             }
           ],
@@ -4144,19 +4204,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenSettingsIcon_5.AccessibleLabel"
+                  "fullyQualifiedName": "TrophyScreen.Icon2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenSettingsIcon_5.AccessibleLabel",
+                  "fullyQualifiedName": "TrophyScreen.Icon2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "TrophyScreen",
-                "type": "TrophyScreen.HomeScreenSettingsIcon_5"
+                "type": "TrophyScreen.Icon2"
               }
             }
           ],
@@ -4174,79 +4234,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenSettingsIcon_5.TabIndex"
+                  "fullyQualifiedName": "TrophyScreen.Icon2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenSettingsIcon_5.TabIndex",
+                  "fullyQualifiedName": "TrophyScreen.Icon2.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "TrophyScreen",
-                "type": "TrophyScreen.HomeScreenSettingsIcon_5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenMailIcon_5.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenMailIcon_5.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.HomeScreenMailIcon_5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenMailIcon_5.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenMailIcon_5.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TrophyScreen",
-                "type": "TrophyScreen.HomeScreenMailIcon_5"
+                "type": "TrophyScreen.Icon2"
               }
             }
           ],
@@ -4324,19 +4324,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenRefreshIcon_5.AccessibleLabel"
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenMailIcon_5.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenRefreshIcon_5.AccessibleLabel",
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenMailIcon_5.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "TrophyScreen",
-                "type": "TrophyScreen.HomeScreenRefreshIcon_5"
+                "type": "TrophyScreen.HomeScreenMailIcon_5"
               }
             }
           ],
@@ -4354,19 +4354,139 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenRefreshIcon_5.TabIndex"
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenMailIcon_5.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "TrophyScreen.HomeScreenRefreshIcon_5.TabIndex",
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenMailIcon_5.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "TrophyScreen",
-                "type": "TrophyScreen.HomeScreenRefreshIcon_5"
+                "type": "TrophyScreen.HomeScreenMailIcon_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenTaskIcon_5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenTaskIcon_5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.HomeScreenTaskIcon_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenTaskIcon_5.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenTaskIcon_5.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.HomeScreenTaskIcon_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenHomeIcon_5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenHomeIcon_5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.HomeScreenHomeIcon_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenHomeIcon_5.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenHomeIcon_5.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.HomeScreenHomeIcon_5"
               }
             }
           ],
@@ -4438,6 +4558,216 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenSettingsIcon_5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenSettingsIcon_5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.HomeScreenSettingsIcon_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenSettingsIcon_5.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenSettingsIcon_5.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.HomeScreenSettingsIcon_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenRefreshIcon_5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenRefreshIcon_5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.HomeScreenRefreshIcon_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenRefreshIcon_5.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrophyScreen.HomeScreenRefreshIcon_5.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TrophyScreen",
+                "type": "TrophyScreen.HomeScreenRefreshIcon_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.HomeScreenPictureResult"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.HomeScreenPictureResult",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HomeScreenPictureResult",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.画像_1"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.画像_1",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "画像_1",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.applicationlogo"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.applicationlogo",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "applicationlogo",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
         }
       ],
       "tool": {
@@ -4513,6 +4843,40 @@
                 "level": "Medium",
                 "primaryCategory": "accessibility",
                 "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
+              }
+            },
+            {
+              "id": "app-UnusedVariables",
+              "messageStrings": {
+                "issue": {
+                  "text": "未使用の変数"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "未使用の変数を削除してください。"
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "この変数は、宣言されていますが、どのコントロールによっても参照されていないため、不要です。"
+              }
+            },
+            {
+              "id": "app-UnusedMediaResources",
+              "messageStrings": {
+                "issue": {
+                  "text": "使用されていないメディア ファイル"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "メディア ペインで未使用のメディア ファイルを削除します。"
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "このメディア ファイルは、コントロールの式によって参照されていないため、不要です。削除するとパフォーマンスが向上します。"
               }
             }
           ],

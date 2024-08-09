@@ -161,7 +161,9 @@ RatingScreen As screen:
         ZIndex: =6
 
     RatingScreenHomeButton As button:
+        Fill: =RGBA(192, 79, 21, 0.8)
         Height: =48
+        HoverFill: =ColorFade(Self.Fill, -20%)
         OnSelect: =Navigate(HomeScreen, ScreenTransition.None);
         Size: =16
         Text: ="ホームに戻る"
@@ -398,6 +400,7 @@ RatingScreen As screen:
         ZIndex: =14
 
     Icon1 As icon.Ribbon:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Ribbon
         OnSelect: |-
             =Navigate(TrophyScreen);
@@ -407,6 +410,7 @@ RatingScreen As screen:
         ZIndex: =15
 
     HomeScreenHomeIcon_4 As icon.Home:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Home
         OnSelect: |-
             =If(
@@ -419,6 +423,7 @@ RatingScreen As screen:
         ZIndex: =16
 
     HomeScreenTaskIcon_4 As icon.Note:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Note
         OnSelect: |-
             =If(
@@ -437,16 +442,26 @@ RatingScreen As screen:
                     Filter(
                         B_TASK,
                         USERID = user_id,
+                        FINISHTIME = Today()
+                    )
+                )
+            );
+            Set(
+                _Tasks,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
                         DATE = Today()
                     )
                 )
             );
-            Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
         X: =195
         Y: =1049
         ZIndex: =17
 
     HomeScreenSettingsIcon_4 As icon.Settings:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
         X: =465
@@ -454,6 +469,7 @@ RatingScreen As screen:
         ZIndex: =18
 
     HomeScreenMailIcon_4 As icon.Mail:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Mail
         OnSelect: |
             =Refresh(B_USER);
@@ -480,6 +496,7 @@ RatingScreen As screen:
         ZIndex: =19
 
     HomeScreenLogoutIcon_4 As icon.Lock:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Lock
         OnSelect: |-
             =Set(
@@ -493,6 +510,7 @@ RatingScreen As screen:
         ZIndex: =20
 
     HomeScreenRefreshIcon_4 As icon.Reset:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Reset
         OnSelect: |-
             =Refresh(B_CHAT);
@@ -505,6 +523,7 @@ RatingScreen As screen:
         ZIndex: =21
 
     HomeScreenProgressIcon_4 As icon.Trending:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Trending
         OnSelect: |
             =Navigate(

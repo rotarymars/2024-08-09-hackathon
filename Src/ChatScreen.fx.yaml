@@ -138,6 +138,7 @@ ChatScreen As screen:
         ZIndex: =8
 
     ChatScreenSendIcon As icon.Send:
+        Color: =RGBA(192, 79, 21, 0.8)
         Height: =94
         Icon: =Icon.Send
         OnSelect: |-
@@ -172,12 +173,13 @@ ChatScreen As screen:
         ZIndex: =9
 
     ChatScreenSendPointIcon As icon.Currency:
+        Color: =RGBA(192, 79, 21, 0.8)
         Height: =62
         Icon: =Icon.Currency
         OnSelect: |
             =Set(
                 _rate,
-                "今のレート:" & Rating & Char(10) & " 今日のポイント:" & Today_Rate
+                "今のレート:" & Rating & Char(10) & " 今日のポイント:" & Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))
             );
             If(
                 !IsBlank(LookUp(B_TROPHY, And(CHATRATE <> 1, USERID = Text(user_id)))),
@@ -204,6 +206,7 @@ ChatScreen As screen:
         ZIndex: =10
 
     HomeScreenHomeIcon_3 As icon.Home:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Home
         OnSelect: |-
             =If(
@@ -216,6 +219,7 @@ ChatScreen As screen:
         ZIndex: =11
 
     HomeScreenTaskIcon_3 As icon.Note:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Note
         OnSelect: |-
             =If(
@@ -234,16 +238,26 @@ ChatScreen As screen:
                     Filter(
                         B_TASK,
                         USERID = user_id,
+                        FINISHTIME = Today()
+                    )
+                )
+            );
+            Set(
+                _Tasks,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
                         DATE = Today()
                     )
                 )
             );
-            Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
         X: =195
         Y: =1049
         ZIndex: =12
 
     HomeScreenSettingsIcon_3 As icon.Settings:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
         X: =465
@@ -251,6 +265,7 @@ ChatScreen As screen:
         ZIndex: =13
 
     HomeScreenMailIcon_3 As icon.Mail:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Mail
         OnSelect: |
             =Refresh(B_USER);
@@ -277,6 +292,7 @@ ChatScreen As screen:
         ZIndex: =14
 
     HomeScreenLogoutIcon_3 As icon.Lock:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Lock
         OnSelect: |-
             =Set(
@@ -290,6 +306,7 @@ ChatScreen As screen:
         ZIndex: =15
 
     HomeScreenRefreshIcon_2 As icon.Reset:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Reset
         OnSelect: |-
             =Refresh(B_CHAT);
@@ -302,6 +319,7 @@ ChatScreen As screen:
         ZIndex: =16
 
     HomeScreenProgressIcon_3 As icon.Trending:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Trending
         OnSelect: |
             =Navigate(

@@ -57,20 +57,23 @@ OneTaskShowScreen As screen:
         ZIndex: =8
 
     OneTaskShowScreenBackIcon As icon.ArrowLeft:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.ArrowLeft
         OnSelect: =Back();
         Y: =3
         ZIndex: =16
 
     OneTaskShowScreenEditIcon As icon.Edit:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Edit
         OnSelect: =Navigate(TaskEditScreen, ScreenTransition.None);
         X: =224
         ZIndex: =17
 
     OneTaskShowScreenFinishIcon As icon.Check:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Check
-        OnSelect: |-
+        OnSelect: |
             =Patch(
                 B_TASK,
                 LookUp(
@@ -79,29 +82,61 @@ OneTaskShowScreen As screen:
                 ),
                 {
                     USERID: user_id,
-                    TASKNAME: LookUp(B_TASK, B_TASK=task_id).TASKNAME,
-                    TASKDESCRIPTION: LookUp(B_TASK, B_TASK=task_id).TASKDESCRIPTION,
-                    DATE: LookUp(B_TASK, B_TASK=task_id).DATE,
+                    TASKNAME: LookUp(
+                        B_TASK,
+                        B_TASK = task_id
+                    ).TASKNAME,
+                    TASKDESCRIPTION: LookUp(
+                        B_TASK,
+                        B_TASK = task_id
+                    ).TASKDESCRIPTION,
+                    DATE: LookUp(
+                        B_TASK,
+                        B_TASK = task_id
+                    ).DATE,
                     FINISHTIME: Today(),
                     FLAG: 1
                 }
             );
-            
             Patch(
+                B_TROPHY,
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id)
+                ),
+                {
+                    TASK: LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)
+                    ).TASK + 1
+                }
+            );
+            Back(ScreenTransition.None);
+            If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id)
+                ).POINT < Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT)),
+                Patch(
                     B_TROPHY,
                     LookUp(
                         B_TROPHY,
-                        USERID = Text(user_id)
-                    ),
-                    {
-                        TASK: LookUp(
-                            B_TROPHY,
-                            USERID = Text(user_id)
-                        ).TASK + 1
-                    }
-                );
-            
-            Back(ScreenTransition.None);
+                        USERID = Text(user_id)),
+                        {POINT: Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))}
+                    )
+                );If(
+                LookUp(
+                    B_TROPHY,
+                    USERID = Text(user_id)
+                ).RATE < Today_Rate,
+                Patch(
+                    B_TROPHY,
+                    LookUp(
+                        B_TROPHY,
+                        USERID = Text(user_id)),
+                        {RATE: Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))}
+                    )
+            )
         X: =575
         ZIndex: =24
 
@@ -122,6 +157,7 @@ OneTaskShowScreen As screen:
         ZIndex: =27
 
     HomeScreenHomeIcon_1 As icon.Home:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Home
         OnSelect: |-
             =If(
@@ -134,6 +170,7 @@ OneTaskShowScreen As screen:
         ZIndex: =28
 
     HomeScreenTaskIcon_1 As icon.Note:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Note
         OnSelect: |-
             =If(
@@ -152,16 +189,26 @@ OneTaskShowScreen As screen:
                     Filter(
                         B_TASK,
                         USERID = user_id,
+                        FINISHTIME = Today()
+                    )
+                )
+            );
+            Set(
+                _Tasks,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
                         DATE = Today()
                     )
                 )
             );
-            Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
         X: =195
         Y: =1049
         ZIndex: =29
 
     HomeScreenSettingsIcon_1 As icon.Settings:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
         X: =465
@@ -169,6 +216,7 @@ OneTaskShowScreen As screen:
         ZIndex: =30
 
     HomeScreenMailIcon_1 As icon.Mail:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Mail
         OnSelect: |
             =Refresh(B_USER);
@@ -195,6 +243,7 @@ OneTaskShowScreen As screen:
         ZIndex: =31
 
     HomeScreenLogoutIcon_1 As icon.Lock:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Lock
         OnSelect: |-
             =Set(
@@ -208,6 +257,7 @@ OneTaskShowScreen As screen:
         ZIndex: =32
 
     HomeScreenRefreshIcon_1 As icon.Reset:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Reset
         OnSelect: |-
             =Refresh(B_CHAT);
@@ -220,6 +270,7 @@ OneTaskShowScreen As screen:
         ZIndex: =33
 
     HomeScreenProgressIcon_1 As icon.Trending:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Trending
         OnSelect: |
             =Navigate(

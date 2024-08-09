@@ -2,6 +2,7 @@ TrophyScreen As screen:
     Fill: =RGBA(240,239,228,1)
 
     Icon2 As icon.ArrowLeft:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.ArrowLeft
         OnSelect: =Navigate(RatingScreen,ScreenTransition.None)
         X: =24
@@ -115,7 +116,7 @@ TrophyScreen As screen:
 
     Image2_13 As image:
         Height: =76
-        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT > 500,画像,'画像 (6)')
+        Image: =If(Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))> 500,画像,'画像 (6)')
         Width: =88
         X: =508
         Y: =798
@@ -133,7 +134,7 @@ TrophyScreen As screen:
         Height: =76
         Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).DAY > 19,'画像 (1)','画像 (6)')
         Width: =88
-        X: =359
+        X: =364
         Y: =672
         ZIndex: =26
 
@@ -155,7 +156,7 @@ TrophyScreen As screen:
 
     Image2_18 As image:
         Height: =76
-        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT > 999,'画像 (1)','画像 (6)')
+        Image: =If(Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT)) > 999,'画像 (1)','画像 (6)')
         Width: =88
         X: =61
         Y: =672
@@ -187,7 +188,7 @@ TrophyScreen As screen:
 
     Image2_22 As image:
         Height: =76
-        Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).POINT > 2999,'画像 (2)','画像 (6)')
+        Image: =If(Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT)) > 2999,'画像 (2)','画像 (6)')
         Width: =88
         X: =54
         Y: =542
@@ -197,7 +198,7 @@ TrophyScreen As screen:
         Height: =76
         Image: =If(LookUp(B_TROPHY,USERID=Text(user_id)).DAY > 364,'画像 (3)','画像 (6)')
         Width: =88
-        X: =359
+        X: =348
         Y: =379
         ZIndex: =34
 
@@ -219,21 +220,14 @@ TrophyScreen As screen:
 
     Image2_26 As image:
         Height: =76
-        Image: |-
-            =If(
-                LookUp(
-                    B_TROPHY,
-                    USERID = Text(user_id)
-                ).POINT > 4999,
-                '画像 (3)',
-                '画像 (6)'
-            )
+        Image: =If(Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))>4999,'画像 (3)','画像 (6)')
         Width: =88
-        X: =61
+        X: =58
         Y: =379
         ZIndex: =37
 
     Label3 As label:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
         BorderThickness: =2
         DisabledFill: =RGBA(255, 255, 255, 1)
         Fill: =RGBA(241, 244, 249, 1)
@@ -289,7 +283,7 @@ TrophyScreen As screen:
     Label7_2 As label:
         Height: =39
         Size: =21
-        Text: ="最高ポイント：" & LookUp(B_TROPHY,USERID=Text(user_id)).POINT 
+        Text: ="最高ポイント：" &Sum(B_TASK,If(And(FLAG=1,USERID=user_id,FINISHTIME=Today()),POINT))
         Width: =352
         X: =275
         Y: =123
@@ -377,6 +371,7 @@ TrophyScreen As screen:
         ZIndex: =52
 
     HomeScreenHomeIcon_5 As icon.Home:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Home
         OnSelect: |-
             =If(
@@ -389,6 +384,7 @@ TrophyScreen As screen:
         ZIndex: =53
 
     HomeScreenTaskIcon_5 As icon.Note:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Note
         OnSelect: |-
             =If(
@@ -407,16 +403,26 @@ TrophyScreen As screen:
                     Filter(
                         B_TASK,
                         USERID = user_id,
+                        FINISHTIME = Today()
+                    )
+                )
+            );
+            Set(
+                _Tasks,
+                CountRows(
+                    Filter(
+                        B_TASK,
+                        USERID = user_id,
                         DATE = Today()
                     )
                 )
             );
-            Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
         X: =195
         Y: =1049
         ZIndex: =54
 
     HomeScreenSettingsIcon_5 As icon.Settings:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Settings
         OnSelect: =Navigate(SettingScreen, ScreenTransition.None);
         X: =465
@@ -424,6 +430,7 @@ TrophyScreen As screen:
         ZIndex: =55
 
     HomeScreenMailIcon_5 As icon.Mail:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Mail
         OnSelect: |
             =Refresh(B_USER);
@@ -450,6 +457,7 @@ TrophyScreen As screen:
         ZIndex: =56
 
     HomeScreenLogoutIcon_5 As icon.Lock:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Lock
         OnSelect: |-
             =Set(
@@ -463,6 +471,7 @@ TrophyScreen As screen:
         ZIndex: =57
 
     HomeScreenRefreshIcon_5 As icon.Reset:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Reset
         OnSelect: |-
             =Refresh(B_CHAT);
@@ -475,6 +484,7 @@ TrophyScreen As screen:
         ZIndex: =58
 
     HomeScreenProgressIcon_5 As icon.Trending:
+        Color: =RGBA(192, 79, 21, 0.8)
         Icon: =Icon.Trending
         OnSelect: |
             =Navigate(
@@ -503,4 +513,121 @@ TrophyScreen As screen:
         X: =375
         Y: =1049
         ZIndex: =59
+
+    Label9_9 As label:
+        Height: =25
+        Size: =10
+        Text: ="銅の財宝"
+        Width: =71
+        X: =529
+        Y: =886
+        ZIndex: =60
+
+    Label9_10 As label:
+        Height: =25
+        Size: =10
+        Text: ="銀の財宝"
+        Width: =76
+        X: =73
+        Y: =760
+        ZIndex: =61
+
+    Label9_11 As label:
+        Height: =25
+        Size: =10
+        Text: ="初陣"
+        Width: =51
+        X: =228
+        Y: =760
+        ZIndex: =62
+
+    Label9_12 As label:
+        Height: =25
+        Size: =10
+        Text: ="継続はカナり大変"
+        Width: =122
+        X: =347
+        Y: =760
+        ZIndex: =63
+
+    Label9_13 As label:
+        Height: =25
+        Size: =10
+        Text: ="万里の道"
+        Width: =81
+        X: =519
+        Y: =760
+        ZIndex: =64
+
+    Label9_14 As label:
+        Height: =25
+        Size: =10
+        Text: ="ゴールドラッシュ"
+        Width: =122
+        X: =37
+        Y: =632
+        ZIndex: =65
+
+    Label9_15 As label:
+        Height: =25
+        Size: =10
+        Text: ="百戦錬磨"
+        Width: =81
+        X: =207
+        Y: =632
+        ZIndex: =66
+
+    Label9_16 As label:
+        Height: =25
+        Size: =10
+        Text: ="継続はカなり"
+        Width: =92
+        X: =356
+        Y: =632
+        ZIndex: =67
+
+    Label9_17 As label:
+        Height: =25
+        Size: =10
+        Text: ="サーバーもびっくり"
+        Width: =144
+        X: =473
+        Y: =632
+        ZIndex: =68
+
+    Label9_18 As label:
+        Height: =25
+        Size: =10
+        Text: ="金銀財宝"
+        Width: =73
+        X: =65
+        Y: =467
+        ZIndex: =69
+
+    Label9_19 As label:
+        Height: =25
+        Size: =10
+        Text: ="一騎当千"
+        Width: =73
+        X: =220
+        Y: =467
+        ZIndex: =70
+
+    Label9_20 As label:
+        Height: =25
+        Size: =10
+        Text: ="継続は力なり"
+        Width: =104
+        X: =340
+        Y: =467
+        ZIndex: =71
+
+    Label9_21 As label:
+        Height: =25
+        Size: =10
+        Text: ="銀河鉄道"
+        Width: =73
+        X: =516
+        Y: =467
+        ZIndex: =72
 

@@ -2,6 +2,7 @@ TaskScreen As screen:
     Fill: =RGBA(240,239,228,1)
 
     TaskScreenTaskAddButton As button:
+        Fill: =RGBA(192, 79, 21, 0.8)
         Height: =70
         OnSelect: |-
             =Set(
@@ -101,6 +102,7 @@ TaskScreen As screen:
             ZIndex: =6
 
     TaskScreenBackButton As button:
+        Fill: =RGBA(192, 79, 21, 0.8)
         Height: =70
         OnSelect: =Back();
         Size: =24
@@ -122,23 +124,23 @@ TaskScreen As screen:
         ZIndex: =3
 
     Rectangle8 As rectangle:
+        Fill: =RGBA(192, 79, 21, 0.8)
         Height: =42
         OnSelect: |-
-            =Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
-            If(
-                IsBlank(_task),
+            =If(
+                IsBlank(_Tasks),
                 0,
-                _tasks / _task > 1,
-                640 + (640 * (1 / (Int(_tasks) / _task))) - 640,
-                (_tasks / _Task) * 640
+                _Task / _Tasks > 1,
+                640 + (640 * (1 / (Int(_Task) / _Tasks))) - 640,
+                (_Task / _Tasks) * 640
             )
         Width: |-
             =If(
-                IsBlank(_task),
+                IsBlank(_Tasks),
                 0,
-                _task / _tasks > 1,
-                640 + (640 * (1 / (Int(_task) / _tasks))) - 640,
-                (_tasks / _Task) * 640
+                _Task / _Tasks > 1,
+                640 + (640 * (1 / (Int(_Task) / _Tasks))) - 640,
+                (_Task / _Tasks) * 640
             )
         Y: =933
         ZIndex: =4
@@ -146,33 +148,14 @@ TaskScreen As screen:
     Label8 As label:
         Height: =46
         Size: =21
-        Text: ="達成率" & Text((Int(_task) / Int(_tasks)) * 100, "0.0")  & "%" 
+        Text: ="達成率" & If(IsBlank(_Tasks),Text(0),Text((Int(_Task) / (_Tasks)) * 100, "0.0"))  & "%" 
         Width: =220
         Y: =987
         ZIndex: =5
 
-    Button2 As button:
-        Height: =58
-        OnSelect: |-
-            =Set(
-                _Task,
-                CountRows(
-                    Filter(
-                        B_TASK,
-                        USERID = user_id,
-                        DATE = Today()
-                    )
-                )
-            );
-            Set(_tasks,LookUp(B_TROPHY,USERID = Text(user_id)).TASK);
-        Size: =24
-        Text: ="達成率を表示"
-        Width: =221
-        X: =231
-        Y: =981
-        ZIndex: =6
-
     Checkbox1 As checkbox:
+        BorderColor: =RGBA(192, 79, 21, 0.8)
+        CheckboxBorderColor: =RGBA(192, 79, 21, 0.8)
         Height: =60
         OnCheck: |-
             =Set(

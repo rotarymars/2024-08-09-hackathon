@@ -1,6 +1,8 @@
 {
   "968a2724-e1e3-4190-975c-a47744bec96a": {
-    "appActions": [],
+    "appActions": [
+      "Run"
+    ],
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "ロジック フロー",
